@@ -1,0 +1,177 @@
+<div class="pdp container" *ngIf="product as p">
+  <nav class="pdp__crumbs" aria-label="Breadcrumb">
+    <a routerLink="/">Home</a>
+    <span aria-hidden="true">/</span>
+    <a [routerLink]="['/browse', p.department]">{{ deptLabel(p.department) }}</a>
+    <span aria-hidden="true">/</span>
+    <a [routerLink]="['/browse', p.department, p.category]">{{ catLabel(p.category) }}</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">{{ p.name }}</span>
+  </nav>
+
+  <div class="pdp__layout">
+    <div class="pdp__gallery">
+      <div class="pdp__main-img">
+        <img
+          [src]="gallery[activeImage] || selectedColor?.swatch"
+          [alt]="p.name + ' in ' + (selectedColor?.name || '')"
+          [appImgFallback]="p.id"
+        />
+      </div>
+      <div class="pdp__thumbs">
+        <button
+          *ngFor="let img of gallery; let i = index"
+          type="button"
+          class="thumb"
+          [class.thumb--active]="i === activeImage"
+          (click)="activeImage = i"
+          [attr.aria-label]="'Image ' + (i + 1)"
+        >
+          <img
+            [src]="img"
+            [alt]="p.name + ' view ' + (i + 1)"
+            loading="lazy"
+            [appImgFallback]="p.id + i"
+          />
+        </button>
+      </div>
+    </div>
+
+    <div class="pdp__info">
+      <h1 class="pdp__name">{{ p.name }}</h1>
+
+      <div class="pdp__reviews" *ngIf="p.reviewScore">
+        <span class="stars" aria-hidden="true">
+          <span *ngFor="let s of [1, 2, 3, 4, 5]" [class.star--on]="s <= stars(p.reviewScore)">
+            &#9733;
+          </span>
+        </span>
+        <span class="pdp__review-count">{{ p.reviewScore }} ({{ p.reviewCount }})</span>
+      </div>
+
+      <div class="pdp__price">
+        <span class="price" [class.price--sale]="!!p.regularPrice">{{ p.price | currency }}</span>
+        <span class="price-was" *ngIf="p.regularPrice">{{ p.regularPrice | currency }}</span>
+      </div>
+      <p class="promo-flag" *ngIf="p.promo">{{ p.promo }}</p>
+
+      <div class="pdp__section">
+        <span class="pdp__label">
+          Colour:
+          <strong>{{ selectedColor?.name }}</strong>
+        </span>
+        <div class="pdp__swatches" role="radiogroup" aria-label="Colour">
+          <button
+            *ngFor="let c of p.colors"
+            type="button"
+            role="radio"
+            class="swatch"
+            [class.swatch--active]="c === selectedColor"
+            [attr.aria-checked]="c === selectedColor"
+            [attr.aria-label]="c.name"
+            [title]="c.name"
+            (click)="selectColor(c)"
+          >
+            <img [src]="c.swatch" [alt]="c.name" [appImgFallback]="c.ccId" />
+          </button>
+        </div>
+      </div>
+
+      <div class="pdp__section" *ngIf="p.fits.length > 1">
+        <span class="pdp__label">
+          Fit:
+          <strong>{{ selectedFit }}</strong>
+        </span>
+        <div class="pdp__fits" role="radiogroup" aria-label="Fit">
+          <button
+            *ngFor="let f of p.fits"
+            type="button"
+            role="radio"
+            class="fit-chip"
+            [class.fit-chip--active]="f === selectedFit"
+            [attr.aria-checked]="f === selectedFit"
+            (click)="selectedFit = f"
+          >
+            {{ f }}
+          </button>
+        </div>
+      </div>
+
+      <div class="pdp__section">
+        <div class="pdp__label-row">
+          <span class="pdp__label">
+            Size:
+            <strong>{{ selectedSize || 'Select a size' }}</strong>
+          </span>
+          <button type="button" class="link-underline">Size chart</button>
+        </div>
+        <p class="pdp__size-error" *ngIf="sizeError" role="alert">Please select a size</p>
+        <div
+          class="pdp__sizes"
+          role="radiogroup"
+          aria-label="Size"
+          [class.pdp__sizes--error]="sizeError"
+        >
+          <button
+            *ngFor="let s of sortedSizes"
+            type="button"
+            role="radio"
+            class="size-chip"
+            [class.size-chip--active]="s === selectedSize"
+            [attr.aria-checked]="s === selectedSize"
+            (click)="selectSize(s)"
+          >
+            {{ s }}
+          </button>
+        </div>
+      </div>
+
+      <div class="pdp__section pdp__qtyrow">
+        <div class="qty" aria-label="Quantity">
+          <button
+            type="button"
+            (click)="bumpQty(-1)"
+            [disabled]="qty <= 1"
+            aria-label="Decrease quantity"
+          >
+            &minus;
+          </button>
+          <span aria-live="polite">{{ qty }}</span>
+          <button
+            type="button"
+            (click)="bumpQty(1)"
+            [disabled]="qty >= 9"
+            aria-label="Increase quantity"
+          >
+            +
+          </button>
+        </div>
+        <button type="button" class="btn btn--primary pdp__add" (click)="addToBag()">
+          Add to bag
+        </button>
+      </div>
+
+      <div class="pdp__section pdp__desc">
+        <h2>Details</h2>
+        <p>{{ p.description }}</p>
+        <ul>
+          <li>Product #{{ p.id }}</li>
+          <li>{{ deptLabel(p.department) }} &rsaquo; {{ catLabel(p.category) }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <section class="pdp__related" *ngIf="(related$ | async)?.length">
+    <h2>You may also like</h2>
+    <div class="pdp__related-grid">
+      <app-product-card *ngFor="let r of related$ | async" [product]="r"></app-product-card>
+    </div>
+  </section>
+</div>
+
+<div class="pdp-missing container" *ngIf="notFound">
+  <h1>Product not found</h1>
+  <p>This style isn't in the demo catalog.</p>
+  <a class="btn btn--primary" routerLink="/">Back to home</a>
+</div>

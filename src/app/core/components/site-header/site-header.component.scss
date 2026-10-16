@@ -1,0 +1,237 @@
+@use 'tokens' as t;
+
+.header {
+  background: t.$white;
+  border-bottom: 1px solid t.$gray-200;
+  position: sticky;
+  top: 0;
+  z-index: 60;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    max-width: t.$page-max;
+    margin: 0 auto;
+    padding: 14px t.$gutter;
+  }
+
+  &__logo {
+    font-family: t.$font-serif;
+    font-size: 34px;
+    letter-spacing: 2px;
+    line-height: 1;
+    text-decoration: none;
+    color: t.$ink;
+    padding-bottom: 4px;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__nav-link {
+    font-size: t.$fs-16;
+    letter-spacing: t.$ls-nav;
+    text-decoration: none;
+    color: t.$ink;
+    padding: 10px 12px;
+    min-height: t.$tap-target;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    &--active::after {
+      content: '';
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 4px;
+      height: 2px;
+      background: t.$ink;
+    }
+  }
+
+  &__actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    border: 1px solid t.$gray-300;
+    border-radius: 999px;
+    padding: 0 6px 0 14px;
+    height: 36px;
+    width: 240px;
+    background: t.$white;
+
+    input {
+      border: 0;
+      outline: 0;
+      flex: 1;
+      font-size: t.$fs-14;
+      font-family: inherit;
+      min-width: 0;
+      background: transparent;
+    }
+
+    button {
+      border: 0;
+      background: none;
+      width: 32px;
+      height: 32px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__icon-btn {
+    position: relative;
+    border: 0;
+    background: none;
+    width: t.$tap-target;
+    height: t.$tap-target;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  &__account {
+    position: relative;
+  }
+
+  &__account-label {
+    font-size: t.$fs-12;
+    max-width: 72px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__account-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: t.$white;
+    border: 1px solid t.$gray-200;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    min-width: 160px;
+    z-index: 70;
+
+    button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      border: 0;
+      background: none;
+      padding: 12px 16px;
+      min-height: t.$tap-target;
+      font-size: t.$fs-14;
+
+      &:hover {
+        background: t.$gray-100;
+      }
+    }
+  }
+
+  &__bag-count {
+    position: absolute;
+    top: 4px;
+    right: 2px;
+    background: t.$black;
+    color: t.$white;
+    font-size: t.$fs-11;
+    font-weight: 700;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+  }
+
+  &__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: t.$tap-target;
+    height: t.$tap-target;
+    border: 0;
+    background: none;
+    padding: 10px;
+
+    span {
+      display: block;
+      height: 2px;
+      background: t.$ink;
+    }
+  }
+
+  &__mobile-nav {
+    display: none;
+  }
+
+  &__mobile-link {
+    display: block;
+    padding: 14px t.$gutter;
+    min-height: t.$tap-target;
+    text-decoration: none;
+    border-top: 1px solid t.$gray-200;
+    font-size: t.$fs-16;
+  }
+
+  &__mobile-search {
+    padding: 12px t.$gutter 20px;
+
+    input {
+      width: 100%;
+      height: t.$tap-target;
+      border: 1px solid t.$gray-300;
+      border-radius: 999px;
+      padding: 0 16px;
+      font-size: t.$fs-14;
+      font-family: inherit;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    &__nav {
+      display: none;
+    }
+
+    &__burger {
+      display: inline-flex;
+    }
+
+    &__search {
+      display: none;
+    }
+
+    &__mobile-nav {
+      display: block;
+      border-top: 1px solid t.$gray-200;
+    }
+
+    &__inner {
+      gap: 12px;
+      padding: 10px 16px;
+    }
+  }
+}

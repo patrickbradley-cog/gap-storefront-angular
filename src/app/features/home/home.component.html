@@ -1,0 +1,63 @@
+<!-- Hero -->
+<section class="hero">
+  <img class="hero__img" [src]="heroImage" alt="New arrivals" appImgFallback="hero" />
+  <div class="hero__copy">
+    <p class="hero__eyebrow">Friends &amp; Family</p>
+    <h1 class="hero__title">40% off everything</h1>
+    <p class="hero__sub">Includes new arrivals. Online &amp; in stores.</p>
+    <div class="hero__ctas">
+      <a class="btn btn--primary" routerLink="/browse/women">Shop women</a>
+      <a class="btn" routerLink="/browse/men">Shop men</a>
+    </div>
+  </div>
+</section>
+
+<!-- Men's category rail -->
+<section class="rail container">
+  <div class="rail__head">
+    <h2 class="rail__title">Men's Clothes</h2>
+    <div class="rail__arrows">
+      <button type="button" aria-label="Scroll left" (click)="scrollRail(-1)">&#8249;</button>
+      <button type="button" aria-label="Scroll right" (click)="scrollRail(1)">&#8250;</button>
+    </div>
+  </div>
+  <div class="rail__track" #rail>
+    <a *ngFor="let t of menTiles$ | async" class="tile" [routerLink]="t.link">
+      <div class="tile__media">
+        <img [src]="t.image" [alt]="t.label" loading="lazy" [appImgFallback]="t.label" />
+      </div>
+      <span class="tile__label">{{ t.label }}</span>
+    </a>
+  </div>
+</section>
+
+<!-- Promo band -->
+<section class="band">
+  <img
+    class="band__img"
+    [src]="pjsImage"
+    alt="Matching pajamas for the family"
+    appImgFallback="pjs"
+  />
+  <div class="band__copy">
+    <h2>Friends &amp; Family</h2>
+    <p class="band__big">50% off matching PJs</p>
+    <p>Select styles.</p>
+    <a class="btn" routerLink="/browse/baby">Shop the family</a>
+  </div>
+</section>
+
+<!-- Featured products -->
+<section class="featured container">
+  <h2 class="featured__title">Friends &amp; Family — 40% off at checkout</h2>
+  <div class="featured__grid">
+    <app-product-card *ngFor="let p of featured$ | async" [product]="p"></app-product-card>
+  </div>
+</section>
+
+<!-- Departments -->
+<section class="depts container">
+  <a class="dept" *ngFor="let d of departmentTiles" [routerLink]="d.route">
+    <span class="dept__label">{{ d.label }}</span>
+  </a>
+</section>

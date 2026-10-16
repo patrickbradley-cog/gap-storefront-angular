@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  frontend:
+    name: Frontend — lint, unit tests, prod build
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install Chrome dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgbm1 libxkbcommon0 libnss3 libxss1 libasound2
+
+      - name: Install
+        run: npm ci
+
+      - name: ESLint
+        run: npm run lint
+
+      - name: Unit tests (headless Chrome)
+        run: npm test -- --browsers=ChromeHeadlessCI
+
+      - name: Production build
+        run: npx ng build --configuration production
+
+  api:
+    name: API — typecheck + tests
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+
+      - name: Install
+        run: npm --prefix server ci
+
+      - name: Typecheck
+        run: npm --prefix server run build
+
+      - name: API tests
+        run: npm --prefix server test

@@ -1,0 +1,42 @@
+@use 'tokens' as t;
+
+.conf {
+  padding: 72px 24px 96px;
+  text-align: center;
+  max-width: 640px;
+
+  &__check {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    background: t.$black;
+    color: t.$white;
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: t.$fs-28;
+    margin-bottom: 16px;
+  }
+
+  &__sub {
+    color: t.$gray-600;
+    font-size: t.$fs-14;
+    margin-bottom: 10px;
+  }
+
+  &__num {
+    color: t.$ink;
+    font-family: ui-monospace, monospace;
+  }
+
+  &__actions {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+  }
+}

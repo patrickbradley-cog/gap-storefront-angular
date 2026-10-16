@@ -1,0 +1,113 @@
+<div class="plp container">
+  <nav class="plp__crumbs" aria-label="Breadcrumb">
+    <a routerLink="/">Home</a>
+    <span aria-hidden="true">/</span>
+    <a *ngIf="department" [routerLink]="['/browse', department]">{{ deptLabel(department) }}</a>
+    <ng-container *ngIf="category">
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{{ catLabel(category) }}</span>
+    </ng-container>
+  </nav>
+
+  <div class="plp__head">
+    <h1 class="plp__title">{{ heading }}</h1>
+    <span class="plp__count" *ngIf="products$ | async as list">{{ list.length }} items</span>
+  </div>
+
+  <div class="plp__catnav" *ngIf="categories.length">
+    <a
+      *ngFor="let c of categories"
+      [routerLink]="catLink(c)"
+      class="plp__catlink"
+      [class.plp__catlink--active]="c === category"
+    >
+      {{ catLabel(c) }}
+    </a>
+  </div>
+
+  <div class="plp__toolbar">
+    <button
+      type="button"
+      class="plp__filterbtn"
+      (click)="filtersOpen = !filtersOpen"
+      [attr.aria-expanded]="filtersOpen"
+    >
+      Filters
+      <span *ngIf="hasActiveFilters">(active)</span>
+    </button>
+    <label class="plp__sort">
+      Sort by
+      <select [ngModel]="sort" (ngModelChange)="onSort($event)" aria-label="Sort products">
+        <option value="featured">Featured</option>
+        <option value="price-asc">Price: low to high</option>
+        <option value="price-desc">Price: high to low</option>
+        <option value="name">Name A–Z</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="plp__body">
+    <aside class="plp__filters" [class.plp__filters--open]="filtersOpen">
+      <div class="fgroup">
+        <h3>Size</h3>
+        <div class="fgroup__sizes">
+          <button
+            *ngFor="let s of sortedFacetSizes"
+            type="button"
+            class="size-chip"
+            [class.size-chip--active]="selectedSizes.has(s)"
+            (click)="toggleSize(s)"
+          >
+            {{ s }}
+          </button>
+        </div>
+      </div>
+
+      <div class="fgroup">
+        <h3>Colour</h3>
+        <label class="fcheck" *ngFor="let c of facets.colors">
+          <input type="checkbox" [checked]="selectedColors.has(c)" (change)="toggleColor(c)" />
+          <span>{{ c }}</span>
+        </label>
+      </div>
+
+      <div class="fgroup">
+        <h3>Price</h3>
+        <label class="fcheck" *ngFor="let b of priceBuckets">
+          <input
+            type="radio"
+            name="priceMax"
+            [checked]="priceMax === b.max"
+            (change)="setPrice(b.max)"
+          />
+          <span>{{ b.label }}</span>
+        </label>
+        <label class="fcheck">
+          <input
+            type="radio"
+            name="priceMax"
+            [checked]="priceMax === null"
+            (change)="setPrice(null)"
+          />
+          <span>All prices</span>
+        </label>
+      </div>
+
+      <button
+        type="button"
+        class="link-underline"
+        *ngIf="hasActiveFilters"
+        (click)="clearFilters()"
+      >
+        Clear all filters
+      </button>
+    </aside>
+
+    <section class="plp__grid" aria-live="polite">
+      <app-product-card *ngFor="let p of products$ | async" [product]="p"></app-product-card>
+      <p class="plp__empty" *ngIf="(products$ | async)?.length === 0">
+        Nothing matched those filters — try clearing a few.
+      </p>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,125 @@
+@use 'tokens' as t;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: t.$font-sans;
+  font-size: t.$fs-16;
+  line-height: t.$lh-body;
+  color: t.$ink;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+// Shared primitives -------------------------------------------------------
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: t.$tap-target;
+  padding: 10px 24px;
+  border: 1px solid t.$black;
+  border-radius: 999px;
+  background: t.$white;
+  color: t.$black;
+  font-size: t.$fs-14;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+
+  &--primary {
+    background: t.$black;
+    color: t.$white;
+
+    &:hover {
+      background: #222;
+    }
+  }
+
+  &--block {
+    width: 100%;
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+}
+
+.link-underline {
+  font-size: t.$fs-14;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+.price {
+  font-weight: 700;
+
+  &--sale {
+    color: t.$red-sale;
+  }
+}
+
+.price-was {
+  color: t.$gray-500;
+  text-decoration: line-through;
+  font-weight: 400;
+  margin-left: 6px;
+}
+
+.promo-flag {
+  color: t.$red-sale;
+  font-size: t.$fs-12;
+  font-weight: 700;
+}
+
+.container {
+  max-width: t.$page-max;
+  margin: 0 auto;
+  padding: 0 t.$gutter;
+}

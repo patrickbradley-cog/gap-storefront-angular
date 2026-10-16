@@ -1,0 +1,102 @@
+<div class="bag container" *ngIf="quote$ | async as quote">
+  <h1 class="bag__title">
+    Your Bag
+    <span *ngIf="quote.itemCount">({{ quote.itemCount }})</span>
+  </h1>
+
+  <div class="bag__empty" *ngIf="(lines$ | async)?.length === 0">
+    <p>Your bag is empty.</p>
+    <a class="btn btn--primary" routerLink="/">Keep shopping</a>
+  </div>
+
+  <div class="bag__layout" *ngIf="lines$ | async as lines">
+    <ul class="bag__lines" *ngIf="lines.length">
+      <li class="bline" *ngFor="let l of lines">
+        <a class="bline__img" [routerLink]="lineLink(l)">
+          <img [src]="l.image" [alt]="l.name" [appImgFallback]="l.productId" />
+        </a>
+        <div class="bline__info">
+          <a class="bline__name" [routerLink]="lineLink(l)">{{ l.name }}</a>
+          <div class="bline__meta">Colour: {{ l.color }}</div>
+          <div class="bline__meta">Fit: {{ l.fit }} &middot; Size: {{ l.size }}</div>
+          <div class="bline__meta" *ngIf="l.promoEligible">
+            <span class="promo-flag">Friends &amp; Family 40% off at checkout</span>
+          </div>
+          <div class="bline__controls">
+            <label>
+              Qty
+              <select [ngModel]="l.qty" (ngModelChange)="setQty(l, +$event)" aria-label="Quantity">
+                <option *ngFor="let q of quantities" [ngValue]="q">{{ q }}</option>
+              </select>
+            </label>
+            <button type="button" class="link-underline" (click)="remove(l)">Remove</button>
+          </div>
+        </div>
+        <div class="bline__price">
+          <div class="price">{{ l.price * l.qty | currency }}</div>
+          <div class="bline__save" *ngIf="l.promoEligible">
+            -{{ l.price * l.qty * 0.4 | currency }} at checkout
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <aside class="bag__summary" *ngIf="lines.length">
+      <h2>Order summary</h2>
+
+      <form class="bag__promo" (ngSubmit)="applyPromo()">
+        <label for="promo">Promo code</label>
+        <div class="bag__promo-row">
+          <input
+            id="promo"
+            type="text"
+            [(ngModel)]="promoInput"
+            name="promo"
+            placeholder="e.g. EXTRA10"
+          />
+          <button type="submit" class="btn">Apply</button>
+        </div>
+        <p class="bag__promo-error" *ngIf="promoError" role="alert">{{ promoError }}</p>
+        <p class="bag__promo-ok" *ngIf="appliedCode && !promoError">
+          Code {{ appliedCode }} applied.
+          <button type="button" class="link-underline" (click)="removePromo()">Remove</button>
+        </p>
+      </form>
+
+      <dl class="bag__totals">
+        <div class="row">
+          <dt>Subtotal</dt>
+          <dd>{{ quote.subtotal | currency }}</dd>
+        </div>
+        <div class="row row--save" *ngIf="quote.markdown">
+          <dt>Friends &amp; Family 40% off (at checkout)</dt>
+          <dd>-{{ quote.markdown | currency }}</dd>
+        </div>
+        <div class="row row--save" *ngIf="quote.promoDiscount">
+          <dt>Promo {{ quote.promoCode }}</dt>
+          <dd>-{{ quote.promoDiscount | currency }}</dd>
+        </div>
+        <div class="row">
+          <dt>Shipping</dt>
+          <dd>{{ quote.shipping === 0 ? 'Free' : (quote.shipping | currency) }}</dd>
+        </div>
+        <div class="row">
+          <dt>Estimated tax</dt>
+          <dd>{{ quote.tax | currency }}</dd>
+        </div>
+        <div class="row row--total">
+          <dt>Total</dt>
+          <dd>{{ quote.total | currency }}</dd>
+        </div>
+      </dl>
+
+      <p class="bag__ship-note" *ngIf="quote.shipping">
+        Add {{ 50 - quote.subtotal + quote.markdown + quote.promoDiscount | currency }} more for
+        free shipping.
+      </p>
+
+      <a class="btn btn--primary btn--block" routerLink="/checkout">Checkout</a>
+      <a class="link-underline bag__continue" routerLink="/">Continue shopping</a>
+    </aside>
+  </div>
+</div>

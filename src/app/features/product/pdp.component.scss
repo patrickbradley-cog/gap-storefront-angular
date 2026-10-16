@@ -1,0 +1,276 @@
+@use 'tokens' as t;
+
+.pdp {
+  padding-top: 20px;
+  padding-bottom: 48px;
+
+  &__crumbs {
+    font-size: t.$fs-12;
+    color: t.$gray-600;
+    margin-bottom: 20px;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(300px, 5fr);
+    gap: 48px;
+    align-items: start;
+  }
+
+  &__main-img {
+    aspect-ratio: 3 / 4;
+    background: t.$gray-100;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__thumbs {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+
+  &__name {
+    font-size: t.$fs-24;
+    font-weight: 700;
+    line-height: t.$lh-tight;
+  }
+
+  &__reviews {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 8px;
+    font-size: t.$fs-14;
+  }
+
+  &__review-count {
+    color: t.$gray-600;
+    font-size: t.$fs-12;
+  }
+
+  &__price {
+    margin-top: 12px;
+    font-size: t.$fs-20;
+  }
+
+  .promo-flag {
+    margin-top: 6px;
+    font-size: t.$fs-14;
+  }
+
+  &__section {
+    margin-top: 24px;
+  }
+
+  &__label {
+    font-size: t.$fs-14;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  &__label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__size-error {
+    color: t.$red-sale;
+    font-size: 0.8125rem;
+    margin: 6px 0;
+    font-weight: 700;
+  }
+
+  &__swatches {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  &__fits,
+  &__sizes {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  &__sizes--error {
+    outline: 2px solid t.$red-sale;
+    outline-offset: 4px;
+  }
+
+  &__qtyrow {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  &__add {
+    flex: 1;
+  }
+
+  &__desc {
+    border-top: 1px solid t.$gray-200;
+    padding-top: 20px;
+    font-size: t.$fs-14;
+    color: t.$gray-600;
+
+    h2 {
+      font-size: t.$fs-14;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+      color: t.$ink;
+    }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+    }
+  }
+
+  &__related {
+    margin-top: 56px;
+
+    h2 {
+      font-size: t.$fs-20;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__related-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+.thumb {
+  width: 64px;
+  height: 84px;
+  padding: 0;
+  border: 1px solid t.$gray-200;
+  background: t.$gray-100;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &--active {
+    outline: 2px solid t.$black;
+    outline-offset: 1px;
+  }
+}
+
+.swatch {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid t.$gray-300;
+  overflow: hidden;
+  background: t.$white;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &--active {
+    outline: 2px solid t.$black;
+    outline-offset: 2px;
+  }
+}
+
+.fit-chip,
+.size-chip {
+  min-width: t.$tap-target;
+  min-height: t.$tap-target;
+  padding: 0 14px;
+  border: 1px solid t.$gray-300;
+  background: t.$white;
+  font-size: t.$fs-14;
+
+  &--active {
+    background: t.$black;
+    border-color: t.$black;
+    color: t.$white;
+  }
+}
+
+.stars {
+  color: t.$gray-300;
+  letter-spacing: 1px;
+
+  .star--on {
+    color: t.$black;
+  }
+}
+
+.qty {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid t.$gray-300;
+  height: t.$tap-target;
+
+  button {
+    width: t.$tap-target;
+    height: 100%;
+    border: 0;
+    background: none;
+    font-size: 18px;
+
+    &:disabled {
+      opacity: 0.35;
+    }
+  }
+
+  span {
+    min-width: 32px;
+    text-align: center;
+    font-size: t.$fs-14;
+  }
+}
+
+.pdp-missing {
+  padding: 80px 24px;
+  text-align: center;
+
+  p {
+    margin: 12px 0 24px;
+    color: t.$gray-600;
+  }
+}
+
+@media (max-width: 900px) {
+  .pdp {
+    &__layout {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    &__related-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <span class="footer__logo">GAP</span>
+      <p class="footer__demo">
+        Internal demo storefront — not affiliated with, endorsed by, or a real Gap product.
+      </p>
+    </div>
+    <div class="footer__col" *ngFor="let c of cols">
+      <h3>{{ c.title }}</h3>
+      <ul>
+        <li *ngFor="let l of c.links">
+          <a href="#" (click)="$event.preventDefault()">{{ l }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__base">
+    <span>&copy; 2026 Internal demo. Not a Gap site.</span>
+    <span>All product imagery hotlinked for demo purposes.</span>
+  </div>
+</footer>
