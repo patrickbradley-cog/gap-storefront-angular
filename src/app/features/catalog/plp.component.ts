@@ -76,13 +76,7 @@ export class PlpComponent implements OnInit, OnDestroy {
         }
         if (this.department && this.category) {
           this.heading = categoryLabel(this.category);
-          return this.catalog
-            .getByCategory(this.department as Department, this.category)
-            .pipe(
-              switchMap((ps) =>
-                ps.length ? of(ps) : this.catalog.getByDepartment(this.department as Department),
-              ),
-            );
+          return this.catalog.getByCategory(this.department as Department, this.category);
         }
         if (this.department) {
           this.heading = `${departmentLabel(this.department)} — Shop all`;

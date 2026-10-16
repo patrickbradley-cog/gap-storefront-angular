@@ -19,21 +19,23 @@ const FALLBACKS = [
 @Directive({ selector: 'img[appImgFallback]' })
 export class ImgFallbackDirective {
   @Input() appImgFallback = '';
-  private failed = false;
+  private lastFailed = '';
 
   constructor(private el: ElementRef<HTMLImageElement>) {}
 
   @HostListener('error')
   onError(): void {
-    if (this.failed) {
+    const img = this.el.nativeElement;
+    // One fallback per distinct failed src; never loop on the fallback itself.
+    if (img.src === this.lastFailed || FALLBACKS.some((f) => img.src.startsWith(f))) {
       return;
     }
-    this.failed = true;
-    const seed = this.appImgFallback || this.el.nativeElement.alt || 'gap';
+    this.lastFailed = img.src;
+    const seed = this.appImgFallback || img.alt || 'gap';
     let hash = 0;
     for (let i = 0; i < seed.length; i++) {
       hash = (hash * 31 + seed.charCodeAt(i)) >>> 0;
     }
-    this.el.nativeElement.src = FALLBACKS[hash % FALLBACKS.length];
+    img.src = FALLBACKS[hash % FALLBACKS.length];
   }
 }

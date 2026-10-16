@@ -101,7 +101,7 @@
               <span>Expiry (MM/YY)</span>
               <input formControlName="expiry" placeholder="12/28" autocomplete="cc-exp" />
               <small class="field__error" *ngIf="invalid('payment', 'expiry')">
-                MM/YY required.
+                Enter a valid future expiry (MM/YY).
               </small>
             </label>
             <label class="field">

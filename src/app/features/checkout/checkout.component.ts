@@ -6,7 +6,7 @@ import { take, takeUntil } from 'rxjs/operators';
 import { BagStore } from '../../core/services/bag-store.service';
 import { CheckoutService } from '../../core/services/checkout.service';
 import { BagLine } from '../../core/models';
-import { luhnValidator } from './luhn.validator';
+import { expiryValidator, luhnValidator } from './luhn.validator';
 import { OrderDraftService } from './order-draft.service';
 
 const US_STATES = [
@@ -94,7 +94,10 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   payment = this.fb.group({
     nameOnCard: ['', Validators.required],
     cardNumber: ['', [Validators.required, luhnValidator()]],
-    expiry: ['', [Validators.required, Validators.pattern(/^(0[1-9]|1[0-2])\/\d{2}$/)]],
+    expiry: [
+      '',
+      [Validators.required, Validators.pattern(/^(0[1-9]|1[0-2])\/\d{2}$/), expiryValidator()],
+    ],
     cvv: ['', [Validators.required, Validators.pattern(/^\d{3,4}$/)]],
   });
 

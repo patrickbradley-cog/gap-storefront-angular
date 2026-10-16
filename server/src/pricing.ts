@@ -47,12 +47,16 @@ export function priceBag(
   catalog: Map<string, CatalogProduct>,
   promoCode?: string | null,
 ): { quote: PriceQuote; errors: string[] } {
+  const MAX_LINES = 200;
   const errors: string[] = [];
+  if (lines.length > MAX_LINES) {
+    errors.push(`Bag exceeds maximum of ${MAX_LINES} lines`);
+  }
   let subtotal = 0;
   let markdown = 0;
   let itemCount = 0;
 
-  for (const line of lines) {
+  for (const line of lines.slice(0, MAX_LINES)) {
     const qty = Math.floor(Number(line.qty));
     const product = catalog.get(String(line.productId));
     if (!product) {

@@ -40,6 +40,7 @@ export class PdpComponent implements OnInit, OnDestroy {
       tap((p) => {
         if (!p) {
           this.notFound = true;
+          this.product = null;
           return;
         }
         this.notFound = false;

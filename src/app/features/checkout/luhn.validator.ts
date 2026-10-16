@@ -26,3 +26,19 @@ export function luhnValidator(): ValidatorFn {
     return sum % 10 === 0 ? null : { luhn: true };
   };
 }
+
+/** MM/YY expiry — format is enforced separately; this only rejects past dates. */
+export function expiryValidator(): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const m = /^(0[1-9]|1[0-2])\/(\d{2})$/.exec((control.value || '').trim());
+    if (!m) {
+      return null; // pattern validator owns bad formats
+    }
+    const now = new Date();
+    const yy = now.getFullYear() % 100;
+    const mm = now.getMonth() + 1;
+    const mo = parseInt(m[1], 10);
+    const y = parseInt(m[2], 10);
+    return y > yy || (y === yy && mo >= mm) ? null : { expired: true };
+  };
+}

@@ -65,7 +65,7 @@ export class BagStore {
     const existing = lines.find((l) => l.key === key);
     const colorway = product.colors.find((c) => c.ccId === ccId) || product.colors[0];
     if (existing) {
-      existing.qty += qty;
+      existing.qty = Math.min(9, existing.qty + qty);
     } else {
       lines.push({
         key,
@@ -76,7 +76,7 @@ export class BagStore {
         fit,
         size,
         qty,
-        price: product.price,
+        price: parseFloat(colorway.effectivePrice) || product.price,
         promoEligible: !!product.promo,
         image: colorway.images[0] || colorway.swatch,
         department: product.department,

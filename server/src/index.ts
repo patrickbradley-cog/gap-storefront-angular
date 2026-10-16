@@ -10,7 +10,13 @@ interface Product extends CatalogProduct {
   [k: string]: unknown;
 }
 
-const CATALOG_PATH = path.resolve(__dirname, '../../src/assets/data/catalog.json');
+// Resolve the shared catalog whether running via tsx (server/src),
+// compiled output (server/dist/src), or an unusual cwd.
+const CATALOG_PATH = [
+  path.resolve(process.cwd(), 'src/assets/data/catalog.json'),
+  path.resolve(__dirname, '../../src/assets/data/catalog.json'),
+  path.resolve(__dirname, '../../../src/assets/data/catalog.json'),
+].find((p) => fs.existsSync(p)) as string;
 
 function loadCatalog(): Product[] {
   return JSON.parse(fs.readFileSync(CATALOG_PATH, 'utf8')) as Product[];
