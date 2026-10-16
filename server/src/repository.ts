@@ -259,6 +259,8 @@ export class PostgresCatalogRepository implements CatalogRepository {
   private db(): pg.Pool {
     if (!this.pool) {
       this.pool = new pg.Pool({ ...postgresConfig(), max: 4, types: pgTypes });
+      // An idle client dropping (e.g. Postgres restart) must not crash the API.
+      this.pool.on('error', (e) => console.error('[postgres] idle client error:', e.message));
     }
     return this.pool;
   }
