@@ -6,15 +6,16 @@ disclaimer via the top demo bar; keep it that way.
 
 ## Commands
 
-| Where    | Command                               | What                                    |
-| -------- | ------------------------------------- | --------------------------------------- |
-| root     | `npm start`                           | web :4200 + api :4201 (proxy.conf.json) |
-| root     | `npm test`                            | Karma/Jasmine, headless Chrome          |
-| root     | `npm run lint` / `npm run build`      | angular-eslint / prod build             |
-| `server` | `npm --prefix server test`            | API tests (`node:test` via tsx)         |
-| `server` | `npm --prefix server run build`       | `tsc` typecheck                         |
-| root     | `docker compose up -d`                | boots Oracle XE + an empty Postgres 16  |
-| `server` | `npm --prefix server run seed:oracle` | creates GAPCAT schema + loads catalog   |
+| Where    | Command                                 | What                                    |
+| -------- | --------------------------------------- | --------------------------------------- |
+| root     | `npm start`                             | web :4200 + api :4201 (proxy.conf.json) |
+| root     | `npm test`                              | Karma/Jasmine, headless Chrome          |
+| root     | `npm run lint` / `npm run build`        | angular-eslint / prod build             |
+| `server` | `npm --prefix server test`              | API tests (`node:test` via tsx)         |
+| `server` | `npm --prefix server run build`         | `tsc` typecheck                         |
+| root     | `docker compose up -d`                  | boots Oracle XE + Postgres 16           |
+| `server` | `npm --prefix server run seed:oracle`   | creates GAPCAT schema + loads catalog   |
+| `server` | `npm --prefix server run seed:postgres` | same tables + catalog in Postgres       |
 
 ## Catalog data sources
 
@@ -25,14 +26,21 @@ The API resolves catalog data through `CatalogRepository`
   (schema `GAPCAT`, DDL in `server/oracle/schema.sql`). Connection via env:
   `ORACLE_CONNECT_STRING` (default `localhost:1521/XEPDB1`),
   `ORACLE_USER` (`GAPCAT`), `ORACLE_PASSWORD` (`GAPDEMO`).
+- `postgres` → `PostgresCatalogRepository` queries **Postgres 16** (the
+  `gap-catalog-postgres` compose service; DDL in `server/postgres/schema.sql`,
+  unquoted lowercase identifiers). Connection via `POSTGRES_URL` or
+  `PGHOST`/`PGPORT`/`PGUSER`/`PGPASSWORD`/`PGDATABASE`, default
+  `postgres://gapcat:gapdemo@localhost:5432/gapcat`.
 - unset / `json` → `JsonCatalogRepository` reads
   `src/assets/data/catalog.json` — the nightly extract produced from the
   legacy DB. CI, tests and zero-setup runs use this; keep it working.
 
 `GET /api/health` reports `{ ok, products, source }`.
 
-An empty `postgres` service already exists in `docker-compose.yml` as the
-migration target (stands in for GCP Cloud SQL / AlloyDB — same engine).
+The `postgres` service in `docker-compose.yml` is the migration target (stands
+in for GCP Cloud SQL / AlloyDB — same engine). Oracle and Postgres share the
+query + row-assembly code in `repository.ts`, so their API output is identical.
+`SIZE` is reserved in Oracle — it is quoted there (`"SIZE"`), not in Postgres.
 
 ## Conventions
 
