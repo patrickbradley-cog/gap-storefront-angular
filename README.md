@@ -77,13 +77,19 @@ flowchart LR
     EP4["POST /api/checkout"]
   end
 
-  JSON[("src/assets/data/<br/>catalog.json<br/>45 real Gap SKUs")]
+  subgraph Data["Catalog data — one of, via CATALOG_SOURCE"]
+    JSON[("src/assets/data/<br/>catalog.json<br/>nightly extract")]
+    ORA[("Oracle XE 21c — GAPCAT<br/>docker compose")]
+    PG[("PostgreSQL 16<br/>empty migration target")]
+  end
   GapCDN[("gap.com CDN<br/>hotlinked product images")]
 
   Cat -- "proxy.conf.json" --> EP1 & EP2
   Store -- "POST /api/bag/price" --> EP3
   UI -- "POST /api/checkout" --> EP4
   EP1 & EP2 & EP3 & EP4 --> JSON
+  EP1 & EP2 & EP3 & EP4 -. "CATALOG_SOURCE=oracle" .-> ORA
+  ORA -.->|"migration"| PG
   UI -.->|"<img> w/ onerror fallback"| GapCDN
 ```
 
@@ -91,6 +97,27 @@ Pricing rules (40% Friends & Family markdown on promo-eligible lines, promo code
 `EXTRA10` / `GAPMORE`, free shipping ≥ $50, 8.5% tax) are implemented in
 `server/src/pricing.ts` (authoritative) and mirrored by the frontend
 `PricingService` for instant UI feedback.
+
+### Catalog backend (JSON or live Oracle)
+
+The API reads its catalog through a `CatalogRepository`
+(`server/src/repository.ts`), selected by the `CATALOG_SOURCE` env var:
+
+- **default — `json`**: reads `src/assets/data/catalog.json`, the nightly
+  extract. Zero setup; used by CI and tests.
+- **`oracle`**: `OracleCatalogRepository` queries a real Oracle XE database
+  (schema `GAPCAT`, DDL in `server/oracle/schema.sql`). API responses are
+  byte-identical — relational rows are reassembled into the same product shape.
+
+```bash
+docker compose up -d                     # boots Oracle XE + empty Postgres 16 (target)
+npm --prefix server run seed:oracle      # creates GAPCAT schema + loads the catalog
+CATALOG_SOURCE=oracle npm start          # API now queries live Oracle on :1521
+```
+
+`GET /api/health` reports which source is live (`{"ok":true,"products":45,"source":"oracle"}`).
+The Postgres service stands in for GCP Cloud SQL for PostgreSQL / AlloyDB — same
+engine, same DDL — and stays empty until a migration fills it.
 
 ## Screenshots & recording
 
@@ -147,5 +174,10 @@ src/app/
 src/assets/data/catalog.json   # 45 real Gap SKUs (names/prices/colourways/images)
 src/styles/_tokens.scss        # measured design tokens (colours, type, spacing)
 server/           # Express + TypeScript mock API (same pricing rules)
+  src/repository.ts            # CatalogRepository — json vs oracle sources
+  oracle/schema.sql            # GAPCAT schema in Oracle dialect
+  scripts/seed-oracle.ts       # loads catalog.json into Oracle XE
+docker-compose.yml             # Oracle XE (1521) + empty Postgres 16 (5432)
+AGENTS.md                      # agent-facing repo conventions + data-source notes
 .github/workflows/ci.yml       # lint, Karma tests, prod build, server tests
 ```
