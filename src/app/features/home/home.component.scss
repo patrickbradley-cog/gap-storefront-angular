@@ -1,0 +1,247 @@
+@use 'tokens' as t;
+
+.hero {
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: t.$gray-100;
+
+  &__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+
+  &__copy {
+    position: relative;
+    padding: 48px t.$gutter;
+    max-width: 480px;
+    margin-left: max(24px, 8vw);
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(2px);
+  }
+
+  &__eyebrow {
+    color: t.$gap-accent-blue;
+    font-size: t.$fs-20;
+    font-weight: 700;
+  }
+
+  &__title {
+    font-size: clamp(32px, 4.5vw, 56px);
+    line-height: t.$lh-tight;
+    font-weight: 700;
+    margin: 4px 0 8px;
+  }
+
+  &__sub {
+    font-size: t.$fs-14;
+    color: t.$gray-600;
+  }
+
+  &__ctas {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+}
+
+.rail {
+  padding-top: 40px;
+  padding-bottom: 8px;
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    font-size: t.$fs-24;
+    font-weight: 700;
+  }
+
+  &__arrows {
+    display: flex;
+    gap: 8px;
+
+    button {
+      width: t.$tap-target;
+      height: t.$tap-target;
+      border: 1px solid t.$gray-300;
+      background: t.$white;
+      font-size: 20px;
+      line-height: 1;
+
+      &:hover {
+        background: t.$black;
+        color: t.$white;
+      }
+    }
+  }
+
+  &__track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: clamp(160px, 18vw, 260px);
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.tile {
+  scroll-snap-align: start;
+  text-decoration: none;
+  color: t.$ink;
+
+  &__media {
+    aspect-ratio: 3 / 4;
+    background: t.$gray-100;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &:hover .tile__media img {
+    transform: scale(1.04);
+  }
+
+  &__label {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: t.$fs-14;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+.band {
+  position: relative;
+  margin-top: 48px;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+  background: t.$gray-100;
+
+  &__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
+  }
+
+  &__copy {
+    position: relative;
+    background: t.$white;
+    padding: 32px;
+    margin-right: max(24px, 8vw);
+    max-width: 340px;
+
+    h2 {
+      font-size: t.$fs-16;
+    }
+
+    .band__big {
+      font-size: t.$fs-28;
+      font-weight: 700;
+      margin: 4px 0 8px;
+    }
+
+    p {
+      font-size: t.$fs-14;
+      color: t.$gray-600;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.featured {
+  padding-top: 56px;
+
+  &__title {
+    font-size: t.$fs-24;
+    margin-bottom: 20px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+.depts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding-top: 56px;
+}
+
+.dept {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+  border: 1px solid t.$gray-200;
+  text-decoration: none;
+  color: t.$ink;
+  font-size: t.$fs-18;
+  font-weight: 700;
+
+  &:hover {
+    border-color: t.$black;
+  }
+}
+
+@media (max-width: 900px) {
+  .featured__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .depts {
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .band__copy {
+    margin: 24px auto;
+    max-width: calc(100% - 48px);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 420px;
+    &__copy {
+      margin: 0 16px;
+      padding: 28px 20px;
+      max-width: none;
+    }
+  }
+  .featured__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}

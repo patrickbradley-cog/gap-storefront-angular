@@ -1,0 +1,26 @@
+<div class="conf container">
+  <ng-container *ngIf="order; else noOrder">
+    <div class="conf__check" aria-hidden="true">&#10003;</div>
+    <h1>Thanks — your order is in</h1>
+    <p class="conf__sub">
+      Order
+      <strong class="conf__num">{{ order.orderNumber }}</strong>
+      is confirmed (simulated — nothing was charged or shipped).
+    </p>
+    <p class="conf__sub">
+      A confirmation email would go to
+      <strong>{{ order.email }}</strong>
+      . {{ order.itemCount }} item(s), total
+      <strong>{{ order.total | currency }}</strong>
+      .
+    </p>
+    <div class="conf__actions">
+      <a class="btn btn--primary" routerLink="/">Keep shopping</a>
+    </div>
+  </ng-container>
+  <ng-template #noOrder>
+    <h1>No recent order</h1>
+    <p class="conf__sub">Place an order first, then you'll see it here.</p>
+    <a class="btn btn--primary" routerLink="/">Shop now</a>
+  </ng-template>
+</div>

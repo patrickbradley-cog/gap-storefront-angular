@@ -1,0 +1,32 @@
+<a class="card" [routerLink]="link" *ngIf="product">
+  <div class="card__media">
+    <img [src]="image" [alt]="product.name" loading="lazy" [appImgFallback]="product.id" />
+    <span class="card__badge" *ngIf="product.badge">{{ product.badge }}</span>
+  </div>
+  <div class="card__swatches" *ngIf="product.colors.length > 1">
+    <button
+      *ngFor="let c of product.colors.slice(0, 5); let i = index"
+      type="button"
+      class="swatch"
+      [class.swatch--active]="i === selectedColor"
+      [attr.aria-label]="c.name"
+      [title]="c.name"
+      (click)="selectColor(i, $event)"
+    >
+      <img [src]="c.swatch" [alt]="c.name" loading="lazy" [appImgFallback]="c.ccId" />
+    </button>
+    <span class="swatch-more" *ngIf="product.colors.length > 5">
+      +{{ product.colors.length - 5 }}
+    </span>
+  </div>
+  <div class="card__name">{{ product.name }}</div>
+  <div class="card__price">
+    <span class="price" [class.price--sale]="!!product.regularPrice">
+      {{ product.price | currency }}
+    </span>
+    <span class="price-was" *ngIf="product.regularPrice">
+      {{ product.regularPrice | currency }}
+    </span>
+  </div>
+  <div class="promo-flag" *ngIf="product.promo">{{ product.promo }}</div>
+</a>

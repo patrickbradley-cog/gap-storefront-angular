@@ -1,0 +1,201 @@
+<div class="co container" *ngIf="quote$ | async as quote">
+  <h1 class="co__title">Checkout</h1>
+
+  <div class="co__empty" *ngIf="lines.length === 0">
+    <p>Your bag is empty — add something before checking out.</p>
+    <a class="btn btn--primary" routerLink="/">Shop now</a>
+  </div>
+
+  <div class="co__layout" *ngIf="lines.length">
+    <div class="co__main">
+      <ol class="co__steps">
+        <li [class.co__step--on]="step === 'shipping'" [class.co__step--done]="step !== 'shipping'">
+          1. Shipping
+        </li>
+        <li [class.co__step--on]="step === 'payment'" [class.co__step--done]="step === 'review'">
+          2. Payment
+        </li>
+        <li [class.co__step--on]="step === 'review'">3. Review</li>
+      </ol>
+
+      <!-- Shipping -->
+      <section *ngIf="step === 'shipping'" aria-label="Shipping address">
+        <h2>Shipping address</h2>
+        <form [formGroup]="shipping" (ngSubmit)="toPayment()" class="form">
+          <div class="form__grid">
+            <label class="field">
+              <span>First name</span>
+              <input formControlName="firstName" autocomplete="given-name" />
+              <small class="field__error" *ngIf="invalid('shipping', 'firstName')">Required.</small>
+            </label>
+            <label class="field">
+              <span>Last name</span>
+              <input formControlName="lastName" autocomplete="family-name" />
+              <small class="field__error" *ngIf="invalid('shipping', 'lastName')">Required.</small>
+            </label>
+            <label class="field field--wide">
+              <span>Email</span>
+              <input type="email" formControlName="email" autocomplete="email" />
+              <small class="field__error" *ngIf="invalid('shipping', 'email')">
+                Valid email required.
+              </small>
+            </label>
+            <label class="field field--wide">
+              <span>Address</span>
+              <input formControlName="address" autocomplete="street-address" />
+              <small class="field__error" *ngIf="invalid('shipping', 'address')">Required.</small>
+            </label>
+            <label class="field">
+              <span>City</span>
+              <input formControlName="city" autocomplete="address-level2" />
+              <small class="field__error" *ngIf="invalid('shipping', 'city')">Required.</small>
+            </label>
+            <label class="field">
+              <span>State</span>
+              <select formControlName="state">
+                <option value="">Select</option>
+                <option *ngFor="let s of states" [value]="s">{{ s }}</option>
+              </select>
+              <small class="field__error" *ngIf="invalid('shipping', 'state')">Required.</small>
+            </label>
+            <label class="field">
+              <span>ZIP</span>
+              <input formControlName="zip" autocomplete="postal-code" placeholder="10001" />
+              <small class="field__error" *ngIf="invalid('shipping', 'zip')">
+                Valid ZIP required.
+              </small>
+            </label>
+          </div>
+          <div class="form__actions">
+            <button type="submit" class="btn btn--primary">Continue to payment</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Payment -->
+      <section *ngIf="step === 'payment'" aria-label="Payment">
+        <h2>
+          Payment
+          <span class="co__sim">(simulated — never charged)</span>
+        </h2>
+        <form [formGroup]="payment" (ngSubmit)="toReview()" class="form">
+          <div class="form__grid">
+            <label class="field field--wide">
+              <span>Name on card</span>
+              <input formControlName="nameOnCard" autocomplete="cc-name" />
+              <small class="field__error" *ngIf="invalid('payment', 'nameOnCard')">Required.</small>
+            </label>
+            <label class="field field--wide">
+              <span>Card number</span>
+              <input
+                formControlName="cardNumber"
+                inputmode="numeric"
+                autocomplete="cc-number"
+                placeholder="4111 1111 1111 1111"
+              />
+              <small class="field__error" *ngIf="invalid('payment', 'cardNumber')">
+                Enter a valid card number.
+              </small>
+            </label>
+            <label class="field">
+              <span>Expiry (MM/YY)</span>
+              <input formControlName="expiry" placeholder="12/28" autocomplete="cc-exp" />
+              <small class="field__error" *ngIf="invalid('payment', 'expiry')">
+                Enter a valid future expiry (MM/YY).
+              </small>
+            </label>
+            <label class="field">
+              <span>CVV</span>
+              <input
+                formControlName="cvv"
+                inputmode="numeric"
+                autocomplete="cc-csc"
+                placeholder="123"
+              />
+              <small class="field__error" *ngIf="invalid('payment', 'cvv')">3–4 digits.</small>
+            </label>
+          </div>
+          <div class="form__actions">
+            <button type="button" class="btn" (click)="back('shipping')">Back</button>
+            <button type="submit" class="btn btn--primary">Review order</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Review -->
+      <section *ngIf="step === 'review'" aria-label="Review order">
+        <h2>Review &amp; place order</h2>
+        <div class="co__review-box">
+          <h3>Ship to</h3>
+          <p>
+            {{ shipping.value.firstName }} {{ shipping.value.lastName }}
+            <br />
+            {{ shipping.value.address }}
+            <br />
+            {{ shipping.value.city }}, {{ shipping.value.state }} {{ shipping.value.zip }}
+            <br />
+            {{ shipping.value.email }}
+          </p>
+        </div>
+        <div class="co__review-box">
+          <h3>Payment</h3>
+          <p>Card ending in {{ cardLast4 }} (simulated)</p>
+        </div>
+        <ul class="co__review-lines">
+          <li *ngFor="let l of lines" class="rline">
+            <img [src]="l.image" [alt]="l.name" [appImgFallback]="l.productId" />
+            <div>
+              <div class="rline__name">{{ l.name }}</div>
+              <div class="rline__meta">
+                {{ l.color }} / {{ l.fit }} / {{ l.size }} &middot; Qty {{ l.qty }}
+              </div>
+            </div>
+            <div class="rline__price">{{ l.price * l.qty | currency }}</div>
+          </li>
+        </ul>
+        <p class="co__err" *ngIf="placeError" role="alert">{{ placeError }}</p>
+        <div class="form__actions">
+          <button type="button" class="btn" (click)="back('payment')">Back</button>
+          <button
+            type="button"
+            class="btn btn--primary"
+            (click)="placeOrder()"
+            [disabled]="placing"
+          >
+            {{ placing ? 'Placing order…' : 'Place order' }}
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <aside class="co__summary">
+      <h2>Order summary</h2>
+      <dl class="co__totals">
+        <div class="row">
+          <dt>Subtotal ({{ quote.itemCount }})</dt>
+          <dd>{{ quote.subtotal | currency }}</dd>
+        </div>
+        <div class="row row--save" *ngIf="quote.markdown">
+          <dt>Friends &amp; Family 40% off</dt>
+          <dd>-{{ quote.markdown | currency }}</dd>
+        </div>
+        <div class="row row--save" *ngIf="quote.promoDiscount">
+          <dt>Promo {{ quote.promoCode }}</dt>
+          <dd>-{{ quote.promoDiscount | currency }}</dd>
+        </div>
+        <div class="row">
+          <dt>Shipping</dt>
+          <dd>{{ quote.shipping === 0 ? 'Free' : (quote.shipping | currency) }}</dd>
+        </div>
+        <div class="row">
+          <dt>Estimated tax</dt>
+          <dd>{{ quote.tax | currency }}</dd>
+        </div>
+        <div class="row row--total">
+          <dt>Total</dt>
+          <dd>{{ quote.total | currency }}</dd>
+        </div>
+      </dl>
+    </aside>
+  </div>
+</div>

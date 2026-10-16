@@ -1,0 +1,120 @@
+<header class="header">
+  <div class="header__inner">
+    <button
+      class="header__burger"
+      type="button"
+      aria-label="Open navigation"
+      [attr.aria-expanded]="mobileNavOpen"
+      (click)="toggleMobileNav()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a class="header__logo" routerLink="/" aria-label="Gap home">GAP</a>
+
+    <nav class="header__nav" aria-label="Departments">
+      <a
+        *ngFor="let n of nav"
+        [routerLink]="n.route"
+        routerLinkActive="header__nav-link--active"
+        class="header__nav-link"
+      >
+        {{ n.label }}
+      </a>
+    </nav>
+
+    <div class="header__actions">
+      <form class="header__search" role="search" (ngSubmit)="onSearch()">
+        <input
+          type="search"
+          name="q"
+          placeholder="Search Gap"
+          aria-label="Search Gap"
+          [(ngModel)]="searchTerm"
+        />
+        <button type="submit" aria-label="Submit search">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <circle cx="10.5" cy="10.5" r="7" fill="none" stroke="currentColor" stroke-width="2" />
+            <line x1="16" y1="16" x2="21" y2="21" stroke="currentColor" stroke-width="2" />
+          </svg>
+        </button>
+      </form>
+
+      <div class="header__account">
+        <button
+          type="button"
+          class="header__icon-btn"
+          aria-label="Account"
+          [attr.aria-expanded]="accountMenuOpen"
+          (click)="accountMenuOpen = !accountMenuOpen"
+        >
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.8" />
+            <path
+              d="M4 20c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            />
+          </svg>
+          <span class="header__account-label" *ngIf="user$ | async as u">
+            Hi, {{ u.firstName }}
+          </span>
+        </button>
+        <div class="header__account-menu" *ngIf="accountMenuOpen" role="menu">
+          <ng-container *ngIf="user$ | async as u; else signedOut">
+            <button type="button" role="menuitem" (click)="signOut()">Sign out</button>
+          </ng-container>
+          <ng-template #signedOut>
+            <button type="button" role="menuitem" (click)="openSignIn()">Sign in</button>
+            <button type="button" role="menuitem" (click)="openSignIn()">Create account</button>
+          </ng-template>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="header__icon-btn header__bag"
+        aria-label="Shopping bag"
+        (click)="bagCountClick()"
+      >
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path
+            d="M6 8h12l-1 12H7L6 8z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linejoin="round"
+          />
+          <path d="M9 8V6a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="1.8" />
+        </svg>
+        <span class="header__bag-count" *ngIf="(itemCount$ | async) || 0">
+          {{ itemCount$ | async }}
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="header__mobile-nav" *ngIf="mobileNavOpen" aria-label="Departments mobile">
+    <a
+      *ngFor="let n of nav"
+      [routerLink]="n.route"
+      routerLinkActive="header__nav-link--active"
+      class="header__mobile-link"
+      (click)="mobileNavOpen = false"
+    >
+      {{ n.label }}
+    </a>
+    <form class="header__mobile-search" role="search" (ngSubmit)="onSearch()">
+      <input
+        type="search"
+        name="qm"
+        placeholder="Search Gap"
+        aria-label="Search Gap"
+        [(ngModel)]="searchTerm"
+      />
+    </form>
+  </nav>
+</header>

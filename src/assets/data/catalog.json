@@ -1,0 +1,3217 @@
+[
+  {
+    "id": "907280",
+    "name": "Relaxed Polo Sweater",
+    "department": "men",
+    "category": "sweaters",
+    "price": 79.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "",
+    "reviewScore": 5.0,
+    "reviewCount": 1,
+    "colors": [
+      {
+        "ccId": "907280012",
+        "name": "Blue",
+        "regularPrice": "79.95",
+        "effectivePrice": "79.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/336/059/cn63336059.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/336/066/cn63336066.jpg",
+          "https://www.gap.com/webcontent/0063/336/068/cn63336068.jpg",
+          "https://www.gap.com/webcontent/0063/336/075/cn63336075.jpg"
+        ]
+      },
+      {
+        "ccId": "907280042",
+        "name": "Black",
+        "regularPrice": "79.95",
+        "effectivePrice": "79.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/333/783/cn63333783.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/333/806/cn63333806.jpg",
+          "https://www.gap.com/webcontent/0063/331/798/cn63331798.jpg",
+          "https://www.gap.com/webcontent/0063/331/838/cn63331838.jpg"
+        ]
+      },
+      {
+        "ccId": "907280052",
+        "name": "Gray",
+        "regularPrice": "79.95",
+        "effectivePrice": "79.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/338/844/cn63338844.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/338/943/cn63338943.jpg",
+          "https://www.gap.com/webcontent/0063/338/939/cn63338939.jpg",
+          "https://www.gap.com/webcontent/0063/338/947/cn63338947.jpg"
+        ]
+      },
+      {
+        "ccId": "907280002",
+        "name": "Brown",
+        "regularPrice": "79.95",
+        "effectivePrice": "79.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/300/484/cn63300484.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/300/492/cn63300492.jpg",
+          "https://www.gap.com/webcontent/0063/300/489/cn63300489.jpg",
+          "https://www.gap.com/webcontent/0063/300/500/cn63300500.jpg"
+        ]
+      },
+      {
+        "ccId": "907280032",
+        "name": "White",
+        "regularPrice": "79.95",
+        "effectivePrice": "79.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/250/219/cn63250219.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/250/729/cn63250729.jpg",
+          "https://www.gap.com/webcontent/0063/250/688/cn63250688.jpg",
+          "https://www.gap.com/webcontent/0063/250/715/cn63250715.jpg"
+        ]
+      },
+      {
+        "ccId": "907280022",
+        "name": "Gray",
+        "regularPrice": "79.95",
+        "effectivePrice": "79.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/832/401/cn62832401.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/836/614/cn62836614.jpg",
+          "https://www.gap.com/webcontent/0062/836/602/cn62836602.jpg",
+          "https://www.gap.com/webcontent/0062/836/608/cn62836608.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Soft knit cotton polo sweater. In a relaxed fit. Spread collar with front button placket. Long sleeves with drop shoulders. Ribbed cuffs and hem."
+  },
+  {
+    "id": "1185608",
+    "name": "Baby Pull-On Carpenter Jeans",
+    "department": "baby",
+    "category": "baby-and-toddler",
+    "price": 34.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "",
+    "reviewScore": 0.0,
+    "reviewCount": 0,
+    "colors": [
+      {
+        "ccId": "1185608002",
+        "name": "Blue",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/892/153/cn63892153.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/892/452/cn63892452.jpg",
+          "https://www.gap.com/webcontent/0063/891/056/cn63891056.jpg",
+          "https://www.gap.com/webcontent/0063/892/449/cn63892449.jpg"
+        ]
+      }
+    ],
+    "sizes": ["0-3M", "3-6M", "6-12M", "12-18M", "18-24M", "2T", "3T", "4T", "5T"],
+    "fits": ["Regular"],
+    "description": "Baby Pull-On Carpenter Jeans."
+  },
+  {
+    "id": "1186048",
+    "name": "Baby First Favorites Organic Cotton Pull-On Pants (3-Pack)",
+    "department": "baby",
+    "category": "baby-and-toddler",
+    "price": 49.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "",
+    "reviewScore": 0.0,
+    "reviewCount": 0,
+    "colors": [
+      {
+        "ccId": "1186048022",
+        "name": "Multi",
+        "regularPrice": "49.95",
+        "effectivePrice": "49.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/376/846/cn63376846.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/376/973/cn63376973.jpg",
+          "https://www.gap.com/webcontent/0063/376/969/cn63376969.jpg",
+          "https://www.gap.com/webcontent/0063/376/968/cn63376968.jpg"
+        ]
+      },
+      {
+        "ccId": "1186048032",
+        "name": "Multi",
+        "regularPrice": "49.95",
+        "effectivePrice": "49.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/405/896/cn63405896.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/406/305/cn63406305.jpg",
+          "https://www.gap.com/webcontent/0063/426/369/cn63426369.jpg",
+          "https://www.gap.com/webcontent/0063/406/293/cn63406293.jpg"
+        ]
+      }
+    ],
+    "sizes": ["0-3M", "3-6M", "6-12M", "12-18M", "18-24M", "2T", "3T", "4T", "5T"],
+    "fits": ["Regular"],
+    "description": "Soft cotton jersey pull-on pants. Elasticized waist. Banded cuffs. Made with 100% organically grown cotton which is grown without the use of synthetic pesticides and fertilizers. Explore our \\u003ca href=\\"
+  },
+  {
+    "id": "1186049",
+    "name": "Baby First Favorites Organic Cotton Pull-On Pants (3-Pack)",
+    "department": "baby",
+    "category": "baby-and-toddler",
+    "price": 49.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "",
+    "reviewScore": 0.0,
+    "reviewCount": 0,
+    "colors": [
+      {
+        "ccId": "1186049002",
+        "name": "Multi",
+        "regularPrice": "49.95",
+        "effectivePrice": "49.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/361/507/cn63361507.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/364/434/cn63364434.jpg",
+          "https://www.gap.com/webcontent/0063/364/438/cn63364438.jpg",
+          "https://www.gap.com/webcontent/0063/364/432/cn63364432.jpg"
+        ]
+      }
+    ],
+    "sizes": ["0-3M", "3-6M", "6-12M", "12-18M", "18-24M", "2T", "3T", "4T", "5T"],
+    "fits": ["Regular"],
+    "description": "Soft cotton jersey pull-on pants. Elasticized waist. Made with 100% organically grown cotton, which is grown without the use of synthetic pesticides and fertilizers. Explore our \\u003ca href=\\"
+  },
+  {
+    "id": "1184748",
+    "name": "Baby Plaid Flannel Bodysuit",
+    "department": "baby",
+    "category": "baby-and-toddler",
+    "price": 34.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "",
+    "reviewScore": 0.0,
+    "reviewCount": 0,
+    "colors": [
+      {
+        "ccId": "1184748002",
+        "name": "Green",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/710/430/cn63710430.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/710/907/cn63710907.jpg",
+          "https://www.gap.com/webcontent/0063/710/906/cn63710906.jpg",
+          "https://www.gap.com/webcontent/0063/710/903/cn63710903.jpg"
+        ]
+      }
+    ],
+    "sizes": ["0-3M", "3-6M", "6-12M", "12-18M", "18-24M", "2T", "3T", "4T", "5T"],
+    "fits": ["Regular"],
+    "description": "Soft cotton flannel baby bodysuit. Button-down point collar. Long sleeves with button cuffs. Button front placket. Chest patch pocket with embroidered Brannan Bear. Snaps at inseam for easy dressing and diapering. Allover plaid. Explore our \\u003ca href=\\"
+  },
+  {
+    "id": "1184350",
+    "name": "Kids Knit Easy Baggy Jeans",
+    "department": "boys",
+    "category": "jeans",
+    "price": 49.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "New",
+    "reviewScore": 0.0,
+    "reviewCount": 0,
+    "colors": [
+      {
+        "ccId": "1184350002",
+        "name": "Blue",
+        "regularPrice": "49.95",
+        "effectivePrice": "49.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0064/008/806/cn64008806.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0064/008/821/cn64008821.jpg",
+          "https://www.gap.com/webcontent/0063/577/471/cn63577471.jpg",
+          "https://www.gap.com/webcontent/0064/008/820/cn64008820.jpg"
+        ]
+      },
+      {
+        "ccId": "1184353002",
+        "name": "Blue",
+        "regularPrice": "49.95",
+        "effectivePrice": "49.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0064/008/807/cn64008807.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0064/008/836/cn64008836.jpg",
+          "https://www.gap.com/webcontent/0063/656/530/cn63656530.jpg",
+          "https://www.gap.com/webcontent/0064/008/833/cn64008833.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+    "fits": ["Regular"],
+    "description": "Kids Knit Easy Baggy Jeans."
+  },
+  {
+    "id": "733445",
+    "name": "Kids VintageSoft Gap Logo Hoodie",
+    "department": "boys",
+    "category": "sweatshirts-and-sweatpants",
+    "price": 54.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "Matching set",
+    "reviewScore": 4.8,
+    "reviewCount": 550,
+    "colors": [
+      {
+        "ccId": "915488002",
+        "name": "Gray",
+        "regularPrice": "54.95",
+        "effectivePrice": "54.95",
+        "flag": "40% off at checkout",
+        "badge": "Matching set",
+        "swatch": "https://www.gap.com/webcontent/0063/361/555/cn63361555.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/361/826/cn63361826.jpg",
+          "https://www.gap.com/webcontent/0063/574/243/cn63574243.jpg",
+          "https://www.gap.com/webcontent/0063/361/662/cn63361662.jpg"
+        ]
+      },
+      {
+        "ccId": "915488012",
+        "name": "Green",
+        "regularPrice": "54.95",
+        "effectivePrice": "54.95",
+        "flag": "40% off at checkout",
+        "badge": "Matching set",
+        "swatch": "https://www.gap.com/webcontent/0062/956/778/cn62956778.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/957/116/cn62957116.jpg",
+          "https://www.gap.com/webcontent/0063/159/885/cn63159885.jpg",
+          "https://www.gap.com/webcontent/0062/956/747/cn62956747.jpg"
+        ]
+      },
+      {
+        "ccId": "655246002",
+        "name": "Multi",
+        "regularPrice": "54.95",
+        "effectivePrice": "54.95",
+        "flag": "40% off at checkout",
+        "badge": "Matching set",
+        "swatch": "https://www.gap.com/webcontent/0056/976/906/cn56976906.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0056/976/996/cn56976996.jpg",
+          "https://www.gap.com/webcontent/0056/976/971/cn56976971.jpg",
+          "https://www.gap.com/webcontent/0056/976/985/cn56976985.jpg"
+        ]
+      },
+      {
+        "ccId": "655246012",
+        "name": "Blue",
+        "regularPrice": "54.95",
+        "effectivePrice": "54.95",
+        "flag": "40% off at checkout",
+        "badge": "Matching set",
+        "swatch": "https://www.gap.com/webcontent/0056/976/907/cn56976907.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0056/977/013/cn56977013.jpg",
+          "https://www.gap.com/webcontent/0056/976/998/cn56976998.jpg",
+          "https://www.gap.com/webcontent/0056/977/012/cn56977012.jpg"
+        ]
+      },
+      {
+        "ccId": "655246022",
+        "name": "Black",
+        "regularPrice": "54.95",
+        "effectivePrice": "54.95",
+        "flag": "40% off at checkout",
+        "badge": "Matching set",
+        "swatch": "https://www.gap.com/webcontent/0056/976/908/cn56976908.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0057/010/161/cn57010161.jpg",
+          "https://www.gap.com/webcontent/0056/976/960/cn56976960.jpg",
+          "https://www.gap.com/webcontent/0056/976/961/cn56976961.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+    "fits": ["Regular"],
+    "description": "Soft cotton-blend fleece full-zip hoodie. In a relaxed fit. Hooded neckline. Long sleeves with drop shoulders. Zipper front. Gap arch logo at front. Kanga pockets. Banded cuffs and hem. Made with 23% recycled polyester. Compared to virgin materials, using recycled materials helps reduce resource use and waste."
+  },
+  {
+    "id": "1184835",
+    "name": "Kids Plaid Sherpa Zip Jacket",
+    "department": "boys",
+    "category": "sweatshirts-and-sweatpants",
+    "price": 69.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "New",
+    "reviewScore": 0.0,
+    "reviewCount": 0,
+    "colors": [
+      {
+        "ccId": "1184835002",
+        "name": "Green",
+        "regularPrice": "69.95",
+        "effectivePrice": "69.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/934/138/cn63934138.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/934/236/cn63934236.jpg",
+          "https://www.gap.com/webcontent/0063/931/163/cn63931163.jpg",
+          "https://www.gap.com/webcontent/0063/931/169/cn63931169.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+    "fits": ["Regular"],
+    "description": "Soft sherpa fleece jacket. In a relaxed fit. Mockneck. Long sleeves with elasticized cuffs. Zipper front. Slant pockets. Allover plaid. Made with 25% recycled polyester. Compared to virgin materials, using recycled materials helps reduce resource use and waste."
+  },
+  {
+    "id": "1183757",
+    "name": "Kids Heavyweight Oversized Graphic T-Shirt",
+    "department": "boys",
+    "category": "t-shirts",
+    "price": 34.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "New",
+    "reviewScore": 0.0,
+    "reviewCount": 0,
+    "colors": [
+      {
+        "ccId": "1183757002",
+        "name": "White",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/932/384/cn63932384.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/933/453/cn63933453.jpg",
+          "https://www.gap.com/webcontent/0063/930/552/cn63930552.jpg",
+          "https://www.gap.com/webcontent/0063/930/568/cn63930568.jpg"
+        ]
+      },
+      {
+        "ccId": "1183757012",
+        "name": "Blue",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/637/329/cn63637329.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/637/533/cn63637533.jpg",
+          "https://www.gap.com/webcontent/0063/691/689/cn63691689.jpg",
+          "https://www.gap.com/webcontent/0064/048/370/cn64048370.jpg"
+        ]
+      },
+      {
+        "ccId": "908837002",
+        "name": "Blue",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/281/724/cn63281724.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/281/826/cn63281826.jpg",
+          "https://www.gap.com/webcontent/0063/278/627/cn63278627.jpg",
+          "https://www.gap.com/webcontent/0063/278/685/cn63278685.jpg"
+        ]
+      },
+      {
+        "ccId": "908837022",
+        "name": "Red",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/281/735/cn63281735.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/281/840/cn63281840.jpg",
+          "https://www.gap.com/webcontent/0063/288/451/cn63288451.jpg",
+          "https://www.gap.com/webcontent/0063/278/701/cn63278701.jpg"
+        ]
+      },
+      {
+        "ccId": "908837012",
+        "name": "Green",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/945/176/cn62945176.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/945/975/cn62945975.jpg",
+          "https://www.gap.com/webcontent/0063/594/074/cn63594074.jpg",
+          "https://www.gap.com/webcontent/0062/945/220/cn62945220.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+    "fits": ["Regular"],
+    "description": "Soft, heavyweight cotton jersey T-shirt. In an oversized fit. Creweneck. Long sleeves with drop shoulders and banded cuffs. Graphics at front and back. This product was made in a factory that invests in gender equity and women\u2019s empowerment through RISE. Learn more at\u00a0\\u003ca href=\\"
+  },
+  {
+    "id": "827257",
+    "name": "Kids Gamer Graphic T-Shirt",
+    "department": "boys",
+    "category": "t-shirts",
+    "price": 39.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "Best seller",
+    "reviewScore": 4.9,
+    "reviewCount": 380,
+    "colors": [
+      {
+        "ccId": "911535012",
+        "name": "Blue",
+        "regularPrice": "39.95",
+        "effectivePrice": "39.95",
+        "flag": "40% off at checkout",
+        "badge": "Best seller",
+        "swatch": "https://www.gap.com/webcontent/0063/407/012/cn63407012.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/425/684/cn63425684.jpg",
+          "https://www.gap.com/webcontent/0063/425/698/cn63425698.jpg",
+          "https://www.gap.com/webcontent/0063/425/681/cn63425681.jpg"
+        ]
+      },
+      {
+        "ccId": "911535022",
+        "name": "Multi",
+        "regularPrice": "39.95",
+        "effectivePrice": "39.95",
+        "flag": "40% off at checkout",
+        "badge": "Best seller",
+        "swatch": "https://www.gap.com/webcontent/0063/407/013/cn63407013.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/407/037/cn63407037.jpg",
+          "https://www.gap.com/webcontent/0063/407/067/cn63407067.jpg",
+          "https://www.gap.com/webcontent/0063/407/034/cn63407034.jpg"
+        ]
+      },
+      {
+        "ccId": "911535032",
+        "name": "Green",
+        "regularPrice": "39.95",
+        "effectivePrice": "39.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/407/014/cn63407014.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/425/693/cn63425693.jpg",
+          "https://www.gap.com/webcontent/0063/425/707/cn63425707.jpg",
+          "https://www.gap.com/webcontent/0063/425/691/cn63425691.jpg"
+        ]
+      },
+      {
+        "ccId": "911535042",
+        "name": "White",
+        "regularPrice": "39.95",
+        "effectivePrice": "39.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/407/015/cn63407015.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/425/708/cn63425708.jpg",
+          "https://www.gap.com/webcontent/0063/425/717/cn63425717.jpg",
+          "https://www.gap.com/webcontent/0063/425/705/cn63425705.jpg"
+        ]
+      },
+      {
+        "ccId": "1187941002",
+        "name": "Multi",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/289/994/cn63289994.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/297/670/cn63297670.jpg",
+          "https://www.gap.com/webcontent/0063/292/320/cn63292320.jpg",
+          "https://www.gap.com/webcontent/0063/297/668/cn63297668.jpg"
+        ]
+      },
+      {
+        "ccId": "1187941012",
+        "name": "Green",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/317/616/cn63317616.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/318/313/cn63318313.jpg",
+          "https://www.gap.com/webcontent/0063/318/299/cn63318299.jpg",
+          "https://www.gap.com/webcontent/0063/318/309/cn63318309.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+    "fits": ["Regular"],
+    "description": "Soft cotton jersey graphic T-shirt. In a relaxed fit. Crewneck. Long sleeves with drop shoulders and banded cuffs. Graphics at front."
+  },
+  {
+    "id": "915491",
+    "name": "Kids Marvel Relaxed Graphic T-Shirt",
+    "department": "boys",
+    "category": "t-shirts",
+    "price": 34.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "New",
+    "reviewScore": 0.0,
+    "reviewCount": 0,
+    "colors": [
+      {
+        "ccId": "1184276022",
+        "name": "Gray",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/299/199/cn63299199.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/299/213/cn63299213.jpg",
+          "https://www.gap.com/webcontent/0063/299/224/cn63299224.jpg",
+          "https://www.gap.com/webcontent/0063/299/211/cn63299211.jpg"
+        ]
+      },
+      {
+        "ccId": "1184276032",
+        "name": "Gray",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/299/198/cn63299198.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/299/225/cn63299225.jpg",
+          "https://www.gap.com/webcontent/0063/299/233/cn63299233.jpg",
+          "https://www.gap.com/webcontent/0063/299/223/cn63299223.jpg"
+        ]
+      },
+      {
+        "ccId": "1184276012",
+        "name": "Gray",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/299/365/cn63299365.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/299/575/cn63299575.jpg",
+          "https://www.gap.com/webcontent/0063/299/570/cn63299570.jpg",
+          "https://www.gap.com/webcontent/0063/299/573/cn63299573.jpg"
+        ]
+      },
+      {
+        "ccId": "1184276002",
+        "name": "Black",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/297/268/cn63297268.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/320/427/cn63320427.jpg",
+          "https://www.gap.com/webcontent/0063/320/395/cn63320395.jpg",
+          "https://www.gap.com/webcontent/0063/320/422/cn63320422.jpg"
+        ]
+      },
+      {
+        "ccId": "915377012",
+        "name": "Black",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "Best seller",
+        "swatch": "https://www.gap.com/webcontent/0063/058/008/cn63058008.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/593/938/cn63593938.jpg",
+          "https://www.gap.com/webcontent/0063/075/770/cn63075770.jpg",
+          "https://www.gap.com/webcontent/0063/593/933/cn63593933.jpg"
+        ]
+      },
+      {
+        "ccId": "915491002",
+        "name": "Red",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "Best seller",
+        "swatch": "https://www.gap.com/webcontent/0063/058/011/cn63058011.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/593/950/cn63593950.jpg",
+          "https://www.gap.com/webcontent/0063/075/772/cn63075772.jpg",
+          "https://www.gap.com/webcontent/0063/593/946/cn63593946.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+    "fits": ["Regular"],
+    "description": "Kids Marvel Relaxed Graphic T-Shirt."
+  },
+  {
+    "id": "1184972",
+    "name": "Kids Square-Neck Mixed Media Dress",
+    "department": "girls",
+    "category": "dresses",
+    "price": 59.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "New",
+    "reviewScore": 0.0,
+    "reviewCount": 0,
+    "colors": [
+      {
+        "ccId": "1184972002",
+        "name": "Black",
+        "regularPrice": "59.95",
+        "effectivePrice": "59.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/785/126/cn63785126.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/898/794/cn63898794.jpg",
+          "https://www.gap.com/webcontent/0063/898/770/cn63898770.jpg",
+          "https://www.gap.com/webcontent/0063/898/771/cn63898771.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+    "fits": ["Regular"],
+    "description": "Soft velour and mesh tulle mixed media dress. Square neck with loop button keyhole closure at back. Flocked dots at long sleeves and upper yoke. Elasticized waist."
+  },
+  {
+    "id": "1188180",
+    "name": "Kids Relaxed Rugby Polo Dress",
+    "department": "girls",
+    "category": "dresses",
+    "price": 49.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "New",
+    "reviewScore": 0.0,
+    "reviewCount": 0,
+    "colors": [
+      {
+        "ccId": "1188180002",
+        "name": "Blue",
+        "regularPrice": "49.95",
+        "effectivePrice": "49.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/969/749/cn63969749.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/971/490/cn63971490.jpg",
+          "https://www.gap.com/webcontent/0063/963/449/cn63963449.jpg",
+          "https://www.gap.com/webcontent/0063/971/489/cn63971489.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+    "fits": ["Regular"],
+    "description": "Soft, heavyweight cotton jersey polo dress. In a relaxed fit. Spread collar with hidden front button placket. Long sleeves drop shoulders. Embroidered Brannan Bear at chest. Allover rugby stripes."
+  },
+  {
+    "id": "517999",
+    "name": "Kids VintageSoft Relaxed Hoodie",
+    "department": "girls",
+    "category": "sweatshirts-and-sweatpants",
+    "price": 44.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "New",
+    "reviewScore": 4.9,
+    "reviewCount": 423,
+    "colors": [
+      {
+        "ccId": "1184272022",
+        "name": "Yellow",
+        "regularPrice": "44.95",
+        "effectivePrice": "44.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0064/006/957/cn64006957.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0064/008/009/cn64008009.jpg",
+          "https://www.gap.com/webcontent/0064/007/468/cn64007468.jpg",
+          "https://www.gap.com/webcontent/0064/007/995/cn64007995.jpg"
+        ]
+      },
+      {
+        "ccId": "915485042",
+        "name": "Gray",
+        "regularPrice": "44.95",
+        "effectivePrice": "17.0",
+        "flag": "60% off: limited time",
+        "badge": "Matching set",
+        "swatch": "https://www.gap.com/webcontent/0063/804/564/cn63804564.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/804/793/cn63804793.jpg",
+          "https://www.gap.com/webcontent/0063/921/791/cn63921791.jpg",
+          "https://www.gap.com/webcontent/0063/804/767/cn63804767.jpg"
+        ]
+      },
+      {
+        "ccId": "915485032",
+        "name": "Pink",
+        "regularPrice": "44.95",
+        "effectivePrice": "44.95",
+        "flag": "40% off at checkout",
+        "badge": "Matching set",
+        "swatch": "https://www.gap.com/webcontent/0063/604/211/cn63604211.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/604/835/cn63604835.jpg",
+          "https://www.gap.com/webcontent/0063/899/989/cn63899989.jpg",
+          "https://www.gap.com/webcontent/0063/602/968/cn63602968.jpg"
+        ]
+      },
+      {
+        "ccId": "915485062",
+        "name": "Brown",
+        "regularPrice": "44.95",
+        "effectivePrice": "44.95",
+        "flag": "40% off at checkout",
+        "badge": "Best seller",
+        "swatch": "https://www.gap.com/webcontent/0063/318/118/cn63318118.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/318/238/cn63318238.jpg",
+          "https://www.gap.com/webcontent/0063/574/414/cn63574414.jpg",
+          "https://www.gap.com/webcontent/0063/315/956/cn63315956.jpg"
+        ]
+      },
+      {
+        "ccId": "915485012",
+        "name": "Blue",
+        "regularPrice": "44.95",
+        "effectivePrice": "44.95",
+        "flag": "40% off at checkout",
+        "badge": "Best seller",
+        "swatch": "https://www.gap.com/webcontent/0063/282/844/cn63282844.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/283/049/cn63283049.jpg",
+          "https://www.gap.com/webcontent/0063/686/618/cn63686618.jpg",
+          "https://www.gap.com/webcontent/0063/280/122/cn63280122.jpg"
+        ]
+      },
+      {
+        "ccId": "915485022",
+        "name": "Blue",
+        "regularPrice": "44.95",
+        "effectivePrice": "44.95",
+        "flag": "40% off at checkout",
+        "badge": "Matching set",
+        "swatch": "https://www.gap.com/webcontent/0063/058/716/cn63058716.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/277/164/cn63277164.jpg",
+          "https://www.gap.com/webcontent/0063/899/978/cn63899978.jpg",
+          "https://www.gap.com/webcontent/0063/277/097/cn63277097.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+    "fits": ["Regular"],
+    "description": "Kids VintageSoft Relaxed Hoodie."
+  },
+  {
+    "id": "898832",
+    "name": "Kids Heavyweight Oversized Seam T-Shirt",
+    "department": "girls",
+    "category": "t-shirts",
+    "price": 34.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "Matching set",
+    "reviewScore": 5.0,
+    "reviewCount": 1,
+    "colors": [
+      {
+        "ccId": "908917052",
+        "name": "Gray",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "Matching set",
+        "swatch": "https://www.gap.com/webcontent/0063/969/787/cn63969787.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/971/278/cn63971278.jpg",
+          "https://www.gap.com/webcontent/0063/963/752/cn63963752.jpg",
+          "https://www.gap.com/webcontent/0063/971/276/cn63971276.jpg"
+        ]
+      },
+      {
+        "ccId": "908917032",
+        "name": "Brown",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "Matching set",
+        "swatch": "https://www.gap.com/webcontent/0063/742/622/cn63742622.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/863/165/cn63863165.jpg",
+          "https://www.gap.com/webcontent/0063/878/812/cn63878812.jpg",
+          "https://www.gap.com/webcontent/0063/878/819/cn63878819.jpg"
+        ]
+      },
+      {
+        "ccId": "908917002",
+        "name": "Multi",
+        "regularPrice": "34.95",
+        "effectivePrice": "24.99",
+        "flag": "Extra 40% off at checkout",
+        "badge": "Now on Sale",
+        "swatch": "https://www.gap.com/webcontent/0062/981/460/cn62981460.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/014/086/cn63014086.jpg",
+          "https://www.gap.com/webcontent/0062/942/703/cn62942703.jpg",
+          "https://www.gap.com/webcontent/0063/014/035/cn63014035.jpg"
+        ]
+      },
+      {
+        "ccId": "908917012",
+        "name": "Blue",
+        "regularPrice": "34.95",
+        "effectivePrice": "24.99",
+        "flag": "Extra 40% off at checkout",
+        "badge": "Now on Sale",
+        "swatch": "https://www.gap.com/webcontent/0062/933/777/cn62933777.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/936/138/cn62936138.jpg",
+          "https://www.gap.com/webcontent/0062/933/647/cn62933647.jpg",
+          "https://www.gap.com/webcontent/0062/933/648/cn62933648.jpg"
+        ]
+      },
+      {
+        "ccId": "898832002",
+        "name": "Red",
+        "regularPrice": "34.95",
+        "effectivePrice": "24.99",
+        "flag": "Extra 40% off at checkout",
+        "badge": "Selling fast",
+        "swatch": "https://www.gap.com/webcontent/0062/434/919/cn62434919.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/450/202/cn62450202.jpg",
+          "https://www.gap.com/webcontent/0062/451/800/cn62451800.jpg",
+          "https://www.gap.com/webcontent/0062/434/013/cn62434013.jpg"
+        ]
+      },
+      {
+        "ccId": "898832012",
+        "name": "Blue",
+        "regularPrice": "34.95",
+        "effectivePrice": "24.99",
+        "flag": "Extra 40% off at checkout",
+        "badge": "Matching set",
+        "swatch": "https://www.gap.com/webcontent/0062/462/568/cn62462568.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/482/212/cn62482212.jpg",
+          "https://www.gap.com/webcontent/0062/462/614/cn62462614.jpg",
+          "https://www.gap.com/webcontent/0062/462/621/cn62462621.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+    "fits": ["Regular"],
+    "description": "Soft, heavyweight cotton jersey T-shirt. Crewneck. Long sleeves with drop shoulders and banded cuffs. Assorted colors, graphics, and prints."
+  },
+  {
+    "id": "1185500",
+    "name": "Kids Oversized Graphic T-Shirt",
+    "department": "girls",
+    "category": "t-shirts",
+    "price": 19.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "New",
+    "reviewScore": 0.0,
+    "reviewCount": 0,
+    "colors": [
+      {
+        "ccId": "1185500002",
+        "name": "Blue",
+        "regularPrice": "19.95",
+        "effectivePrice": "19.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/674/673/cn63674673.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/675/581/cn63675581.jpg",
+          "https://www.gap.com/webcontent/0063/674/924/cn63674924.jpg",
+          "https://www.gap.com/webcontent/0063/674/955/cn63674955.jpg"
+        ]
+      },
+      {
+        "ccId": "1185500012",
+        "name": "Brown",
+        "regularPrice": "19.95",
+        "effectivePrice": "19.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/656/735/cn63656735.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/656/889/cn63656889.jpg",
+          "https://www.gap.com/webcontent/0063/656/803/cn63656803.jpg",
+          "https://www.gap.com/webcontent/0063/656/822/cn63656822.jpg"
+        ]
+      },
+      {
+        "ccId": "1185500022",
+        "name": "Blue",
+        "regularPrice": "19.95",
+        "effectivePrice": "19.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/674/682/cn63674682.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/675/552/cn63675552.jpg",
+          "https://www.gap.com/webcontent/0063/674/923/cn63674923.jpg",
+          "https://www.gap.com/webcontent/0063/674/925/cn63674925.jpg"
+        ]
+      },
+      {
+        "ccId": "1185500032",
+        "name": "White",
+        "regularPrice": "19.95",
+        "effectivePrice": "19.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/788/762/cn63788762.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/900/295/cn63900295.jpg",
+          "https://www.gap.com/webcontent/0063/900/258/cn63900258.jpg",
+          "https://www.gap.com/webcontent/0063/900/262/cn63900262.jpg"
+        ]
+      },
+      {
+        "ccId": "1185500042",
+        "name": "Pink",
+        "regularPrice": "19.95",
+        "effectivePrice": "19.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/788/819/cn63788819.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/900/287/cn63900287.jpg",
+          "https://www.gap.com/webcontent/0063/900/255/cn63900255.jpg",
+          "https://www.gap.com/webcontent/0063/900/254/cn63900254.jpg"
+        ]
+      },
+      {
+        "ccId": "1185500052",
+        "name": "Brown",
+        "regularPrice": "19.95",
+        "effectivePrice": "19.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/674/704/cn63674704.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/675/545/cn63675545.jpg",
+          "https://www.gap.com/webcontent/0063/674/922/cn63674922.jpg",
+          "https://www.gap.com/webcontent/0063/674/942/cn63674942.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+    "fits": ["Regular"],
+    "description": "Soft cotton jersey T-shirt. In an oversized fit. Crewneck. Long sleeves with drop shoulders. Graphics at front."
+  },
+  {
+    "id": "1189030",
+    "name": "Kids Velour Square-Neck Top",
+    "department": "girls",
+    "category": "t-shirts",
+    "price": 34.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "New",
+    "reviewScore": 0.0,
+    "reviewCount": 0,
+    "colors": [
+      {
+        "ccId": "1189030002",
+        "name": "Blue",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/912/116/cn63912116.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/912/153/cn63912153.jpg",
+          "https://www.gap.com/webcontent/0063/900/816/cn63900816.jpg",
+          "https://www.gap.com/webcontent/0063/910/638/cn63910638.jpg"
+        ]
+      },
+      {
+        "ccId": "1189030012",
+        "name": "Black",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/864/060/cn63864060.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/951/146/cn63951146.jpg",
+          "https://www.gap.com/webcontent/0063/878/053/cn63878053.jpg",
+          "https://www.gap.com/webcontent/0063/878/063/cn63878063.jpg"
+        ]
+      },
+      {
+        "ccId": "1189030022",
+        "name": "Red",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/934/758/cn63934758.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/934/771/cn63934771.jpg",
+          "https://www.gap.com/webcontent/0063/900/811/cn63900811.jpg",
+          "https://www.gap.com/webcontent/0063/934/760/cn63934760.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+    "fits": ["Regular"],
+    "description": "Soft, stretch velour top. Square neck with bow detail. Long sleeves. This product was made in a factory that invests in gender equity and women\u2019s empowerment through RISE. Learn more at\u00a0\\u003ca href=\\"
+  },
+  {
+    "id": "586614",
+    "name": "Extra Baggy Jeans",
+    "department": "men",
+    "category": "jeans",
+    "price": 89.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "",
+    "reviewScore": 4.5,
+    "reviewCount": 186,
+    "colors": [
+      {
+        "ccId": "906989002",
+        "name": "Blue",
+        "regularPrice": "89.95",
+        "effectivePrice": "89.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/010/184/cn63010184.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/010/467/cn63010467.jpg",
+          "https://www.gap.com/webcontent/0063/008/797/cn63008797.jpg",
+          "https://www.gap.com/webcontent/0063/008/804/cn63008804.jpg"
+        ]
+      },
+      {
+        "ccId": "889852002",
+        "name": "Beige",
+        "regularPrice": "89.95",
+        "effectivePrice": "89.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0061/457/162/cn61457162.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0061/457/505/cn61457505.jpg",
+          "https://www.gap.com/webcontent/0061/455/384/cn61455384.jpg",
+          "https://www.gap.com/webcontent/0061/455/472/cn61455472.jpg"
+        ]
+      },
+      {
+        "ccId": "864400002",
+        "name": "Black",
+        "regularPrice": "119.0",
+        "effectivePrice": "94.99",
+        "flag": "Extra 40% off at checkout",
+        "badge": "Now on Sale",
+        "swatch": "https://www.gap.com/webcontent/0062/308/133/cn62308133.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/346/742/cn62346742.jpg",
+          "https://www.gap.com/webcontent/0062/308/056/cn62308056.jpg",
+          "https://www.gap.com/webcontent/0062/308/033/cn62308033.jpg"
+        ]
+      },
+      {
+        "ccId": "621916002",
+        "name": "Blue",
+        "regularPrice": "89.95",
+        "effectivePrice": "89.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/932/491/cn62932491.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/934/504/cn62934504.jpg",
+          "https://www.gap.com/webcontent/0062/932/010/cn62932010.jpg",
+          "https://www.gap.com/webcontent/0062/931/990/cn62931990.jpg"
+        ]
+      },
+      {
+        "ccId": "624552002",
+        "name": "Blue",
+        "regularPrice": "89.95",
+        "effectivePrice": "89.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/108/590/cn63108590.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/108/760/cn63108760.jpg",
+          "https://www.gap.com/webcontent/0063/108/754/cn63108754.jpg",
+          "https://www.gap.com/webcontent/0063/108/770/cn63108770.jpg"
+        ]
+      },
+      {
+        "ccId": "624545002",
+        "name": "Black",
+        "regularPrice": "89.95",
+        "effectivePrice": "89.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/603/434/cn62603434.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/603/441/cn62603441.jpg",
+          "https://www.gap.com/webcontent/0062/603/462/cn62603462.jpg",
+          "https://www.gap.com/webcontent/0062/603/447/cn62603447.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Extra Baggy Jeans."
+  },
+  {
+    "id": "524246",
+    "name": "Baggy Jeans",
+    "department": "men",
+    "category": "jeans",
+    "price": 31.0,
+    "regularPrice": 79.95,
+    "promo": "40% off at checkout",
+    "badge": "",
+    "reviewScore": 4.7,
+    "reviewCount": 534,
+    "colors": [
+      {
+        "ccId": "514098002",
+        "name": "Blue",
+        "regularPrice": "79.95",
+        "effectivePrice": "31.0",
+        "flag": "60% off: limited time",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/931/946/cn62931946.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/934/432/cn62934432.jpg",
+          "https://www.gap.com/webcontent/0062/931/981/cn62931981.jpg",
+          "https://www.gap.com/webcontent/0062/931/798/cn62931798.jpg"
+        ]
+      },
+      {
+        "ccId": "673715002",
+        "name": "Blue",
+        "regularPrice": "79.95",
+        "effectivePrice": "79.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/933/147/cn62933147.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/934/567/cn62934567.jpg",
+          "https://www.gap.com/webcontent/0062/932/531/cn62932531.jpg",
+          "https://www.gap.com/webcontent/0062/932/499/cn62932499.jpg"
+        ]
+      },
+      {
+        "ccId": "524246002",
+        "name": "Black",
+        "regularPrice": "79.95",
+        "effectivePrice": "31.0",
+        "flag": "60% off: limited time",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/932/474/cn62932474.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/934/444/cn62934444.jpg",
+          "https://www.gap.com/webcontent/0062/931/928/cn62931928.jpg",
+          "https://www.gap.com/webcontent/0062/931/831/cn62931831.jpg"
+        ]
+      },
+      {
+        "ccId": "915238002",
+        "name": "Blue",
+        "regularPrice": "79.95",
+        "effectivePrice": "79.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/031/821/cn63031821.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/104/956/cn63104956.jpg",
+          "https://www.gap.com/webcontent/0063/080/836/cn63080836.jpg",
+          "https://www.gap.com/webcontent/0063/080/837/cn63080837.jpg"
+        ]
+      },
+      {
+        "ccId": "915242002",
+        "name": "Beige",
+        "regularPrice": "89.95",
+        "effectivePrice": "89.95",
+        "flag": "40% off at checkout",
+        "badge": "Matching set",
+        "swatch": "https://www.gap.com/webcontent/0063/105/806/cn63105806.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/105/957/cn63105957.jpg",
+          "https://www.gap.com/webcontent/0063/104/912/cn63104912.jpg",
+          "https://www.gap.com/webcontent/0063/104/938/cn63104938.jpg"
+        ]
+      },
+      {
+        "ccId": "914574002",
+        "name": "Blue",
+        "regularPrice": "89.95",
+        "effectivePrice": "89.95",
+        "flag": "40% off at checkout",
+        "badge": "Matching set",
+        "swatch": "https://www.gap.com/webcontent/0063/001/902/cn63001902.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/002/158/cn63002158.jpg",
+          "https://www.gap.com/webcontent/0063/002/143/cn63002143.jpg",
+          "https://www.gap.com/webcontent/0063/002/174/cn63002174.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Baggy Jeans."
+  },
+  {
+    "id": "887827",
+    "name": "UltraSoft Baggy Carpenter Jeans",
+    "department": "men",
+    "category": "jeans",
+    "price": 74.99,
+    "regularPrice": 89.95,
+    "promo": "40% off at checkout",
+    "badge": "Now on Sale",
+    "reviewScore": 4.8,
+    "reviewCount": 10,
+    "colors": [
+      {
+        "ccId": "887832002",
+        "name": "Beige",
+        "regularPrice": "89.95",
+        "effectivePrice": "74.99",
+        "flag": "Extra 40% off at checkout",
+        "badge": "Now on Sale",
+        "swatch": "https://www.gap.com/webcontent/0061/823/888/cn61823888.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0061/860/278/cn61860278.jpg",
+          "https://www.gap.com/webcontent/0061/823/397/cn61823397.jpg",
+          "https://www.gap.com/webcontent/0061/823/419/cn61823419.jpg"
+        ]
+      },
+      {
+        "ccId": "887827002",
+        "name": "Green",
+        "regularPrice": "89.95",
+        "effectivePrice": "74.99",
+        "flag": "Extra 40% off at checkout",
+        "badge": "Now on Sale",
+        "swatch": "https://www.gap.com/webcontent/0062/380/839/cn62380839.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/380/942/cn62380942.jpg",
+          "https://www.gap.com/webcontent/0061/546/261/cn61546261.jpg",
+          "https://www.gap.com/webcontent/0061/546/316/cn61546316.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "UltraSoft Baggy Carpenter Jeans."
+  },
+  {
+    "id": "899341",
+    "name": "Rigid Baggy Jeans",
+    "department": "men",
+    "category": "jeans",
+    "price": 54.97,
+    "regularPrice": 69.95,
+    "promo": "40% off at checkout",
+    "badge": "",
+    "reviewScore": 4.3,
+    "reviewCount": 12,
+    "colors": [
+      {
+        "ccId": "899352002",
+        "name": "Blue",
+        "regularPrice": "69.95",
+        "effectivePrice": "54.97",
+        "flag": "Final sale",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0061/391/579/cn61391579.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/234/934/cn62234934.jpg",
+          "https://www.gap.com/webcontent/0061/391/063/cn61391063.jpg",
+          "https://www.gap.com/webcontent/0061/391/089/cn61391089.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Rigid Baggy Jeans."
+  },
+  {
+    "id": "787704",
+    "name": "Oxford Shirt in Classic Fit",
+    "department": "men",
+    "category": "shirts",
+    "price": 59.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "Selling fast",
+    "reviewScore": 4.7,
+    "reviewCount": 1231,
+    "colors": [
+      {
+        "ccId": "847912192",
+        "name": "Red",
+        "regularPrice": "59.95",
+        "effectivePrice": "59.95",
+        "flag": "40% off at checkout",
+        "badge": "Selling fast",
+        "swatch": "https://www.gap.com/webcontent/0063/356/877/cn63356877.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/664/616/cn63664616.jpg",
+          "https://www.gap.com/webcontent/0063/577/084/cn63577084.jpg",
+          "https://www.gap.com/webcontent/0063/576/225/cn63576225.jpg"
+        ]
+      },
+      {
+        "ccId": "847912202",
+        "name": "Beige",
+        "regularPrice": "59.95",
+        "effectivePrice": "23.0",
+        "flag": "60% off: limited time",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/426/698/cn63426698.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/664/448/cn63664448.jpg",
+          "https://www.gap.com/webcontent/0063/426/778/cn63426778.jpg",
+          "https://www.gap.com/webcontent/0063/426/798/cn63426798.jpg"
+        ]
+      },
+      {
+        "ccId": "847912082",
+        "name": "Pink",
+        "regularPrice": "59.95",
+        "effectivePrice": "49.99",
+        "flag": "",
+        "badge": "Now on Sale",
+        "swatch": "https://www.gap.com/webcontent/0062/182/403/cn62182403.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/182/442/cn62182442.jpg",
+          "https://www.gap.com/webcontent/0062/180/735/cn62180735.jpg",
+          "https://www.gap.com/webcontent/0062/180/743/cn62180743.jpg"
+        ]
+      },
+      {
+        "ccId": "619568342",
+        "name": "Purple",
+        "regularPrice": "59.95",
+        "effectivePrice": "44.97",
+        "flag": "Final sale",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0060/539/019/cn60539019.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0060/539/335/cn60539335.jpg",
+          "https://www.gap.com/webcontent/0060/557/005/cn60557005.jpg",
+          "https://www.gap.com/webcontent/0060/539/160/cn60539160.jpg"
+        ]
+      },
+      {
+        "ccId": "619568352",
+        "name": "Green",
+        "regularPrice": "59.95",
+        "effectivePrice": "34.99",
+        "flag": "Extra 40% off at checkout",
+        "badge": "Lower Price",
+        "swatch": "https://www.gap.com/webcontent/0059/939/633/cn59939633.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0059/940/128/cn59940128.jpg",
+          "https://www.gap.com/webcontent/0059/940/081/cn59940081.jpg",
+          "https://www.gap.com/webcontent/0059/940/087/cn59940087.jpg"
+        ]
+      },
+      {
+        "ccId": "619568392",
+        "name": "Red",
+        "regularPrice": "59.95",
+        "effectivePrice": "19.97",
+        "flag": "Extra 40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0059/734/375/cn59734375.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/341/693/cn63341693.jpg",
+          "https://www.gap.com/webcontent/0059/734/042/cn59734042.jpg",
+          "https://www.gap.com/webcontent/0059/734/086/cn59734086.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Oxford Shirt in Classic Fit."
+  },
+  {
+    "id": "909177",
+    "name": "Relaxed Crop Straight-Hem Oxford Shirt",
+    "department": "men",
+    "category": "shirts",
+    "price": 59.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "Best seller",
+    "reviewScore": 4.2,
+    "reviewCount": 12,
+    "colors": [
+      {
+        "ccId": "909177012",
+        "name": "Green",
+        "regularPrice": "59.95",
+        "effectivePrice": "59.95",
+        "flag": "40% off at checkout",
+        "badge": "Best seller",
+        "swatch": "https://www.gap.com/webcontent/0062/837/727/cn62837727.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/838/666/cn62838666.jpg",
+          "https://www.gap.com/webcontent/0062/838/420/cn62838420.jpg",
+          "https://www.gap.com/webcontent/0062/838/438/cn62838438.jpg"
+        ]
+      },
+      {
+        "ccId": "909177072",
+        "name": "Brown",
+        "regularPrice": "59.95",
+        "effectivePrice": "59.95",
+        "flag": "40% off at checkout",
+        "badge": "Best seller",
+        "swatch": "https://www.gap.com/webcontent/0063/357/044/cn63357044.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/576/220/cn63576220.jpg",
+          "https://www.gap.com/webcontent/0063/576/209/cn63576209.jpg",
+          "https://www.gap.com/webcontent/0063/576/223/cn63576223.jpg"
+        ]
+      },
+      {
+        "ccId": "909177022",
+        "name": "Green",
+        "regularPrice": "59.95",
+        "effectivePrice": "59.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/365/196/cn63365196.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/664/594/cn63664594.jpg",
+          "https://www.gap.com/webcontent/0063/398/864/cn63398864.jpg",
+          "https://www.gap.com/webcontent/0063/365/470/cn63365470.jpg"
+        ]
+      },
+      {
+        "ccId": "909177032",
+        "name": "Blue",
+        "regularPrice": "59.95",
+        "effectivePrice": "59.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/357/040/cn63357040.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/664/583/cn63664583.jpg",
+          "https://www.gap.com/webcontent/0063/576/201/cn63576201.jpg",
+          "https://www.gap.com/webcontent/0063/576/214/cn63576214.jpg"
+        ]
+      },
+      {
+        "ccId": "909177002",
+        "name": "Blue",
+        "regularPrice": "59.95",
+        "effectivePrice": "23.0",
+        "flag": "60% off: limited time",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/500/025/cn63500025.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/500/071/cn63500071.jpg",
+          "https://www.gap.com/webcontent/0063/500/064/cn63500064.jpg",
+          "https://www.gap.com/webcontent/0063/009/063/cn63009063.jpg"
+        ]
+      },
+      {
+        "ccId": "909177052",
+        "name": "Red",
+        "regularPrice": "59.95",
+        "effectivePrice": "59.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/026/926/cn63026926.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/664/572/cn63664572.jpg",
+          "https://www.gap.com/webcontent/0063/081/064/cn63081064.jpg",
+          "https://www.gap.com/webcontent/0063/081/072/cn63081072.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Stretch organic cotton Oxford shirt. In a relaxed fit and cropped length. Spread collar. Long sleeves with button cuffs. Button front. Back yokes seam. Straight hem. Certain styles have an allover print. Certain styles have an embroidered Brannan Bear at chest. Made with 98% organically grown cotton which is grown without the use of synthetic pesticides and fertilizers."
+  },
+  {
+    "id": "901652",
+    "name": "Dobby Stripe Relaxed Straight-Hem Shirt",
+    "department": "men",
+    "category": "shirts",
+    "price": 64.99,
+    "regularPrice": 79.95,
+    "promo": "40% off at checkout",
+    "badge": "",
+    "reviewScore": 5.0,
+    "reviewCount": 3,
+    "colors": [
+      {
+        "ccId": "901652002",
+        "name": "Green",
+        "regularPrice": "79.95",
+        "effectivePrice": "64.99",
+        "flag": "Extra 40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/077/985/cn62077985.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/103/470/cn62103470.jpg",
+          "https://www.gap.com/webcontent/0062/077/518/cn62077518.jpg",
+          "https://www.gap.com/webcontent/0062/077/543/cn62077543.jpg"
+        ]
+      },
+      {
+        "ccId": "901652012",
+        "name": "White",
+        "regularPrice": "79.95",
+        "effectivePrice": "64.99",
+        "flag": "Extra 40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/182/315/cn62182315.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/182/427/cn62182427.jpg",
+          "https://www.gap.com/webcontent/0062/181/963/cn62181963.jpg",
+          "https://www.gap.com/webcontent/0062/181/979/cn62181979.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Soft, textured dobby cotton button-up shirt. In a relaxed fit. Camp collar. Long sleeves with button cuffs. Button front. Chest patch pocket. Back yoke seam. Allover stripes. This product was made in a factory that invests in gender equity and women\u2019s empowerment through RISE. Learn more at \\u003ca href=\\"
+  },
+  {
+    "id": "889775",
+    "name": "Mesh Polo Sweater",
+    "department": "men",
+    "category": "sweaters",
+    "price": 59.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "New",
+    "reviewScore": 4.7,
+    "reviewCount": 13,
+    "colors": [
+      {
+        "ccId": "1191844002",
+        "name": "Multi",
+        "regularPrice": "59.95",
+        "effectivePrice": "59.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/759/277/cn63759277.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/759/525/cn63759525.jpg",
+          "https://www.gap.com/webcontent/0063/759/503/cn63759503.jpg",
+          "https://www.gap.com/webcontent/0063/759/522/cn63759522.jpg"
+        ]
+      },
+      {
+        "ccId": "1191844012",
+        "name": "Green",
+        "regularPrice": "59.95",
+        "effectivePrice": "59.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/789/863/cn63789863.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/789/966/cn63789966.jpg",
+          "https://www.gap.com/webcontent/0063/789/962/cn63789962.jpg",
+          "https://www.gap.com/webcontent/0063/789/990/cn63789990.jpg"
+        ]
+      },
+      {
+        "ccId": "889775022",
+        "name": "White",
+        "regularPrice": "79.95",
+        "effectivePrice": "64.99",
+        "flag": "Extra 40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/293/190/cn62293190.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/293/264/cn62293264.jpg",
+          "https://www.gap.com/webcontent/0062/293/271/cn62293271.jpg",
+          "https://www.gap.com/webcontent/0062/293/295/cn62293295.jpg"
+        ]
+      },
+      {
+        "ccId": "889775012",
+        "name": "Blue",
+        "regularPrice": "59.95",
+        "effectivePrice": "49.99",
+        "flag": "Extra 40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/001/159/cn62001159.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/001/389/cn62001389.jpg",
+          "https://www.gap.com/webcontent/0062/000/954/cn62000954.jpg",
+          "https://www.gap.com/webcontent/0062/000/971/cn62000971.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Soft, mesh textured cotton polo sweater shirt. In a relaxed fit. Johnny collar. Short sleeves. Ribbed cuffs and hem. This product was made in a factory that invests in gender equity and women\u2019s empowerment through RISE. Learn more at\u00a0\\u003ca href=\\"
+  },
+  {
+    "id": "889774",
+    "name": "Classic Polo Sweater",
+    "department": "men",
+    "category": "sweaters",
+    "price": 59.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "New",
+    "reviewScore": 4.5,
+    "reviewCount": 46,
+    "colors": [
+      {
+        "ccId": "1191843002",
+        "name": "Brown",
+        "regularPrice": "59.95",
+        "effectivePrice": "59.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/763/527/cn63763527.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/763/597/cn63763597.jpg",
+          "https://www.gap.com/webcontent/0063/763/609/cn63763609.jpg",
+          "https://www.gap.com/webcontent/0063/763/616/cn63763616.jpg"
+        ]
+      },
+      {
+        "ccId": "1191843012",
+        "name": "Red",
+        "regularPrice": "59.95",
+        "effectivePrice": "59.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/759/276/cn63759276.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/759/516/cn63759516.jpg",
+          "https://www.gap.com/webcontent/0063/759/492/cn63759492.jpg",
+          "https://www.gap.com/webcontent/0063/759/505/cn63759505.jpg"
+        ]
+      },
+      {
+        "ccId": "889774042",
+        "name": "Gray",
+        "regularPrice": "59.95",
+        "effectivePrice": "59.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0061/792/132/cn61792132.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0061/792/253/cn61792253.jpg",
+          "https://www.gap.com/webcontent/0061/789/780/cn61789780.jpg",
+          "https://www.gap.com/webcontent/0061/789/790/cn61789790.jpg"
+        ]
+      },
+      {
+        "ccId": "889774062",
+        "name": "Black",
+        "regularPrice": "59.95",
+        "effectivePrice": "59.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0061/792/137/cn61792137.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0061/792/235/cn61792235.jpg",
+          "https://www.gap.com/webcontent/0061/789/776/cn61789776.jpg",
+          "https://www.gap.com/webcontent/0061/789/784/cn61789784.jpg"
+        ]
+      },
+      {
+        "ccId": "889774012",
+        "name": "Blue",
+        "regularPrice": "59.95",
+        "effectivePrice": "59.95",
+        "flag": "40% off at checkout",
+        "badge": "Selling fast",
+        "swatch": "https://www.gap.com/webcontent/0061/546/286/cn61546286.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0061/546/548/cn61546548.jpg",
+          "https://www.gap.com/webcontent/0061/546/263/cn61546263.jpg",
+          "https://www.gap.com/webcontent/0061/546/327/cn61546327.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Soft knit cotton polo sweater shirt. Spread collar with front button placket. Short sleeves. Ribbed cuffs and hem."
+  },
+  {
+    "id": "869799",
+    "name": "Herringbone Crochet Sweater Shirt",
+    "department": "men",
+    "category": "sweaters",
+    "price": 49.99,
+    "regularPrice": 59.95,
+    "promo": "40% off at checkout",
+    "badge": "",
+    "reviewScore": 4.6,
+    "reviewCount": 8,
+    "colors": [
+      {
+        "ccId": "869799032",
+        "name": "Gray",
+        "regularPrice": "59.95",
+        "effectivePrice": "49.99",
+        "flag": "Extra 40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/046/063/cn62046063.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/046/158/cn62046158.jpg",
+          "https://www.gap.com/webcontent/0062/046/165/cn62046165.jpg",
+          "https://www.gap.com/webcontent/0062/046/182/cn62046182.jpg"
+        ]
+      },
+      {
+        "ccId": "869799022",
+        "name": "Black",
+        "regularPrice": "59.95",
+        "effectivePrice": "49.99",
+        "flag": "Extra 40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/011/298/cn62011298.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/011/606/cn62011606.jpg",
+          "https://www.gap.com/webcontent/0062/011/508/cn62011508.jpg",
+          "https://www.gap.com/webcontent/0062/011/520/cn62011520.jpg"
+        ]
+      },
+      {
+        "ccId": "869799002",
+        "name": "Green",
+        "regularPrice": "59.95",
+        "effectivePrice": "49.99",
+        "flag": "Extra 40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0061/807/420/cn61807420.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0061/807/434/cn61807434.jpg",
+          "https://www.gap.com/webcontent/0061/808/396/cn61808396.jpg",
+          "https://www.gap.com/webcontent/0061/805/520/cn61805520.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Soft crochet knit cotton button sweater shirt. In an oversized fit. Spread collar, button front. Short sleeves. Herringbone pattern. Ribbed hem. This product was made in a factory that invests in gender equity and women\u2019s empowerment through RISE. Learn more at\u00a0\\u003ca href=\\"
+  },
+  {
+    "id": "869800",
+    "name": "Oversized Quarter-Zip Pocket Polo Sweater",
+    "department": "men",
+    "category": "sweaters",
+    "price": 74.97,
+    "regularPrice": 89.95,
+    "promo": "40% off at checkout",
+    "badge": "Lower Price",
+    "reviewScore": 4.5,
+    "reviewCount": 2,
+    "colors": [
+      {
+        "ccId": "869800002",
+        "name": "Black",
+        "regularPrice": "89.95",
+        "effectivePrice": "74.97",
+        "flag": "Final sale",
+        "badge": "Lower Price",
+        "swatch": "https://www.gap.com/webcontent/0061/816/338/cn61816338.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0061/816/368/cn61816368.jpg",
+          "https://www.gap.com/webcontent/0061/814/872/cn61814872.jpg",
+          "https://www.gap.com/webcontent/0061/815/220/cn61815220.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Soft sweater knit polo shirt in an oversized fit. Spread collar with quarter-zip closure. Short sleeves. Chest patch pocket. This product was made in a factory that invests in gender equity and women\u2019s empowerment through RISE. Learn more at\u00a0\\u003ca href=\\"
+  },
+  {
+    "id": "898564",
+    "name": "Linen-Blend Camp Polo Sweater Shirt",
+    "department": "men",
+    "category": "sweaters",
+    "price": 39.99,
+    "regularPrice": 79.95,
+    "promo": "40% off at checkout",
+    "badge": "Selling fast",
+    "reviewScore": 4.9,
+    "reviewCount": 7,
+    "colors": [
+      {
+        "ccId": "898564002",
+        "name": "Red",
+        "regularPrice": "79.95",
+        "effectivePrice": "39.99",
+        "flag": "Extra 40% off at checkout",
+        "badge": "Selling fast",
+        "swatch": "https://www.gap.com/webcontent/0062/216/690/cn62216690.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/216/810/cn62216810.jpg",
+          "https://www.gap.com/webcontent/0062/216/489/cn62216489.jpg",
+          "https://www.gap.com/webcontent/0062/216/507/cn62216507.jpg"
+        ]
+      },
+      {
+        "ccId": "898564012",
+        "name": "White",
+        "regularPrice": "79.95",
+        "effectivePrice": "64.99",
+        "flag": "Extra 40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/184/525/cn62184525.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/184/532/cn62184532.jpg",
+          "https://www.gap.com/webcontent/0062/186/857/cn62186857.jpg",
+          "https://www.gap.com/webcontent/0062/184/533/cn62184533.jpg"
+        ]
+      },
+      {
+        "ccId": "898564022",
+        "name": "Blue",
+        "regularPrice": "79.95",
+        "effectivePrice": "64.99",
+        "flag": "Extra 40% off at checkout",
+        "badge": "Selling fast",
+        "swatch": "https://www.gap.com/webcontent/0062/100/025/cn62100025.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/100/230/cn62100230.jpg",
+          "https://www.gap.com/webcontent/0062/099/944/cn62099944.jpg",
+          "https://www.gap.com/webcontent/0062/099/960/cn62099960.jpg"
+        ]
+      },
+      {
+        "ccId": "898564032",
+        "name": "Green",
+        "regularPrice": "79.95",
+        "effectivePrice": "24.97",
+        "flag": "Final sale",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/077/873/cn62077873.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/077/923/cn62077923.jpg",
+          "https://www.gap.com/webcontent/0062/077/503/cn62077503.jpg",
+          "https://www.gap.com/webcontent/0062/077/533/cn62077533.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Soft linen-blend polo shirt. Camp collar. Short sleeves. Made with 45% recycled polyester. Compared to virgin materials, using recycled materials helps reduce resource use and waste. This product was made in a factory that invests in gender equity and women\u2019s empowerment through RISE. Learn more at \\u003ca href=\\"
+  },
+  {
+    "id": "821279",
+    "name": "Adult Extra Heavyweight French Terry Hoodie",
+    "department": "men",
+    "category": "sweatshirts-and-sweatpants",
+    "price": 98.0,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "",
+    "reviewScore": 4.8,
+    "reviewCount": 53,
+    "colors": [
+      {
+        "ccId": "821279042",
+        "name": "Blue",
+        "regularPrice": "98.0",
+        "effectivePrice": "98.0",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0060/329/665/cn60329665.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0060/346/791/cn60346791.jpg",
+          "https://www.gap.com/webcontent/0060/346/827/cn60346827.jpg",
+          "https://www.gap.com/webcontent/0060/346/886/cn60346886.jpg"
+        ]
+      },
+      {
+        "ccId": "821279022",
+        "name": "Gray",
+        "regularPrice": "98.0",
+        "effectivePrice": "98.0",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0059/764/594/cn59764594.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0059/765/592/cn59765592.jpg",
+          "https://www.gap.com/webcontent/0059/738/470/cn59738470.jpg",
+          "https://www.gap.com/webcontent/0059/738/490/cn59738490.jpg"
+        ]
+      },
+      {
+        "ccId": "821279032",
+        "name": "Black",
+        "regularPrice": "98.0",
+        "effectivePrice": "98.0",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0060/285/032/cn60285032.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0060/285/332/cn60285332.jpg",
+          "https://www.gap.com/webcontent/0060/285/329/cn60285329.jpg",
+          "https://www.gap.com/webcontent/0060/285/347/cn60285347.jpg"
+        ]
+      },
+      {
+        "ccId": "1184629002",
+        "name": "Black",
+        "regularPrice": "128.0",
+        "effectivePrice": "128.0",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/788/322/cn63788322.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/788/792/cn63788792.jpg",
+          "https://www.gap.com/webcontent/0063/788/753/cn63788753.jpg",
+          "https://www.gap.com/webcontent/0063/788/771/cn63788771.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Soft, 650-gram heavyweight French Terry hoodie. In an oversized fit. Hooded neckline with drawcords. Long sleeves. Kanga pocket. Banded hem. Made with 18% recycled polyester. Compared to virgin materials, using recycled materials helps reduce resource use and waste. Explore our \\u003ca href=\\"
+  },
+  {
+    "id": "1179752",
+    "name": "Adult VintageSoft Reversible Oversized Logo Hoodie",
+    "department": "men",
+    "category": "sweatshirts-and-sweatpants",
+    "price": 128.0,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "",
+    "reviewScore": 0.0,
+    "reviewCount": 0,
+    "colors": [
+      {
+        "ccId": "1179752012",
+        "name": "Red",
+        "regularPrice": "128.0",
+        "effectivePrice": "128.0",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/763/142/cn63763142.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/763/181/cn63763181.jpg",
+          "https://www.gap.com/webcontent/0063/890/969/cn63890969.jpg",
+          "https://www.gap.com/webcontent/0063/763/242/cn63763242.jpg"
+        ]
+      },
+      {
+        "ccId": "1179752022",
+        "name": "Multi",
+        "regularPrice": "128.0",
+        "effectivePrice": "128.0",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/754/316/cn63754316.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/754/347/cn63754347.jpg",
+          "https://www.gap.com/webcontent/0063/754/341/cn63754341.jpg",
+          "https://www.gap.com/webcontent/0063/754/357/cn63754357.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Adult VintageSoft Reversible Oversized Logo Hoodie."
+  },
+  {
+    "id": "1189003",
+    "name": "Adult VintageSoft Bandana Oversized Logo Hoodie",
+    "department": "men",
+    "category": "sweatshirts-and-sweatpants",
+    "price": 128.0,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "",
+    "reviewScore": 0.0,
+    "reviewCount": 0,
+    "colors": [
+      {
+        "ccId": "1189003002",
+        "name": "Blue",
+        "regularPrice": "128.0",
+        "effectivePrice": "128.0",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/763/237/cn63763237.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/763/540/cn63763540.jpg",
+          "https://www.gap.com/webcontent/0063/763/538/cn63763538.jpg",
+          "https://www.gap.com/webcontent/0063/763/548/cn63763548.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Adult VintageSoft Bandana Oversized Logo Hoodie."
+  },
+  {
+    "id": "796255",
+    "name": "Adult Relaxed T-Shirt",
+    "department": "men",
+    "category": "t-shirts",
+    "price": 11.0,
+    "regularPrice": 29.95,
+    "promo": "40% off at checkout",
+    "badge": "",
+    "reviewScore": 4.6,
+    "reviewCount": 1243,
+    "colors": [
+      {
+        "ccId": "796255412",
+        "name": "Gray",
+        "regularPrice": "29.95",
+        "effectivePrice": "11.0",
+        "flag": "60% off: limited time",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/370/098/cn62370098.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/370/292/cn62370292.jpg",
+          "https://www.gap.com/webcontent/0062/369/932/cn62369932.jpg",
+          "https://www.gap.com/webcontent/0062/370/170/cn62370170.jpg"
+        ]
+      },
+      {
+        "ccId": "796255012",
+        "name": "Black",
+        "regularPrice": "29.95",
+        "effectivePrice": "11.0",
+        "flag": "60% off: limited time",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/541/641/cn62541641.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/541/652/cn62541652.jpg",
+          "https://www.gap.com/webcontent/0062/541/680/cn62541680.jpg",
+          "https://www.gap.com/webcontent/0062/541/674/cn62541674.jpg"
+        ]
+      },
+      {
+        "ccId": "796255082",
+        "name": "Blue",
+        "regularPrice": "29.95",
+        "effectivePrice": "11.0",
+        "flag": "60% off: limited time",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0061/838/215/cn61838215.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0061/838/382/cn61838382.jpg",
+          "https://www.gap.com/webcontent/0061/838/352/cn61838352.jpg",
+          "https://www.gap.com/webcontent/0055/627/847/cn55627847.jpg"
+        ]
+      },
+      {
+        "ccId": "796255112",
+        "name": "White",
+        "regularPrice": "29.95",
+        "effectivePrice": "11.0",
+        "flag": "60% off: limited time",
+        "badge": "Best seller",
+        "swatch": "https://www.gap.com/webcontent/0062/763/844/cn62763844.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/763/864/cn62763864.jpg",
+          "https://www.gap.com/webcontent/0062/763/881/cn62763881.jpg",
+          "https://www.gap.com/webcontent/0062/763/885/cn62763885.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Soft cotton T-shirt. Crewneck. Short sleeves. Explore our \\u003ca href=\\"
+  },
+  {
+    "id": "428038",
+    "name": "Organic Cotton T-Shirt",
+    "department": "men",
+    "category": "t-shirts",
+    "price": 34.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "",
+    "reviewScore": 4.7,
+    "reviewCount": 1013,
+    "colors": [
+      {
+        "ccId": "428038462",
+        "name": "Brown",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/429/664/cn63429664.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/431/150/cn63431150.jpg",
+          "https://www.gap.com/webcontent/0063/430/803/cn63430803.jpg",
+          "https://www.gap.com/webcontent/0063/430/793/cn63430793.jpg"
+        ]
+      },
+      {
+        "ccId": "428038472",
+        "name": "Brown",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/335/679/cn63335679.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/335/738/cn63335738.jpg",
+          "https://www.gap.com/webcontent/0063/335/734/cn63335734.jpg",
+          "https://www.gap.com/webcontent/0063/335/736/cn63335736.jpg"
+        ]
+      },
+      {
+        "ccId": "428038502",
+        "name": "Multi",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/282/067/cn63282067.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/282/751/cn63282751.jpg",
+          "https://www.gap.com/webcontent/0063/276/461/cn63276461.jpg",
+          "https://www.gap.com/webcontent/0063/276/459/cn63276459.jpg"
+        ]
+      },
+      {
+        "ccId": "428038512",
+        "name": "White",
+        "regularPrice": "39.95",
+        "effectivePrice": "39.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/282/079/cn63282079.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/282/661/cn63282661.jpg",
+          "https://www.gap.com/webcontent/0063/279/478/cn63279478.jpg",
+          "https://www.gap.com/webcontent/0063/279/495/cn63279495.jpg"
+        ]
+      },
+      {
+        "ccId": "428038482",
+        "name": "Green",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "Selling fast",
+        "swatch": "https://www.gap.com/webcontent/0063/182/871/cn63182871.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/183/592/cn63183592.jpg",
+          "https://www.gap.com/webcontent/0063/183/247/cn63183247.jpg",
+          "https://www.gap.com/webcontent/0063/183/252/cn63183252.jpg"
+        ]
+      },
+      {
+        "ccId": "428038452",
+        "name": "Blue",
+        "regularPrice": "34.95",
+        "effectivePrice": "34.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/994/959/cn62994959.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/995/231/cn62995231.jpg",
+          "https://www.gap.com/webcontent/0063/085/933/cn63085933.jpg",
+          "https://www.gap.com/webcontent/0062/994/913/cn62994913.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Soft cotton long sleeve t-shirt. Crewneck. Certain styles have allover prints. Made with 100% organically grown cotton, which is grown without the use of synthetic pesticides and fertilizers. Explore our \\u003ca href=\\"
+  },
+  {
+    "id": "735031",
+    "name": "Adult Heavyweight Relaxed T-Shirt",
+    "department": "men",
+    "category": "t-shirts",
+    "price": 44.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "",
+    "reviewScore": 4.7,
+    "reviewCount": 257,
+    "colors": [
+      {
+        "ccId": "735031412",
+        "name": "Multi",
+        "regularPrice": "44.95",
+        "effectivePrice": "44.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/559/909/cn63559909.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/561/138/cn63561138.jpg",
+          "https://www.gap.com/webcontent/0063/560/874/cn63560874.jpg",
+          "https://www.gap.com/webcontent/0063/560/932/cn63560932.jpg"
+        ]
+      },
+      {
+        "ccId": "735031422",
+        "name": "Brown",
+        "regularPrice": "44.95",
+        "effectivePrice": "44.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/501/677/cn63501677.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/501/869/cn63501869.jpg",
+          "https://www.gap.com/webcontent/0063/501/607/cn63501607.jpg",
+          "https://www.gap.com/webcontent/0063/501/616/cn63501616.jpg"
+        ]
+      },
+      {
+        "ccId": "735031372",
+        "name": "Multi",
+        "regularPrice": "44.95",
+        "effectivePrice": "44.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/896/217/cn62896217.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/897/066/cn62897066.jpg",
+          "https://www.gap.com/webcontent/0062/897/067/cn62897067.jpg",
+          "https://www.gap.com/webcontent/0062/895/962/cn62895962.jpg"
+        ]
+      },
+      {
+        "ccId": "735031382",
+        "name": "Green",
+        "regularPrice": "44.95",
+        "effectivePrice": "44.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/769/669/cn62769669.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/788/699/cn62788699.jpg",
+          "https://www.gap.com/webcontent/0062/769/692/cn62769692.jpg",
+          "https://www.gap.com/webcontent/0062/769/699/cn62769699.jpg"
+        ]
+      },
+      {
+        "ccId": "735031392",
+        "name": "Red",
+        "regularPrice": "44.95",
+        "effectivePrice": "44.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/819/213/cn62819213.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/820/732/cn62820732.jpg",
+          "https://www.gap.com/webcontent/0062/837/644/cn62837644.jpg",
+          "https://www.gap.com/webcontent/0062/820/418/cn62820418.jpg"
+        ]
+      },
+      {
+        "ccId": "735031332",
+        "name": "Brown",
+        "regularPrice": "39.95",
+        "effectivePrice": "29.99",
+        "flag": "Extra 40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/103/582/cn62103582.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/103/921/cn62103921.jpg",
+          "https://www.gap.com/webcontent/0062/103/877/cn62103877.jpg",
+          "https://www.gap.com/webcontent/0062/103/891/cn62103891.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Soft, heavyweight jersey cotton relaxed T-shirt. Crewneck. Short sleeves. Explore our \\u003ca href=\\"
+  },
+  {
+    "id": "1179939",
+    "name": "Adult Los Tacos No. 1 Relaxed Graphic T-Shirt",
+    "department": "men",
+    "category": "t-shirts",
+    "price": 54.0,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "",
+    "reviewScore": 0.0,
+    "reviewCount": 0,
+    "colors": [
+      {
+        "ccId": "1179939012",
+        "name": "Gray",
+        "regularPrice": "54.0",
+        "effectivePrice": "54.0",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/971/389/cn62971389.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/760/653/cn62760653.jpg",
+          "https://www.gap.com/webcontent/0062/971/850/cn62971850.jpg",
+          "https://www.gap.com/webcontent/0062/760/637/cn62760637.jpg"
+        ]
+      },
+      {
+        "ccId": "1179939022",
+        "name": "Black",
+        "regularPrice": "54.0",
+        "effectivePrice": "54.0",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/880/503/cn62880503.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/972/594/cn62972594.jpg",
+          "https://www.gap.com/webcontent/0062/972/580/cn62972580.jpg",
+          "https://www.gap.com/webcontent/0062/972/592/cn62972592.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Soft cotton jersey graphic T-shirt. In a relaxed fit. Crewneck. Short sleeves. Los Tacos No. 1 graphics at front and back. Certain styles have a chest patch pocket."
+  },
+  {
+    "id": "863808",
+    "name": "Mid Rise Relaxed Straight Jeans",
+    "department": "women",
+    "category": "jeans",
+    "price": 89.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "Best seller",
+    "reviewScore": 3.9,
+    "reviewCount": 118,
+    "colors": [
+      {
+        "ccId": "863808002",
+        "name": "Blue",
+        "regularPrice": "89.95",
+        "effectivePrice": "89.95",
+        "flag": "40% off at checkout",
+        "badge": "Best seller",
+        "swatch": "https://www.gap.com/webcontent/0061/410/775/cn61410775.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0061/527/363/cn61527363.jpg",
+          "https://www.gap.com/webcontent/0061/453/660/cn61453660.jpg",
+          "https://www.gap.com/webcontent/0061/453/682/cn61453682.jpg"
+        ]
+      },
+      {
+        "ccId": "863802002",
+        "name": "Blue",
+        "regularPrice": "89.95",
+        "effectivePrice": "89.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0061/405/937/cn61405937.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/909/829/cn62909829.jpg",
+          "https://www.gap.com/webcontent/0062/908/751/cn62908751.jpg",
+          "https://www.gap.com/webcontent/0062/908/753/cn62908753.jpg"
+        ]
+      },
+      {
+        "ccId": "863809002",
+        "name": "Blue",
+        "regularPrice": "89.95",
+        "effectivePrice": "35.0",
+        "flag": "60% off: limited time",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0061/418/106/cn61418106.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0061/418/600/cn61418600.jpg",
+          "https://www.gap.com/webcontent/0061/416/985/cn61416985.jpg",
+          "https://www.gap.com/webcontent/0061/417/037/cn61417037.jpg"
+        ]
+      },
+      {
+        "ccId": "883102002",
+        "name": "Blue",
+        "regularPrice": "89.95",
+        "effectivePrice": "49.97",
+        "flag": "Final sale",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0061/457/104/cn61457104.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0061/845/219/cn61845219.jpg",
+          "https://www.gap.com/webcontent/0061/845/233/cn61845233.jpg",
+          "https://www.gap.com/webcontent/0061/845/244/cn61845244.jpg"
+        ]
+      },
+      {
+        "ccId": "883104002",
+        "name": "Blue",
+        "regularPrice": "99.95",
+        "effectivePrice": "54.97",
+        "flag": "Final sale",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0061/418/656/cn61418656.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0061/519/282/cn61519282.jpg",
+          "https://www.gap.com/webcontent/0061/417/335/cn61417335.jpg",
+          "https://www.gap.com/webcontent/0061/417/363/cn61417363.jpg"
+        ]
+      },
+      {
+        "ccId": "863799002",
+        "name": "White",
+        "regularPrice": "89.95",
+        "effectivePrice": "74.99",
+        "flag": "Extra 40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0061/456/492/cn61456492.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0061/498/267/cn61498267.jpg",
+          "https://www.gap.com/webcontent/0061/453/673/cn61453673.jpg",
+          "https://www.gap.com/webcontent/0061/453/691/cn61453691.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Mid Rise Relaxed Straight Jeans."
+  },
+  {
+    "id": "823045",
+    "name": "Relaxed Straight Jeans",
+    "department": "women",
+    "category": "jeans",
+    "price": 79.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "",
+    "reviewScore": 4.3,
+    "reviewCount": 199,
+    "colors": [
+      {
+        "ccId": "899417002",
+        "name": "Beige",
+        "regularPrice": "79.95",
+        "effectivePrice": "79.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/380/845/cn62380845.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/524/284/cn62524284.jpg",
+          "https://www.gap.com/webcontent/0062/524/236/cn62524236.jpg",
+          "https://www.gap.com/webcontent/0062/524/240/cn62524240.jpg"
+        ]
+      },
+      {
+        "ccId": "889860002",
+        "name": "Blue",
+        "regularPrice": "79.95",
+        "effectivePrice": "79.95",
+        "flag": "40% off at checkout",
+        "badge": "Selling fast",
+        "swatch": "https://www.gap.com/webcontent/0061/602/498/cn61602498.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/017/681/cn62017681.jpg",
+          "https://www.gap.com/webcontent/0062/017/698/cn62017698.jpg",
+          "https://www.gap.com/webcontent/0062/036/368/cn62036368.jpg"
+        ]
+      },
+      {
+        "ccId": "889861002",
+        "name": "Blue",
+        "regularPrice": "79.95",
+        "effectivePrice": "79.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0061/546/324/cn61546324.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0061/696/735/cn61696735.jpg",
+          "https://www.gap.com/webcontent/0061/696/685/cn61696685.jpg",
+          "https://www.gap.com/webcontent/0061/696/684/cn61696684.jpg"
+        ]
+      },
+      {
+        "ccId": "889862002",
+        "name": "Black",
+        "regularPrice": "79.95",
+        "effectivePrice": "59.99",
+        "flag": "Extra 40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0061/457/237/cn61457237.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0061/457/466/cn61457466.jpg",
+          "https://www.gap.com/webcontent/0061/455/375/cn61455375.jpg",
+          "https://www.gap.com/webcontent/0061/455/443/cn61455443.jpg"
+        ]
+      },
+      {
+        "ccId": "796684002",
+        "name": "Black",
+        "regularPrice": "79.95",
+        "effectivePrice": "79.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0059/923/251/cn59923251.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/331/372/cn63331372.jpg",
+          "https://www.gap.com/webcontent/0063/331/334/cn63331334.jpg",
+          "https://www.gap.com/webcontent/0063/331/330/cn63331330.jpg"
+        ]
+      },
+      {
+        "ccId": "796680002",
+        "name": "Blue",
+        "regularPrice": "79.95",
+        "effectivePrice": "79.95",
+        "flag": "40% off at checkout",
+        "badge": "Best seller",
+        "swatch": "https://www.gap.com/webcontent/0059/734/758/cn59734758.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/341/615/cn63341615.jpg",
+          "https://www.gap.com/webcontent/0059/734/031/cn59734031.jpg",
+          "https://www.gap.com/webcontent/0059/734/055/cn59734055.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Relaxed Straight Jeans."
+  },
+  {
+    "id": "906998",
+    "name": "The Hailey Extra Baggy Jean",
+    "department": "women",
+    "category": "jeans",
+    "price": 89.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "",
+    "reviewScore": 4.1,
+    "reviewCount": 69,
+    "colors": [
+      {
+        "ccId": "906998012",
+        "name": "Blue",
+        "regularPrice": "89.95",
+        "effectivePrice": "89.95",
+        "flag": "Excluded from promotions",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/907/743/cn62907743.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/907/971/cn62907971.jpg",
+          "https://www.gap.com/webcontent/0062/907/960/cn62907960.jpg",
+          "https://www.gap.com/webcontent/0062/908/013/cn62908013.jpg"
+        ]
+      },
+      {
+        "ccId": "906998022",
+        "name": "Blue",
+        "regularPrice": "89.95",
+        "effectivePrice": "89.95",
+        "flag": "Excluded from promotions",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/907/745/cn62907745.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/907/968/cn62907968.jpg",
+          "https://www.gap.com/webcontent/0062/907/957/cn62907957.jpg",
+          "https://www.gap.com/webcontent/0062/907/995/cn62907995.jpg"
+        ]
+      },
+      {
+        "ccId": "906998032",
+        "name": "Blue",
+        "regularPrice": "89.95",
+        "effectivePrice": "89.95",
+        "flag": "Excluded from promotions",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0062/750/746/cn62750746.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0062/817/629/cn62817629.jpg",
+          "https://www.gap.com/webcontent/0062/817/583/cn62817583.jpg",
+          "https://www.gap.com/webcontent/0062/817/595/cn62817595.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "The Hailey Extra Baggy Jean."
+  },
+  {
+    "id": "1185362",
+    "name": "CashSoft Oversized Half-Zip Pullover Sweater",
+    "department": "women",
+    "category": "sweaters",
+    "price": 89.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "New",
+    "reviewScore": 0.0,
+    "reviewCount": 0,
+    "colors": [
+      {
+        "ccId": "912520042",
+        "name": "Green",
+        "regularPrice": "89.95",
+        "effectivePrice": "89.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/661/472/cn63661472.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/661/674/cn63661674.jpg",
+          "https://www.gap.com/webcontent/0063/661/458/cn63661458.jpg",
+          "https://www.gap.com/webcontent/0063/661/459/cn63661459.jpg"
+        ]
+      },
+      {
+        "ccId": "912520072",
+        "name": "Red",
+        "regularPrice": "89.95",
+        "effectivePrice": "89.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/651/115/cn63651115.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/651/464/cn63651464.jpg",
+          "https://www.gap.com/webcontent/0063/651/457/cn63651457.jpg",
+          "https://www.gap.com/webcontent/0063/651/462/cn63651462.jpg"
+        ]
+      },
+      {
+        "ccId": "912520032",
+        "name": "Brown",
+        "regularPrice": "89.95",
+        "effectivePrice": "89.95",
+        "flag": "40% off at checkout",
+        "badge": "Matching set",
+        "swatch": "https://www.gap.com/webcontent/0063/499/225/cn63499225.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/499/314/cn63499314.jpg",
+          "https://www.gap.com/webcontent/0063/498/437/cn63498437.jpg",
+          "https://www.gap.com/webcontent/0063/498/472/cn63498472.jpg"
+        ]
+      },
+      {
+        "ccId": "912520062",
+        "name": "Black",
+        "regularPrice": "89.95",
+        "effectivePrice": "89.95",
+        "flag": "40% off at checkout",
+        "badge": "Matching set",
+        "swatch": "https://www.gap.com/webcontent/0063/499/226/cn63499226.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/499/301/cn63499301.jpg",
+          "https://www.gap.com/webcontent/0063/498/434/cn63498434.jpg",
+          "https://www.gap.com/webcontent/0063/498/471/cn63498471.jpg"
+        ]
+      },
+      {
+        "ccId": "912520022",
+        "name": "Brown",
+        "regularPrice": "89.95",
+        "effectivePrice": "89.95",
+        "flag": "40% off at checkout",
+        "badge": "Matching set",
+        "swatch": "https://www.gap.com/webcontent/0063/489/685/cn63489685.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/489/828/cn63489828.jpg",
+          "https://www.gap.com/webcontent/0063/489/814/cn63489814.jpg",
+          "https://www.gap.com/webcontent/0063/489/824/cn63489824.jpg"
+        ]
+      },
+      {
+        "ccId": "912520012",
+        "name": "Gray",
+        "regularPrice": "89.95",
+        "effectivePrice": "89.95",
+        "flag": "40% off at checkout",
+        "badge": "Matching set",
+        "swatch": "https://www.gap.com/webcontent/0063/345/810/cn63345810.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/360/489/cn63360489.jpg",
+          "https://www.gap.com/webcontent/0063/360/490/cn63360490.jpg",
+          "https://www.gap.com/webcontent/0063/360/497/cn63360497.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Supersoft knit cotton-blend pullover sweater. In an oversized fit. Mockneck with half-zip closure. Long sleeves with drop shoulders. Ribbed hem."
+  },
+  {
+    "id": "820732",
+    "name": "100% Cotton Oversized Sweater",
+    "department": "women",
+    "category": "sweaters",
+    "price": 79.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "New",
+    "reviewScore": 4.6,
+    "reviewCount": 451,
+    "colors": [
+      {
+        "ccId": "820732332",
+        "name": "Blue",
+        "regularPrice": "79.95",
+        "effectivePrice": "79.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/832/683/cn63832683.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/833/084/cn63833084.jpg",
+          "https://www.gap.com/webcontent/0063/833/069/cn63833069.jpg",
+          "https://www.gap.com/webcontent/0063/833/081/cn63833081.jpg"
+        ]
+      },
+      {
+        "ccId": "820732242",
+        "name": "Yellow",
+        "regularPrice": "79.95",
+        "effectivePrice": "79.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/422/692/cn63422692.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/422/769/cn63422769.jpg",
+          "https://www.gap.com/webcontent/0063/422/249/cn63422249.jpg",
+          "https://www.gap.com/webcontent/0063/422/252/cn63422252.jpg"
+        ]
+      },
+      {
+        "ccId": "820732302",
+        "name": "Red",
+        "regularPrice": "79.95",
+        "effectivePrice": "79.95",
+        "flag": "40% off at checkout",
+        "badge": "Best seller",
+        "swatch": "https://www.gap.com/webcontent/0063/345/456/cn63345456.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/345/763/cn63345763.jpg",
+          "https://www.gap.com/webcontent/0063/343/786/cn63343786.jpg",
+          "https://www.gap.com/webcontent/0063/345/128/cn63345128.jpg"
+        ]
+      },
+      {
+        "ccId": "820732282",
+        "name": "Brown",
+        "regularPrice": "89.95",
+        "effectivePrice": "89.95",
+        "flag": "40% off at checkout",
+        "badge": "",
+        "swatch": "https://www.gap.com/webcontent/0063/117/172/cn63117172.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/124/194/cn63124194.jpg",
+          "https://www.gap.com/webcontent/0063/124/145/cn63124145.jpg",
+          "https://www.gap.com/webcontent/0063/124/204/cn63124204.jpg"
+        ]
+      },
+      {
+        "ccId": "820732222",
+        "name": "Blue",
+        "regularPrice": "79.95",
+        "effectivePrice": "79.95",
+        "flag": "40% off at checkout",
+        "badge": "Best seller",
+        "swatch": "https://www.gap.com/webcontent/0063/178/109/cn63178109.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/178/801/cn63178801.jpg",
+          "https://www.gap.com/webcontent/0063/178/387/cn63178387.jpg",
+          "https://www.gap.com/webcontent/0063/178/413/cn63178413.jpg"
+        ]
+      },
+      {
+        "ccId": "820732212",
+        "name": "Brown",
+        "regularPrice": "79.95",
+        "effectivePrice": "79.95",
+        "flag": "40% off at checkout",
+        "badge": "Best seller",
+        "swatch": "https://www.gap.com/webcontent/0063/129/714/cn63129714.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/132/205/cn63132205.jpg",
+          "https://www.gap.com/webcontent/0063/130/902/cn63130902.jpg",
+          "https://www.gap.com/webcontent/0063/132/204/cn63132204.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Soft 100% cotton knit oversized sweater. Double-layer crewneck. Long sleeves with drop shoulders and banded cuffs. Certain styles have allover stripes. Ribbed hem. This product was made in a factory that invests in gender equity and women\u2019s empowerment through RISE. Learn more at \\u003ca href=\\"
+  },
+  {
+    "id": "908887",
+    "name": "CashSoft Crew Sweater",
+    "department": "women",
+    "category": "sweaters",
+    "price": 69.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "New",
+    "reviewScore": 4.3,
+    "reviewCount": 12,
+    "colors": [
+      {
+        "ccId": "908887102",
+        "name": "Yellow",
+        "regularPrice": "69.95",
+        "effectivePrice": "69.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/760/625/cn63760625.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/760/718/cn63760718.jpg",
+          "https://www.gap.com/webcontent/0063/760/728/cn63760728.jpg",
+          "https://www.gap.com/webcontent/0063/760/753/cn63760753.jpg"
+        ]
+      },
+      {
+        "ccId": "908887112",
+        "name": "Pink",
+        "regularPrice": "79.95",
+        "effectivePrice": "79.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/604/141/cn63604141.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/604/502/cn63604502.jpg",
+          "https://www.gap.com/webcontent/0063/603/415/cn63603415.jpg",
+          "https://www.gap.com/webcontent/0063/603/425/cn63603425.jpg"
+        ]
+      },
+      {
+        "ccId": "908887132",
+        "name": "Green",
+        "regularPrice": "79.95",
+        "effectivePrice": "79.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/646/060/cn63646060.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/646/246/cn63646246.jpg",
+          "https://www.gap.com/webcontent/0063/646/225/cn63646225.jpg",
+          "https://www.gap.com/webcontent/0063/646/227/cn63646227.jpg"
+        ]
+      },
+      {
+        "ccId": "908887142",
+        "name": "Pink",
+        "regularPrice": "69.95",
+        "effectivePrice": "69.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/760/704/cn63760704.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/760/717/cn63760717.jpg",
+          "https://www.gap.com/webcontent/0063/761/259/cn63761259.jpg",
+          "https://www.gap.com/webcontent/0063/761/262/cn63761262.jpg"
+        ]
+      },
+      {
+        "ccId": "908887152",
+        "name": "Pink",
+        "regularPrice": "79.95",
+        "effectivePrice": "79.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/712/575/cn63712575.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/713/058/cn63713058.jpg",
+          "https://www.gap.com/webcontent/0063/713/046/cn63713046.jpg",
+          "https://www.gap.com/webcontent/0063/713/049/cn63713049.jpg"
+        ]
+      },
+      {
+        "ccId": "908887162",
+        "name": "Blue",
+        "regularPrice": "69.95",
+        "effectivePrice": "69.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/661/231/cn63661231.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/661/700/cn63661700.jpg",
+          "https://www.gap.com/webcontent/0063/660/908/cn63660908.jpg",
+          "https://www.gap.com/webcontent/0063/660/959/cn63660959.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Supersoft knit cotton-blend sweater. In a slightly cropped length. Crewneck. Long sleeves. Ribbed hem."
+  },
+  {
+    "id": "1186084",
+    "name": "100% Cotton Oversized Mockneck Sweater",
+    "department": "women",
+    "category": "sweaters",
+    "price": 89.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "New",
+    "reviewScore": 5.0,
+    "reviewCount": 1,
+    "colors": [
+      {
+        "ccId": "1186084022",
+        "name": "Green",
+        "regularPrice": "89.95",
+        "effectivePrice": "89.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/711/355/cn63711355.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/711/747/cn63711747.jpg",
+          "https://www.gap.com/webcontent/0063/711/762/cn63711762.jpg",
+          "https://www.gap.com/webcontent/0063/711/780/cn63711780.jpg"
+        ]
+      },
+      {
+        "ccId": "1186084032",
+        "name": "Beige",
+        "regularPrice": "99.95",
+        "effectivePrice": "99.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/756/464/cn63756464.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/756/689/cn63756689.jpg",
+          "https://www.gap.com/webcontent/0063/730/359/cn63730359.jpg",
+          "https://www.gap.com/webcontent/0063/730/361/cn63730361.jpg"
+        ]
+      },
+      {
+        "ccId": "1186084112",
+        "name": "Brown",
+        "regularPrice": "99.95",
+        "effectivePrice": "99.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/831/626/cn63831626.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/832/038/cn63832038.jpg",
+          "https://www.gap.com/webcontent/0063/832/023/cn63832023.jpg",
+          "https://www.gap.com/webcontent/0063/832/024/cn63832024.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Soft knit cotton sweater. In an oversized fit and slightly cropped length. Mockneck. Long sleeves with drop shoulders. Ribbed cuffs and hem. This product was made in a factory that invests in gender equity and women\u2019s empowerment through RISE. Learn more at\u00a0\\u003ca href=\\"
+  },
+  {
+    "id": "801470",
+    "name": "Modern Crewneck T-Shirt",
+    "department": "women",
+    "category": "t-shirts-and-tanks",
+    "price": 44.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "New",
+    "reviewScore": 4.5,
+    "reviewCount": 592,
+    "colors": [
+      {
+        "ccId": "801470252",
+        "name": "Pink",
+        "regularPrice": "44.95",
+        "effectivePrice": "44.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/669/307/cn63669307.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/669/758/cn63669758.jpg",
+          "https://www.gap.com/webcontent/0063/669/210/cn63669210.jpg",
+          "https://www.gap.com/webcontent/0063/669/240/cn63669240.jpg"
+        ]
+      },
+      {
+        "ccId": "801470272",
+        "name": "Brown",
+        "regularPrice": "39.95",
+        "effectivePrice": "39.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/669/308/cn63669308.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/669/759/cn63669759.jpg",
+          "https://www.gap.com/webcontent/0063/669/209/cn63669209.jpg",
+          "https://www.gap.com/webcontent/0063/669/223/cn63669223.jpg"
+        ]
+      },
+      {
+        "ccId": "801470262",
+        "name": "Yellow",
+        "regularPrice": "44.95",
+        "effectivePrice": "44.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/613/855/cn63613855.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/614/176/cn63614176.jpg",
+          "https://www.gap.com/webcontent/0063/613/603/cn63613603.jpg",
+          "https://www.gap.com/webcontent/0063/613/632/cn63613632.jpg"
+        ]
+      },
+      {
+        "ccId": "801470282",
+        "name": "Red",
+        "regularPrice": "39.95",
+        "effectivePrice": "39.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/615/385/cn63615385.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/615/986/cn63615986.jpg",
+          "https://www.gap.com/webcontent/0063/615/947/cn63615947.jpg",
+          "https://www.gap.com/webcontent/0063/615/948/cn63615948.jpg"
+        ]
+      },
+      {
+        "ccId": "801470292",
+        "name": "Blue",
+        "regularPrice": "44.95",
+        "effectivePrice": "44.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/669/309/cn63669309.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/682/310/cn63682310.jpg",
+          "https://www.gap.com/webcontent/0063/669/208/cn63669208.jpg",
+          "https://www.gap.com/webcontent/0063/669/219/cn63669219.jpg"
+        ]
+      },
+      {
+        "ccId": "801470242",
+        "name": "Red",
+        "regularPrice": "39.95",
+        "effectivePrice": "39.95",
+        "flag": "40% off at checkout",
+        "badge": "Best seller",
+        "swatch": "https://www.gap.com/webcontent/0063/477/301/cn63477301.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/477/343/cn63477343.jpg",
+          "https://www.gap.com/webcontent/0063/477/342/cn63477342.jpg",
+          "https://www.gap.com/webcontent/0063/477/352/cn63477352.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Soft, stretch cotton-modal blend T-Shirt in a slightly cropped length. Crewneck. Long sleeves. This product was made in a factory that invests in gender equity and women\u2019s empowerment through RISE. Learn more at \\u003ca href=\\"
+  },
+  {
+    "id": "1189486",
+    "name": "Modern High V-Neck T-Shirt",
+    "department": "women",
+    "category": "t-shirts-and-tanks",
+    "price": 39.95,
+    "regularPrice": null,
+    "promo": "40% off at checkout",
+    "badge": "New",
+    "reviewScore": 4.3,
+    "reviewCount": 4,
+    "colors": [
+      {
+        "ccId": "1189486032",
+        "name": "Red",
+        "regularPrice": "39.95",
+        "effectivePrice": "39.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0064/062/468/cn64062468.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0064/062/641/cn64062641.jpg",
+          "https://www.gap.com/webcontent/0064/060/126/cn64060126.jpg",
+          "https://www.gap.com/webcontent/0064/062/636/cn64062636.jpg"
+        ]
+      },
+      {
+        "ccId": "1189486022",
+        "name": "Gray",
+        "regularPrice": "39.95",
+        "effectivePrice": "39.95",
+        "flag": "40% off at checkout",
+        "badge": "New",
+        "swatch": "https://www.gap.com/webcontent/0063/844/546/cn63844546.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/844/762/cn63844762.jpg",
+          "https://www.gap.com/webcontent/0063/844/747/cn63844747.jpg",
+          "https://www.gap.com/webcontent/0063/844/754/cn63844754.jpg"
+        ]
+      },
+      {
+        "ccId": "1189486002",
+        "name": "White",
+        "regularPrice": "39.95",
+        "effectivePrice": "39.95",
+        "flag": "40% off at checkout",
+        "badge": "Best seller",
+        "swatch": "https://www.gap.com/webcontent/0063/210/189/cn63210189.jpg",
+        "images": [
+          "https://www.gap.com/webcontent/0063/210/698/cn63210698.jpg",
+          "https://www.gap.com/webcontent/0063/210/046/cn63210046.jpg",
+          "https://www.gap.com/webcontent/0063/210/055/cn63210055.jpg"
+        ]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+    "fits": ["Regular", "Tall"],
+    "description": "Soft stretch cotton-modal blend T-shirt. High v-neck. 3/4 sleeves."
+  }
+]

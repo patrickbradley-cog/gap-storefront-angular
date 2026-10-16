@@ -1,0 +1,81 @@
+@use 'tokens' as t;
+
+.scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 100;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(420px, calc(100vw - 32px));
+  background: t.$white;
+  padding: 32px 28px;
+  z-index: 110;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+
+  h2 {
+    font-size: t.$fs-24;
+    margin-bottom: 8px;
+  }
+
+  &__sub {
+    font-size: t.$fs-14;
+    color: t.$gray-600;
+    margin-bottom: 20px;
+  }
+
+  &__fine {
+    margin-top: 16px;
+    font-size: t.$fs-12;
+    color: t.$gray-500;
+  }
+
+  &__close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border: 0;
+    background: none;
+    font-size: 28px;
+    width: t.$tap-target;
+    height: t.$tap-target;
+  }
+}
+
+.field {
+  display: block;
+  margin-bottom: 16px;
+
+  span {
+    display: block;
+    font-size: t.$fs-14;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  input {
+    width: 100%;
+    height: t.$tap-target;
+    border: 1px solid t.$gray-300;
+    padding: 0 12px;
+    font-size: t.$fs-14;
+    font-family: inherit;
+
+    &:focus {
+      outline: t.$focus-ring;
+      outline-offset: 1px;
+    }
+  }
+
+  &__error {
+    color: t.$red-sale;
+    font-size: t.$fs-12;
+    display: block;
+    margin-top: 4px;
+  }
+}

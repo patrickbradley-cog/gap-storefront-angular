@@ -1,0 +1,53 @@
+// Design tokens — values measured from gap.com (Oct 2026) with getComputedStyle.
+
+// Colors
+$gap-blue: #031ba1; // promo banner background (spec)
+$gap-accent-blue: #0714f2; // promo headline accent on real site
+$gap-navy: #001e96; // classic gap brand blue
+$black: #000000;
+$white: #ffffff;
+$ink: #000000;
+$gray-999: #999999; // inactive brand-bar links
+$gray-600: #5f5f5f;
+$gray-500: #767676;
+$gray-300: #cecece;
+$gray-200: #e5e7eb; // hairline borders
+$gray-100: #f5f5f5; // image tile background
+$red-sale: #e51937; // sale / markdown red
+$green-stock: #008000;
+
+// Type
+$font-sans: 'Gap Sans', 'Helvetica Neue', Helvetica, Arial, Roboto, sans-serif;
+$font-serif: 'Didot', 'Bodoni MT', 'Playfair Display', Georgia, 'Times New Roman', serif;
+
+$fs-10: 0.625rem; // 10px
+$fs-11: 0.6875rem; // 11px
+$fs-12: 0.75rem; // 12px — brand bar links
+$fs-14: 0.875rem; // 14px — search input, body small
+$fs-16: 1rem; // 16px — nav links, body
+$fs-18: 1.125rem;
+$fs-20: 1.25rem;
+$fs-24: 1.5rem;
+$fs-28: 1.75rem; // promo headline on gap.com
+$fs-32: 2rem;
+
+$lh-tight: 1.15;
+$lh-body: 1.5;
+
+$ls-nav: 0.32px;
+$ls-brand: 0.2px;
+
+// Layout
+$header-h: 46px; // measured brand-bar height
+$page-max: 1440px;
+$gutter: 24px;
+$tap-target: 44px;
+
+// Breakpoints
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+
+// Misc
+$radius: 4px;
+$focus-ring: 2px solid $gap-accent-blue;
