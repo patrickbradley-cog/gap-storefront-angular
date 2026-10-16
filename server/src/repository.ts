@@ -258,7 +258,7 @@ export function postgresConfig(): pg.PoolConfig {
 // pg returns NUMERIC as strings to avoid precision loss; the catalog's
 // NUMERIC(10,2)/(3,2) columns fit in a double, and the API must emit numbers
 // exactly like the Oracle driver does.
-const pgTypes = {
+export const pgTypes = {
   getTypeParser(oid: number, format: 'text' | 'binary' = 'text') {
     if (format === 'binary') return pg.types.getTypeParser(oid, 'binary');
     return oid === pg.types.builtins.NUMERIC ? parseFloat : pg.types.getTypeParser(oid, 'text');
@@ -280,21 +280,29 @@ export class PostgresCatalogRepository implements CatalogRepository {
   }
 
   async listProducts(): Promise<Product[]> {
-    const db = this.db();
-    const [products, colors, images, sizes, fits] = await Promise.all([
-      db.query<ProductRow>(CATALOG_SQL.products),
-      db.query<ColorRow>(CATALOG_SQL.colors),
-      db.query<CatalogRows['images'][number]>(CATALOG_SQL.images),
-      db.query<CatalogRows['sizes'][number]>(CATALOG_SQL.sizes),
-      db.query<CatalogRows['fits'][number]>(CATALOG_SQL.fits),
-    ]);
-    return assembleProducts({
-      products: products.rows,
-      colors: colors.rows,
-      images: images.rows,
-      sizes: sizes.rows,
-      fits: fits.rows,
-    });
+    // One client + one snapshot, so all five tables come from the same commit.
+    const client = await this.db().connect();
+    try {
+      await client.query('BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY');
+      const products = await client.query<ProductRow>(CATALOG_SQL.products);
+      const colors = await client.query<ColorRow>(CATALOG_SQL.colors);
+      const images = await client.query<CatalogRows['images'][number]>(CATALOG_SQL.images);
+      const sizes = await client.query<CatalogRows['sizes'][number]>(CATALOG_SQL.sizes);
+      const fits = await client.query<CatalogRows['fits'][number]>(CATALOG_SQL.fits);
+      await client.query('COMMIT');
+      return assembleProducts({
+        products: products.rows,
+        colors: colors.rows,
+        images: images.rows,
+        sizes: sizes.rows,
+        fits: fits.rows,
+      });
+    } catch (e) {
+      await client.query('ROLLBACK').catch(() => undefined);
+      throw e;
+    } finally {
+      client.release();
+    }
   }
 
   async getProduct(id: string): Promise<Product | undefined> {

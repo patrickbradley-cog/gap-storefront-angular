@@ -2,9 +2,10 @@
 import fs from 'fs';
 import path from 'path';
 import { Client, ClientConfig } from 'pg';
-import { postgresConfig } from '../src/repository';
+import { pgTypes, postgresConfig } from '../src/repository';
 
-export const PG_CONFIG: ClientConfig = postgresConfig();
+// NUMERIC -> number, matching the Oracle driver (used by row-level verification).
+export const PG_CONFIG: ClientConfig = { ...postgresConfig(), types: pgTypes };
 
 const SCHEMA_PATH = [
   path.resolve(process.cwd(), 'postgres/schema.sql'),

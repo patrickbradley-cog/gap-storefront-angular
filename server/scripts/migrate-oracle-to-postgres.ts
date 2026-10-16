@@ -4,7 +4,8 @@
  * 1. Copies every row of the five GAPCAT tables from Oracle XE (still the live
  *    source) into Postgres 16, preserving ids, ORD ordering and LOADED_AT.
  *    The Postgres tables are dropped and recreated, so re-running is safe.
- * 2. Verifies the copy: per-table row counts, then the API payload
+ * 2. Verifies the copy: per-table row counts and row-by-row values (every
+ *    copied column, incl. ids and LOADED_AT), then the API payload
  *    (OracleCatalogRepository.catalogMap() vs PostgresCatalogRepository).
  *    Exits non-zero on any mismatch — do not flip CATALOG_SOURCE until it passes.
  *
@@ -123,16 +124,45 @@ async function copyTables(ora: oracledb.Connection, pg: Client): Promise<void> {
   }
 }
 
-async function compareCounts(ora: oracledb.Connection, pg: Client): Promise<string[]> {
+const normalize = (row: Row) =>
+  JSON.stringify(row.map((v) => (v instanceof Date ? v.toISOString() : v)));
+
+/** Row counts plus a column-by-column compare of every copied row (incl. ids, ORD, LOADED_AT). */
+async function compareTables(ora: oracledb.Connection, pg: Client): Promise<string[]> {
   const problems: string[] = [];
-  for (const { table } of COPY_PLAN) {
-    const o = await ora.execute<[number]>(`SELECT COUNT(*) FROM ${table}`);
-    const p = await pg.query<{ n: string }>(`SELECT COUNT(*) AS n FROM ${table}`);
-    const oracleRows = Number(o.rows?.[0]?.[0]);
-    const pgRows = Number(p.rows[0].n);
-    const ok = oracleRows === pgRows;
-    log(`  ${ok ? 'OK  ' : 'FAIL'} ${table.padEnd(15)} oracle=${oracleRows} postgres=${pgRows}`);
-    if (!ok) problems.push(`${table}: oracle has ${oracleRows} rows, postgres has ${pgRows}`);
+  for (const { table, columns, orderBy } of COPY_PLAN) {
+    const o = await ora.execute<Row>(
+      `SELECT ${columns.map(oracleCol).join(', ')} FROM ${table} ORDER BY ${orderBy}`,
+      [],
+      {
+        outFormat: oracledb.OUT_FORMAT_ARRAY,
+        fetchInfo: table === 'PRODUCTS' ? { DESCRIPTION: { type: oracledb.STRING } } : {},
+      },
+    );
+    const p = await pg.query<Row>({
+      text: `SELECT ${columns.join(', ')} FROM ${table} ORDER BY ${orderBy}`,
+      rowMode: 'array',
+    });
+    const oracleRows = (o.rows || []).map(normalize);
+    const pgRows = p.rows.map(normalize);
+    const tableProblems: string[] = [];
+    if (oracleRows.length !== pgRows.length) {
+      tableProblems.push(
+        `${table}: oracle has ${oracleRows.length} rows, postgres has ${pgRows.length}`,
+      );
+    }
+    const pgSet = new Set(pgRows);
+    const oraSet = new Set(oracleRows);
+    for (const r of oracleRows)
+      if (!pgSet.has(r)) tableProblems.push(`${table}: oracle row ${r} not in postgres`);
+    for (const r of pgRows)
+      if (!oraSet.has(r)) tableProblems.push(`${table}: postgres row ${r} not in oracle`);
+    log(
+      `  ${tableProblems.length ? 'FAIL' : 'OK  '} ${table.padEnd(15)} oracle=${
+        oracleRows.length
+      } postgres=${pgRows.length}`,
+    );
+    problems.push(...tableProblems);
   }
   return problems;
 }
@@ -165,8 +195,8 @@ async function main(): Promise<void> {
     if (verifyOnly) log('--verify-only: skipping copy');
     else await copyTables(ora, pg);
 
-    log('verify 1/2: row counts');
-    problems = await compareCounts(ora, pg);
+    log('verify 1/2: row counts + row-by-row values');
+    problems = await compareTables(ora, pg);
   } finally {
     await pg.end();
     await ora.close();
