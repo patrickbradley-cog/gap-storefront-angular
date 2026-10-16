@@ -2,8 +2,14 @@
 #
 #   oracle   — the "legacy" catalog store (Oracle XE 21c, GAPCAT schema).
 #              Seed it with: npm --prefix server run seed:oracle
-#   postgres — the migration target. Intentionally empty; nothing writes to it
-#              until the Oracle -> Postgres migration is done.
+#   postgres — the migration target (Postgres 16, gapcat db/user). Same tables
+#              as Oracle, DDL in server/postgres/schema.sql.
+#              Fill it from Oracle + verify: npm --prefix server run migrate:db
+#              (or load it straight from catalog.json: seed:postgres)
+#
+# Parallel run: keep oracle up (read-only) while CATALOG_SOURCE=oracle serves
+# traffic; once migrate:db passes, flip CATALOG_SOURCE=postgres. Flip back to
+# roll back. Remove the oracle service only after the soak period.
 #
 # Postgres 16 here stands in for GCP Cloud SQL for PostgreSQL / AlloyDB —
 # same engine, same DDL.
