@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import oracledb from 'oracledb';
+import pg from 'pg';
 import { CatalogProduct } from './pricing';
 
 export interface Product extends CatalogProduct {
@@ -17,6 +18,8 @@ export interface CatalogRepository {
   getProduct(id: string): Promise<Product | undefined>;
   /** Products keyed by id — what the pricing engine consumes. */
   catalogMap(): Promise<Map<string, CatalogProduct>>;
+  /** Release pooled connections (scripts/tests; the API never calls it). */
+  close(): Promise<void>;
 }
 
 // Resolve the shared catalog file whether running via tsx (server/src),
@@ -49,18 +52,136 @@ export class JsonCatalogRepository implements CatalogRepository {
   catalogMap(): Promise<Map<string, CatalogProduct>> {
     return Promise.resolve(this.byId as Map<string, CatalogProduct>);
   }
+
+  close(): Promise<void> {
+    return Promise.resolve();
+  }
+}
+
+interface ProductRow {
+  product_id: string;
+  name: string;
+  department: string;
+  category: string;
+  price: number;
+  regular_price: number | null;
+  promo: string | null;
+  badge: string | null;
+  review_score: number | null;
+  review_count: number | null;
+  description: string | null;
 }
 
 interface ColorRow {
-  COLOR_ID: number;
-  PRODUCT_ID: string;
-  CC_ID: string;
-  NAME: string;
-  REGULAR_PRICE: string | null;
-  EFFECTIVE_PRICE: string | null;
-  FLAG: string | null;
-  BADGE: string | null;
-  SWATCH: string | null;
+  color_id: number;
+  product_id: string;
+  cc_id: string;
+  name: string;
+  regular_price: string | null;
+  effective_price: string | null;
+  flag: string | null;
+  badge: string | null;
+  swatch: string | null;
+}
+
+/** Rows from the five GAPCAT tables, keyed by lowercase column name. */
+interface CatalogRows {
+  products: ProductRow[];
+  colors: ColorRow[];
+  images: Array<{ color_id: number; url: string }>;
+  sizes: Array<{ product_id: string; size: string }>;
+  fits: Array<{ product_id: string; fit: string }>;
+}
+
+const CATALOG_SQL = {
+  products: `SELECT PRODUCT_ID, NAME, DEPARTMENT, CATEGORY, PRICE, REGULAR_PRICE,
+                    PROMO, BADGE, REVIEW_SCORE, REVIEW_COUNT, DESCRIPTION
+               FROM PRODUCTS ORDER BY PRODUCT_ID`,
+  colors: `SELECT COLOR_ID, PRODUCT_ID, CC_ID, NAME, REGULAR_PRICE, EFFECTIVE_PRICE,
+                  FLAG, BADGE, SWATCH
+             FROM PRODUCT_COLORS ORDER BY PRODUCT_ID, ORD`,
+  images: 'SELECT COLOR_ID, URL FROM PRODUCT_IMAGES ORDER BY COLOR_ID, ORD',
+  sizes: 'SELECT PRODUCT_ID, SIZE FROM PRODUCT_SIZES ORDER BY PRODUCT_ID, ORD',
+  fits: 'SELECT PRODUCT_ID, FIT FROM PRODUCT_FITS ORDER BY PRODUCT_ID, ORD',
+};
+
+function lowerKeys<T>(rows: Array<Record<string, unknown>> | undefined): T[] {
+  return (rows || []).map(
+    (r) => Object.fromEntries(Object.entries(r).map(([k, v]) => [k.toLowerCase(), v])) as T,
+  );
+}
+
+function groupBy<T, K, V>(rows: T[], key: (r: T) => K, value: (r: T) => V): Map<K, V[]> {
+  const out = new Map<K, V[]>();
+  for (const r of rows) {
+    const k = key(r);
+    const list = out.get(k) || [];
+    list.push(value(r));
+    out.set(k, list);
+  }
+  return out;
+}
+
+/** Reassembles relational rows into the nested product shape of catalog.json. */
+function assembleProducts(rows: CatalogRows): Product[] {
+  const imagesByColor = groupBy(
+    rows.images,
+    (i) => i.color_id,
+    (i) => i.url,
+  );
+  const colorsByProduct = groupBy(
+    rows.colors,
+    (c) => c.product_id,
+    (c) => ({
+      ccId: c.cc_id,
+      name: c.name,
+      regularPrice: c.regular_price,
+      effectivePrice: c.effective_price,
+      flag: c.flag,
+      badge: c.badge,
+      swatch: c.swatch,
+      images: imagesByColor.get(c.color_id) || [],
+    }),
+  );
+  const sizesByProduct = groupBy(
+    rows.sizes,
+    (s) => s.product_id,
+    (s) => s.size,
+  );
+  const fitsByProduct = groupBy(
+    rows.fits,
+    (f) => f.product_id,
+    (f) => f.fit,
+  );
+
+  return rows.products.map((r) => {
+    const id = String(r.product_id);
+    return {
+      id,
+      name: r.name,
+      department: r.department,
+      category: r.category,
+      price: r.price,
+      regularPrice: r.regular_price,
+      promo: r.promo,
+      badge: r.badge,
+      reviewScore: r.review_score,
+      reviewCount: r.review_count,
+      description: r.description,
+      colors: colorsByProduct.get(id) || [],
+      sizes: sizesByProduct.get(id) || [],
+      fits: fitsByProduct.get(id) || [],
+    } as unknown as Product;
+  });
+}
+
+/** Oracle connection settings, defaulting to the compose service. */
+export function oracleConfig(): oracledb.ConnectionAttributes {
+  return {
+    user: process.env.ORACLE_USER || 'GAPCAT',
+    password: process.env.ORACLE_PASSWORD || 'GAPDEMO',
+    connectString: process.env.ORACLE_CONNECT_STRING || 'localhost:1521/XEPDB1',
+  };
 }
 
 /**
@@ -71,15 +192,9 @@ export class OracleCatalogRepository implements CatalogRepository {
   readonly source = 'oracle';
   private pool: oracledb.Pool | null = null;
 
-  private readonly config = {
-    user: process.env.ORACLE_USER || 'GAPCAT',
-    password: process.env.ORACLE_PASSWORD || 'GAPDEMO',
-    connectString: process.env.ORACLE_CONNECT_STRING || 'localhost:1521/XEPDB1',
-  };
-
   private async conn(): Promise<oracledb.Connection> {
     if (!this.pool) {
-      this.pool = await oracledb.createPool({ ...this.config, poolMin: 1, poolMax: 4 });
+      this.pool = await oracledb.createPool({ ...oracleConfig(), poolMin: 1, poolMax: 4 });
     }
     return this.pool.getConnection();
   }
@@ -87,91 +202,26 @@ export class OracleCatalogRepository implements CatalogRepository {
   async listProducts(): Promise<Product[]> {
     const conn = await this.conn();
     try {
-      const opts = { outFormat: oracledb.OUT_FORMAT_OBJECT };
+      const opts: oracledb.ExecuteOptions = {
+        outFormat: oracledb.OUT_FORMAT_OBJECT,
+        // Fetch the CLOB as a string, not a Lob stream object.
+        fetchInfo: { DESCRIPTION: { type: oracledb.STRING } },
+      };
+      const q = (sql: string) => conn.execute<Record<string, unknown>>(sql, [], opts);
       const [products, colors, images, sizes, fits] = await Promise.all([
-        conn.execute<Record<string, unknown>>(
-          `SELECT PRODUCT_ID, NAME, DEPARTMENT, CATEGORY, PRICE, REGULAR_PRICE,
-                  PROMO, BADGE, REVIEW_SCORE, REVIEW_COUNT, DESCRIPTION
-             FROM PRODUCTS ORDER BY PRODUCT_ID`,
-          [],
-          opts,
-        ),
-        conn.execute<ColorRow>(
-          `SELECT COLOR_ID, PRODUCT_ID, CC_ID, NAME, REGULAR_PRICE, EFFECTIVE_PRICE,
-                  FLAG, BADGE, SWATCH
-             FROM PRODUCT_COLORS ORDER BY PRODUCT_ID, ORD`,
-          [],
-          opts,
-        ),
-        conn.execute<{ COLOR_ID: number; URL: string }>(
-          'SELECT COLOR_ID, URL FROM PRODUCT_IMAGES ORDER BY COLOR_ID, ORD',
-          [],
-          opts,
-        ),
-        conn.execute<{ PRODUCT_ID: string; SIZE: string }>(
-          'SELECT PRODUCT_ID, SIZE FROM PRODUCT_SIZES ORDER BY PRODUCT_ID, ORD',
-          [],
-          opts,
-        ),
-        conn.execute<{ PRODUCT_ID: string; FIT: string }>(
-          'SELECT PRODUCT_ID, FIT FROM PRODUCT_FITS ORDER BY PRODUCT_ID, ORD',
-          [],
-          opts,
-        ),
+        q(CATALOG_SQL.products),
+        q(CATALOG_SQL.colors),
+        q(CATALOG_SQL.images),
+        // SIZE is a reserved word in Oracle, so it is quoted in the Oracle DDL.
+        q(CATALOG_SQL.sizes.replace(' SIZE ', ' "SIZE" ')),
+        q(CATALOG_SQL.fits),
       ]);
-
-      const imagesByColor = new Map<number, string[]>();
-      for (const img of images.rows || []) {
-        const list = imagesByColor.get(img.COLOR_ID) || [];
-        list.push(img.URL);
-        imagesByColor.set(img.COLOR_ID, list);
-      }
-      const colorsByProduct = new Map<string, unknown[]>();
-      for (const c of colors.rows || []) {
-        const list = colorsByProduct.get(c.PRODUCT_ID) || [];
-        list.push({
-          ccId: c.CC_ID,
-          name: c.NAME,
-          regularPrice: c.REGULAR_PRICE,
-          effectivePrice: c.EFFECTIVE_PRICE,
-          flag: c.FLAG,
-          badge: c.BADGE,
-          swatch: c.SWATCH,
-          images: imagesByColor.get(c.COLOR_ID) || [],
-        });
-        colorsByProduct.set(c.PRODUCT_ID, list);
-      }
-      const sizesByProduct = new Map<string, string[]>();
-      for (const s of sizes.rows || []) {
-        const list = sizesByProduct.get(s.PRODUCT_ID) || [];
-        list.push(s.SIZE);
-        sizesByProduct.set(s.PRODUCT_ID, list);
-      }
-      const fitsByProduct = new Map<string, string[]>();
-      for (const f of fits.rows || []) {
-        const list = fitsByProduct.get(f.PRODUCT_ID) || [];
-        list.push(f.FIT);
-        fitsByProduct.set(f.PRODUCT_ID, list);
-      }
-
-      return (products.rows || []).map((r) => {
-        const id = String(r.PRODUCT_ID);
-        return {
-          id,
-          name: r.NAME,
-          department: r.DEPARTMENT,
-          category: r.CATEGORY,
-          price: r.PRICE,
-          regularPrice: r.REGULAR_PRICE,
-          promo: r.PROMO,
-          badge: r.BADGE,
-          reviewScore: r.REVIEW_SCORE,
-          reviewCount: r.REVIEW_COUNT,
-          description: r.DESCRIPTION,
-          colors: colorsByProduct.get(id) || [],
-          sizes: sizesByProduct.get(id) || [],
-          fits: fitsByProduct.get(id) || [],
-        } as unknown as Product;
+      return assembleProducts({
+        products: lowerKeys(products.rows),
+        colors: lowerKeys(colors.rows),
+        images: lowerKeys(images.rows),
+        sizes: lowerKeys(sizes.rows),
+        fits: lowerKeys(fits.rows),
       });
     } finally {
       await conn.close();
@@ -186,10 +236,97 @@ export class OracleCatalogRepository implements CatalogRepository {
     const products = await this.listProducts();
     return new Map(products.map((p) => [p.id, p]));
   }
+
+  async close(): Promise<void> {
+    await this.pool?.close(0);
+    this.pool = null;
+  }
+}
+
+/** Postgres connection settings: DATABASE_URL, else PG* vars, defaulting to the compose service. */
+export function postgresConfig(): pg.PoolConfig {
+  if (process.env.DATABASE_URL) return { connectionString: process.env.DATABASE_URL };
+  return {
+    host: process.env.PGHOST || 'localhost',
+    port: Number(process.env.PGPORT || 5432),
+    user: process.env.PGUSER || 'gapcat',
+    password: process.env.PGPASSWORD || 'gapdemo',
+    database: process.env.PGDATABASE || 'gapcat',
+  };
+}
+
+// pg returns NUMERIC as strings to avoid precision loss; the catalog's
+// NUMERIC(10,2)/(3,2) columns fit in a double, and the API must emit numbers
+// exactly like the Oracle driver does.
+export const pgTypes = {
+  getTypeParser(oid: number, format: 'text' | 'binary' = 'text') {
+    if (format === 'binary') return pg.types.getTypeParser(oid, 'binary');
+    return oid === pg.types.builtins.NUMERIC ? parseFloat : pg.types.getTypeParser(oid, 'text');
+  },
+} as pg.CustomTypesConfig;
+
+/** Live Postgres 16 source — the migration target (stands in for Cloud SQL / AlloyDB). */
+export class PostgresCatalogRepository implements CatalogRepository {
+  readonly source = 'postgres';
+  private pool: pg.Pool | null = null;
+
+  private db(): pg.Pool {
+    if (!this.pool) {
+      this.pool = new pg.Pool({ ...postgresConfig(), max: 4, types: pgTypes });
+      // An idle client dropping (e.g. Postgres restart) must not crash the API.
+      this.pool.on('error', (e) => console.error('[postgres] idle client error:', e.message));
+    }
+    return this.pool;
+  }
+
+  async listProducts(): Promise<Product[]> {
+    // One client + one snapshot, so all five tables come from the same commit.
+    const client = await this.db().connect();
+    try {
+      await client.query('BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY');
+      const products = await client.query<ProductRow>(CATALOG_SQL.products);
+      const colors = await client.query<ColorRow>(CATALOG_SQL.colors);
+      const images = await client.query<CatalogRows['images'][number]>(CATALOG_SQL.images);
+      const sizes = await client.query<CatalogRows['sizes'][number]>(CATALOG_SQL.sizes);
+      const fits = await client.query<CatalogRows['fits'][number]>(CATALOG_SQL.fits);
+      await client.query('COMMIT');
+      return assembleProducts({
+        products: products.rows,
+        colors: colors.rows,
+        images: images.rows,
+        sizes: sizes.rows,
+        fits: fits.rows,
+      });
+    } catch (e) {
+      await client.query('ROLLBACK').catch(() => undefined);
+      throw e;
+    } finally {
+      client.release();
+    }
+  }
+
+  async getProduct(id: string): Promise<Product | undefined> {
+    return (await this.listProducts()).find((p) => p.id === id);
+  }
+
+  async catalogMap(): Promise<Map<string, CatalogProduct>> {
+    const products = await this.listProducts();
+    return new Map(products.map((p) => [p.id, p]));
+  }
+
+  async close(): Promise<void> {
+    await this.pool?.end();
+    this.pool = null;
+  }
 }
 
 export function createCatalogRepository(): CatalogRepository {
-  return process.env.CATALOG_SOURCE === 'oracle'
-    ? new OracleCatalogRepository()
-    : new JsonCatalogRepository();
+  switch (process.env.CATALOG_SOURCE) {
+    case 'oracle':
+      return new OracleCatalogRepository();
+    case 'postgres':
+      return new PostgresCatalogRepository();
+    default:
+      return new JsonCatalogRepository();
+  }
 }

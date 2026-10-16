@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { AddressInfo } from 'net';
 import { Server } from 'http';
 import { createApp } from '../src/index';
+import { createCatalogRepository } from '../src/repository';
 
 let server: Server;
 let base: string;
@@ -111,4 +112,23 @@ test('POST /api/checkout returns an order number and validates input', async () 
     body: JSON.stringify({ shipping: { firstName: 'X' }, lines: [] }),
   });
   assert.equal(empty.status, 400);
+});
+
+test('CATALOG_SOURCE selects the catalog repository', () => {
+  const prev = process.env.CATALOG_SOURCE;
+  try {
+    for (const [value, source] of [
+      [undefined, 'json'],
+      ['json', 'json'],
+      ['oracle', 'oracle'],
+      ['postgres', 'postgres'],
+    ] as const) {
+      if (value === undefined) delete process.env.CATALOG_SOURCE;
+      else process.env.CATALOG_SOURCE = value;
+      assert.equal(createCatalogRepository().source, source);
+    }
+  } finally {
+    if (prev === undefined) delete process.env.CATALOG_SOURCE;
+    else process.env.CATALOG_SOURCE = prev;
+  }
 });
