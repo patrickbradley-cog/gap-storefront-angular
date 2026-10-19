@@ -80,7 +80,7 @@ flowchart LR
   subgraph Data["Catalog data — one of, via CATALOG_SOURCE"]
     JSON[("src/assets/data/<br/>catalog.json<br/>nightly extract")]
     ORA[("Oracle XE 21c — GAPCAT<br/>docker compose")]
-    PG[("PostgreSQL 16<br/>empty migration target")]
+    PG[("PostgreSQL 16 — gapcat<br/>docker compose")]
   end
   GapCDN[("gap.com CDN<br/>hotlinked product images")]
 
@@ -89,7 +89,7 @@ flowchart LR
   UI -- "POST /api/checkout" --> EP4
   EP1 & EP2 & EP3 & EP4 --> JSON
   EP1 & EP2 & EP3 & EP4 -. "CATALOG_SOURCE=oracle" .-> ORA
-  ORA -.->|"migration"| PG
+  EP1 & EP2 & EP3 & EP4 -. "CATALOG_SOURCE=postgres" .-> PG
   UI -.->|"<img> w/ onerror fallback"| GapCDN
 ```
 
@@ -98,26 +98,39 @@ Pricing rules (40% Friends & Family markdown on promo-eligible lines, promo code
 `server/src/pricing.ts` (authoritative) and mirrored by the frontend
 `PricingService` for instant UI feedback.
 
-### Catalog backend (JSON or live Oracle)
+### Catalog backend (JSON, Oracle or Postgres)
 
 The API reads its catalog through a `CatalogRepository`
 (`server/src/repository.ts`), selected by the `CATALOG_SOURCE` env var:
 
-- **default — `json`**: reads `src/assets/data/catalog.json`, the nightly
-  extract. Zero setup; used by CI and tests.
-- **`oracle`**: `OracleCatalogRepository` queries a real Oracle XE database
-  (schema `GAPCAT`, DDL in `server/oracle/schema.sql`). API responses are
-  byte-identical — relational rows are reassembled into the same product shape.
+| `CATALOG_SOURCE` | Repository                  | Data                                                                                   |
+| ---------------- | --------------------------- | -------------------------------------------------------------------------------------- |
+| `json` (default) | `JsonCatalogRepository`     | `src/assets/data/catalog.json`, the nightly extract. Zero setup; used by CI and tests. |
+| `oracle`         | `OracleCatalogRepository`   | Oracle XE 21c, schema `GAPCAT` (DDL `server/oracle/schema.sql`)                        |
+| `postgres`       | `PostgresCatalogRepository` | PostgreSQL 16, database `gapcat` (DDL `server/postgres/schema.sql`)                    |
+
+Connection env vars:
+
+- Oracle: `ORACLE_CONNECT_STRING` (default `localhost:1521/XEPDB1`),
+  `ORACLE_USER` (`GAPCAT`), `ORACLE_PASSWORD` (`GAPDEMO`).
+- Postgres: `POSTGRES_URL`, or the standard `PGHOST` / `PGPORT` / `PGUSER` /
+  `PGPASSWORD` / `PGDATABASE`. Default
+  `postgres://gapcat:gapdemo@localhost:5432/gapcat`.
 
 ```bash
-docker compose up -d                     # boots Oracle XE + empty Postgres 16 (target)
+npm --prefix server run db:up            # boots Oracle XE + Postgres 16 (docker compose)
 npm --prefix server run seed:oracle      # creates GAPCAT schema + loads the catalog
-CATALOG_SOURCE=oracle npm start          # API now queries live Oracle on :1521
+npm --prefix server run seed:postgres    # creates gapcat schema + loads the catalog
+
+CATALOG_SOURCE=oracle npm --prefix server start     # API on :4201 from Oracle (:1521)
+CATALOG_SOURCE=postgres npm --prefix server start   # API on :4201 from Postgres (:5432)
 ```
 
-`GET /api/health` reports which source is live (`{"ok":true,"products":45,"source":"oracle"}`).
-The Postgres service stands in for GCP Cloud SQL for PostgreSQL / AlloyDB — same
-engine, same DDL — and stays empty until a migration fills it.
+Oracle XE takes a minute or two to become ready after `db:up`. Both database
+sources serve a byte-identical `/api/catalog` — relational rows are reassembled
+into the same product shape. `GET /api/health` reports which source is live,
+e.g. `{"ok":true,"products":45,"source":"postgres"}`. Postgres 16 stands in for
+GCP Cloud SQL for PostgreSQL / AlloyDB — same engine.
 
 ## Screenshots & recording
 
@@ -174,10 +187,12 @@ src/app/
 src/assets/data/catalog.json   # 45 real Gap SKUs (names/prices/colourways/images)
 src/styles/_tokens.scss        # measured design tokens (colours, type, spacing)
 server/           # Express + TypeScript mock API (same pricing rules)
-  src/repository.ts            # CatalogRepository — json vs oracle sources
+  src/repository.ts            # CatalogRepository — json / oracle / postgres sources
   oracle/schema.sql            # GAPCAT schema in Oracle dialect
+  postgres/schema.sql          # gapcat schema in Postgres dialect
   scripts/seed-oracle.ts       # loads catalog.json into Oracle XE
-docker-compose.yml             # Oracle XE (1521) + empty Postgres 16 (5432)
+  scripts/seed-postgres.ts     # loads catalog.json into Postgres 16
+docker-compose.yml             # Oracle XE (1521) + Postgres 16 (5432)
 AGENTS.md                      # agent-facing repo conventions + data-source notes
 .github/workflows/ci.yml       # lint, Karma tests, prod build, server tests
 ```

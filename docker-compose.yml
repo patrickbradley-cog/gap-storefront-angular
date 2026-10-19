@@ -1,12 +1,16 @@
 # Database services for the catalog API.
 #
-#   oracle   — the "legacy" catalog store (Oracle XE 21c, GAPCAT schema).
-#              Seed it with: npm --prefix server run seed:oracle
-#   postgres — the migration target. Intentionally empty; nothing writes to it
-#              until the Oracle -> Postgres migration is done.
+# Start both with: npm --prefix server run db:up
+#
+#   oracle   — Oracle XE 21c catalog store (GAPCAT schema).
+#              Seed: npm --prefix server run seed:oracle
+#              Serve: CATALOG_SOURCE=oracle npm --prefix server start
+#   postgres — PostgreSQL 16 catalog store (gapcat database).
+#              Seed: npm --prefix server run seed:postgres
+#              Serve: CATALOG_SOURCE=postgres npm --prefix server start
 #
 # Postgres 16 here stands in for GCP Cloud SQL for PostgreSQL / AlloyDB —
-# same engine, same DDL.
+# same engine.
 
 services:
   oracle:
