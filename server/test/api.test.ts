@@ -3,6 +3,12 @@ import assert from 'node:assert/strict';
 import { AddressInfo } from 'net';
 import { Server } from 'http';
 import { createApp } from '../src/index';
+import {
+  JsonCatalogRepository,
+  OracleCatalogRepository,
+  PostgresCatalogRepository,
+  createCatalogRepository,
+} from '../src/repository';
 
 let server: Server;
 let base: string;
@@ -111,4 +117,26 @@ test('POST /api/checkout returns an order number and validates input', async () 
     body: JSON.stringify({ shipping: { firstName: 'X' }, lines: [] }),
   });
   assert.equal(empty.status, 400);
+});
+
+test('CATALOG_SOURCE selects the catalog repository', async () => {
+  const saved = process.env.CATALOG_SOURCE;
+  try {
+    for (const [value, cls, source] of [
+      [undefined, JsonCatalogRepository, 'json'],
+      ['json', JsonCatalogRepository, 'json'],
+      ['oracle', OracleCatalogRepository, 'oracle'],
+      ['postgres', PostgresCatalogRepository, 'postgres'],
+    ] as const) {
+      if (value === undefined) delete process.env.CATALOG_SOURCE;
+      else process.env.CATALOG_SOURCE = value;
+      const repo = createCatalogRepository();
+      assert.ok(repo instanceof cls, `CATALOG_SOURCE=${value} -> ${cls.name}`);
+      assert.equal(repo.source, source);
+      if (repo instanceof PostgresCatalogRepository) await repo.end();
+    }
+  } finally {
+    if (saved === undefined) delete process.env.CATALOG_SOURCE;
+    else process.env.CATALOG_SOURCE = saved;
+  }
 });
