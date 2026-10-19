@@ -1,4 +1,4 @@
-import { PricingService } from './pricing.service';
+import { PricingService, isPromoEligible } from './pricing.service';
 import { makeLine } from '../../testing/fixtures';
 
 describe('PricingService', () => {
@@ -53,5 +53,14 @@ describe('PricingService', () => {
     expect(q.subtotal).toBe(0);
     expect(q.total).toBe(0);
     expect(q.shipping).toBe(0);
+  });
+
+  it('treats only "... at checkout" colourway flags as promo-eligible', () => {
+    expect(isPromoEligible('40% off at checkout')).toBeTrue();
+    expect(isPromoEligible('Extra 40% off at checkout')).toBeTrue();
+    expect(isPromoEligible('60% off: limited time')).toBeFalse();
+    expect(isPromoEligible('Final sale')).toBeFalse();
+    expect(isPromoEligible('Excluded from promotions')).toBeFalse();
+    expect(isPromoEligible('')).toBeFalse();
   });
 });

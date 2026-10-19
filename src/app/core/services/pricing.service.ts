@@ -13,12 +13,19 @@ const PROMO_CODES: Record<string, number> = {
 
 const money = (n: number) => Math.round(n * 100) / 100;
 
+/** Friends & Family applies only to colourways flagged "... at checkout". */
+export function isPromoEligible(flag: string | null | undefined): boolean {
+  return /\bat checkout\b/i.test(flag || '');
+}
+
 /**
  * Pure pricing rules — mirrors /api/bag/price on the server so the UI can
  * render instantly and still be verified against the HTTP boundary.
  *
  * "Friends & Family 40% off" is a checkout-time markdown: prices shown on
  * PDP/PLP are list prices, the 40% is applied to promo-eligible lines here.
+ * Lines are priced at the colourway's effectivePrice; eligibility comes from
+ * the colourway's own flag (see isPromoEligible).
  */
 @Injectable({ providedIn: 'root' })
 export class PricingService {

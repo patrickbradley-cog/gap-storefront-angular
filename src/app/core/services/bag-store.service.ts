@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { catchError, debounceTime, distinctUntilChanged, map, switchMap } from 'rxjs/operators';
 import { BagLine, BagState, PriceQuote, Product } from '../models';
-import { PricingService } from './pricing.service';
+import { PricingService, isPromoEligible } from './pricing.service';
 
 const STORAGE_KEY = 'gap-storefront.bag';
 const PROMO_KEY = 'gap-storefront.promo';
@@ -77,7 +77,7 @@ export class BagStore {
         size,
         qty,
         price: parseFloat(colorway.effectivePrice) || product.price,
-        promoEligible: !!product.promo,
+        promoEligible: isPromoEligible(colorway.flag),
         image: colorway.images[0] || colorway.swatch,
         department: product.department,
         category: product.category,
