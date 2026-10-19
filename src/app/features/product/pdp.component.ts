@@ -107,6 +107,16 @@ export class PdpComponent implements OnInit, OnDestroy {
     );
   }
 
+  /** Selected colourway's selling price — what the bag and checkout charge. */
+  get price(): number {
+    return parseFloat(this.selectedColor?.effectivePrice || '') || this.product?.price || 0;
+  }
+
+  get wasPrice(): number | null {
+    const regular = parseFloat(this.selectedColor?.regularPrice || '');
+    return regular > this.price ? regular : null;
+  }
+
   get gallery(): string[] {
     return this.selectedColor?.images || [];
   }

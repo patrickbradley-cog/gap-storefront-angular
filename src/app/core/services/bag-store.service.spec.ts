@@ -61,4 +61,20 @@ describe('BagStore', () => {
     const fresh = newStore();
     expect(fresh.lines.length).toBe(0);
   });
+
+  it('prices lines from the colourway and its own promo flag', () => {
+    const p = makeProduct({
+      price: 31,
+      colors: [
+        { ...makeProduct().colors[0], ccId: 'full', effectivePrice: '89.95' },
+        { ...makeProduct().colors[1], ccId: 'final', effectivePrice: '49.97', flag: 'Final sale' },
+      ],
+    });
+    store.add(p, 'full', 'Beige', 'Regular', 'M', 1);
+    store.add(p, 'final', 'Black', 'Regular', 'M', 1);
+    expect(store.lines[0].price).toBe(89.95);
+    expect(store.lines[0].promoEligible).toBeTrue();
+    expect(store.lines[1].price).toBe(49.97);
+    expect(store.lines[1].promoEligible).toBeFalse();
+  });
 });

@@ -13,12 +13,32 @@ const PROMO_CODES: Record<string, number> = {
   GAPMORE: 0.15,
 };
 
+export interface CatalogColorway {
+  ccId: string;
+  effectivePrice: string | number | null;
+  flag: string | null;
+}
+
 export interface CatalogProduct {
   id: string;
   price: number;
   promo: string;
-  colors: Array<{ ccId: string }>;
+  colors: CatalogColorway[];
   sizes: string[];
+}
+
+/** Friends & Family applies only to colourways flagged "... at checkout". */
+export function isPromoEligible(flag: string | null | undefined): boolean {
+  return /\bat checkout\b/i.test(flag || '');
+}
+
+/** The colourway's own selling price, or null if it is missing/invalid. */
+export function colorwayPrice(colorway: CatalogColorway): number | null {
+  const price =
+    typeof colorway.effectivePrice === 'number'
+      ? colorway.effectivePrice
+      : parseFloat(String(colorway.effectivePrice ?? ''));
+  return Number.isFinite(price) && price > 0 ? price : null;
 }
 
 export interface RequestLine {
@@ -67,17 +87,23 @@ export function priceBag(
       errors.push(`Invalid qty for ${product.id}`);
       continue;
     }
-    if (!product.colors.some((c) => c.ccId === line.ccId)) {
+    const colorway = product.colors.find((c) => c.ccId === line.ccId);
+    if (!colorway) {
       errors.push(`Unknown colour ${line.ccId} for ${product.id}`);
+      continue;
+    }
+    const price = colorwayPrice(colorway);
+    if (price === null) {
+      errors.push(`No price for colour ${line.ccId} of ${product.id}`);
       continue;
     }
     if (!product.sizes.includes(line.size)) {
       errors.push(`Unknown size ${line.size} for ${product.id}`);
       continue;
     }
-    subtotal += product.price * qty;
-    if (product.promo) {
-      markdown += product.price * FRIENDS_FAMILY_RATE * qty;
+    subtotal += price * qty;
+    if (isPromoEligible(colorway.flag)) {
+      markdown += price * FRIENDS_FAMILY_RATE * qty;
     }
     itemCount += qty;
   }
