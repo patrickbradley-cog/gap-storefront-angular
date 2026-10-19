@@ -77,4 +77,19 @@ describe('PdpComponent', () => {
     const img = fixture.nativeElement.querySelector('.pdp__main-img img') as HTMLImageElement;
     expect(img.src).toBe(other.images[0]);
   });
+
+  it('shows the selected colourway price and flag', () => {
+    const base = (component.product as Product).colors[1];
+    component.selectColor({
+      ...base,
+      regularPrice: '89.95',
+      effectivePrice: '49.97',
+      flag: 'Final sale',
+    });
+    fixture.detectChanges();
+    const el = fixture.nativeElement as HTMLElement;
+    expect(el.querySelector('.pdp__price .price')?.textContent).toContain('$49.97');
+    expect(el.querySelector('.pdp__price .price-was')?.textContent).toContain('$89.95');
+    expect(el.querySelector('.promo-flag')?.textContent).toContain('Final sale');
+  });
 });

@@ -50,10 +50,10 @@
       </div>
 
       <div class="pdp__price">
-        <span class="price" [class.price--sale]="!!p.regularPrice">{{ p.price | currency }}</span>
-        <span class="price-was" *ngIf="p.regularPrice">{{ p.regularPrice | currency }}</span>
+        <span class="price" [class.price--sale]="!!wasPrice">{{ price | currency }}</span>
+        <span class="price-was" *ngIf="wasPrice">{{ wasPrice | currency }}</span>
       </div>
-      <p class="promo-flag" *ngIf="p.promo">{{ p.promo }}</p>
+      <p class="promo-flag" *ngIf="selectedColor?.flag">{{ selectedColor?.flag }}</p>
 
       <div class="pdp__section">
         <span class="pdp__label">
