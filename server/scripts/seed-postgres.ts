@@ -21,21 +21,33 @@ const CATALOG_PATH = [
   path.resolve(__dirname, '../../src/assets/data/catalog.json'),
 ].find((p) => fs.existsSync(p)) as string;
 
-const DEFAULT_URL = 'postgres://gapcat:gapdemo@localhost:5432/gapcat';
-const HAS_PG_ENV = ['PGHOST', 'PGPORT', 'PGUSER', 'PGPASSWORD', 'PGDATABASE'].some(
-  (k) => process.env[k],
-);
-// With no connectionString, pg reads the standard PG* env vars itself.
+// Same defaults as PostgresCatalogRepository (server/src/repository.ts).
 const CONFIG: ClientConfig = process.env.POSTGRES_URL
   ? { connectionString: process.env.POSTGRES_URL }
-  : HAS_PG_ENV
-  ? {}
-  : { connectionString: DEFAULT_URL };
+  : {
+      host: process.env.PGHOST || 'localhost',
+      port: Number(process.env.PGPORT || 5432),
+      user: process.env.PGUSER || 'gapcat',
+      password: process.env.PGPASSWORD || 'gapdemo',
+      database: process.env.PGDATABASE || 'gapcat',
+    };
 
-const TARGET = CONFIG.connectionString
-  ? CONFIG.connectionString.replace(/\/\/([^:@/]+):[^@]*@/, '//$1:***@')
-  : `${process.env.PGHOST || 'localhost'}:${process.env.PGPORT || '5432'}/` +
-    `${process.env.PGDATABASE || process.env.PGUSER || ''}`;
+// host:port/db only — never print credentials from the URL or its query string.
+function describeTarget(config: ClientConfig): string {
+  if (!config.connectionString) {
+    return `${config.host}:${config.port}/${config.database}`;
+  }
+  try {
+    const url = new URL(config.connectionString);
+    return `${url.hostname || 'localhost'}:${url.port || '5432'}/${decodeURIComponent(
+      url.pathname.replace(/^\//, ''),
+    )}`;
+  } catch {
+    return '<POSTGRES_URL>';
+  }
+}
+
+const TARGET = describeTarget(CONFIG);
 
 // Keeps every INSERT far below Postgres' 65535 bind-parameter limit.
 const MAX_PARAMS_PER_INSERT = 10000;
