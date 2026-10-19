@@ -144,7 +144,7 @@ async function main(): Promise<void> {
           imageRows.push({ COLOR_ID: id, URL: url, ORD: imgOrd });
         });
       });
-      p.sizes.forEach((s, ord) => sizeRows.push({ PRODUCT_ID: p.id, SIZE: s, ORD: ord }));
+      p.sizes.forEach((s, ord) => sizeRows.push({ PRODUCT_ID: p.id, SZ: s, ORD: ord }));
       p.fits.forEach((f, ord) => fitRows.push({ PRODUCT_ID: p.id, FIT: f, ORD: ord }));
     }
 
@@ -160,7 +160,7 @@ async function main(): Promise<void> {
       imageRows,
     );
     await conn.executeMany(
-      'INSERT INTO PRODUCT_SIZES (PRODUCT_ID, SIZE, ORD) VALUES (:PRODUCT_ID, :SIZE, :ORD)',
+      'INSERT INTO PRODUCT_SIZES (PRODUCT_ID, "SIZE", ORD) VALUES (:PRODUCT_ID, :SZ, :ORD)',
       sizeRows,
     );
     await conn.executeMany(
