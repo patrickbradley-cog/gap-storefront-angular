@@ -1,4 +1,5 @@
 import express, { Request, Response } from 'express';
+import rateLimit from 'express-rate-limit';
 import { RequestLine, priceBag } from './pricing';
 import { createCatalogRepository } from './repository';
 
@@ -15,6 +16,19 @@ const h =
 
 export function createApp(): express.Express {
   const app = express();
+  const perMinute = Number(process.env.API_RATE_LIMIT_PER_MIN ?? 600);
+  if (perMinute > 0) {
+    app.use(
+      '/api',
+      rateLimit({
+        windowMs: 60_000,
+        limit: perMinute,
+        standardHeaders: 'draft-7',
+        legacyHeaders: false,
+        message: { error: 'Too many requests, slow down.' },
+      }),
+    );
+  }
   app.use(express.json());
 
   app.get(
