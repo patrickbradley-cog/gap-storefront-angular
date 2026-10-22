@@ -110,10 +110,15 @@ The API reads its catalog through a `CatalogRepository`
   byte-identical — relational rows are reassembled into the same product shape.
 
 ```bash
+cp .env.example .env                     # set your own DB passwords (.env is git-ignored)
+set -a; . ./.env; set +a                 # export them for the seed script and API
 docker compose up -d                     # boots Oracle XE + empty Postgres 16 (target)
 npm --prefix server run seed:oracle      # creates GAPCAT schema + loads the catalog
 CATALOG_SOURCE=oracle npm start          # API now queries live Oracle on :1521
 ```
+
+There are no default DB passwords: compose, `seed:oracle` and the API all
+refuse to start without them, and the DB ports are published on `127.0.0.1` only.
 
 `GET /api/health` reports which source is live (`{"ok":true,"products":45,"source":"oracle"}`).
 The Postgres service stands in for GCP Cloud SQL for PostgreSQL / AlloyDB — same

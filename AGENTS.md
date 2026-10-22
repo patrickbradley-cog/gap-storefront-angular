@@ -6,15 +6,16 @@ disclaimer via the top demo bar; keep it that way.
 
 ## Commands
 
-| Where    | Command                               | What                                    |
-| -------- | ------------------------------------- | --------------------------------------- |
-| root     | `npm start`                           | web :4200 + api :4201 (proxy.conf.json) |
-| root     | `npm test`                            | Karma/Jasmine, headless Chrome          |
-| root     | `npm run lint` / `npm run build`      | angular-eslint / prod build             |
-| `server` | `npm --prefix server test`            | API tests (`node:test` via tsx)         |
-| `server` | `npm --prefix server run build`       | `tsc` typecheck                         |
-| root     | `docker compose up -d`                | boots Oracle XE + an empty Postgres 16  |
-| `server` | `npm --prefix server run seed:oracle` | creates GAPCAT schema + loads catalog   |
+| Where    | Command                                | What                                    |
+| -------- | -------------------------------------- | --------------------------------------- |
+| root     | `npm start`                            | web :4200 + api :4201 (proxy.conf.json) |
+| root     | `npm test`                             | Karma/Jasmine, headless Chrome          |
+| root     | `npm run lint` / `npm run build`       | angular-eslint / prod build             |
+| `server` | `npm --prefix server test`             | API tests (`node:test` via tsx)         |
+| `server` | `npm --prefix server run build`        | `tsc` typecheck                         |
+| root     | `cp .env.example .env` (set passwords) | DB passwords for compose, seed and API  |
+| root     | `docker compose up -d`                 | boots Oracle XE + an empty Postgres 16  |
+| `server` | `npm --prefix server run seed:oracle`  | creates GAPCAT schema + loads catalog   |
 
 ## Catalog data sources
 
@@ -24,7 +25,8 @@ The API resolves catalog data through `CatalogRepository`
 - `oracle` → `OracleCatalogRepository` queries the **Oracle XE** catalog DB
   (schema `GAPCAT`, DDL in `server/oracle/schema.sql`). Connection via env:
   `ORACLE_CONNECT_STRING` (default `localhost:1521/XEPDB1`),
-  `ORACLE_USER` (`GAPCAT`), `ORACLE_PASSWORD` (`GAPDEMO`).
+  `ORACLE_USER` (`GAPCAT`), `ORACLE_PASSWORD` (required — no default; set it
+  in the untracked `.env`, template `.env.example`).
 - unset / `json` → `JsonCatalogRepository` reads
   `src/assets/data/catalog.json` — the nightly extract produced from the
   legacy DB. CI, tests and zero-setup runs use this; keep it working.

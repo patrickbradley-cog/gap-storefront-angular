@@ -8,6 +8,7 @@
 import fs from 'fs';
 import path from 'path';
 import oracledb from 'oracledb';
+import { oracleConnectionConfig } from '../src/repository';
 
 const SCHEMA_PATH = [
   path.resolve(process.cwd(), 'oracle/schema.sql'),
@@ -20,11 +21,7 @@ const CATALOG_PATH = [
   path.resolve(__dirname, '../../src/assets/data/catalog.json'),
 ].find((p) => fs.existsSync(p)) as string;
 
-const CONFIG = {
-  user: process.env.ORACLE_USER || 'GAPCAT',
-  password: process.env.ORACLE_PASSWORD || 'GAPDEMO',
-  connectString: process.env.ORACLE_CONNECT_STRING || 'localhost:1521/XEPDB1',
-};
+const CONFIG = oracleConnectionConfig();
 
 interface JsonColor {
   ccId: string;

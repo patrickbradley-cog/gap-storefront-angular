@@ -64,6 +64,26 @@ interface ColorRow {
 }
 
 /**
+ * Oracle connection settings from env. There is deliberately no password
+ * fallback: a missing ORACLE_PASSWORD fails fast instead of silently trying a
+ * well-known default.
+ */
+export function oracleConnectionConfig(env: NodeJS.ProcessEnv = process.env): {
+  user: string;
+  password: string;
+  connectString: string;
+} {
+  if (!env.ORACLE_PASSWORD) {
+    throw new Error('ORACLE_PASSWORD must be set to connect to Oracle (see .env.example)');
+  }
+  return {
+    user: env.ORACLE_USER || 'GAPCAT',
+    password: env.ORACLE_PASSWORD,
+    connectString: env.ORACLE_CONNECT_STRING || 'localhost:1521/XEPDB1',
+  };
+}
+
+/**
  * Live Oracle source — queries the GAPCAT schema in the Oracle XE catalog DB.
  * Thin-mode driver: no Oracle client install required.
  */
@@ -71,11 +91,7 @@ export class OracleCatalogRepository implements CatalogRepository {
   readonly source = 'oracle';
   private pool: oracledb.Pool | null = null;
 
-  private readonly config = {
-    user: process.env.ORACLE_USER || 'GAPCAT',
-    password: process.env.ORACLE_PASSWORD || 'GAPDEMO',
-    connectString: process.env.ORACLE_CONNECT_STRING || 'localhost:1521/XEPDB1',
-  };
+  private readonly config = oracleConnectionConfig();
 
   private async conn(): Promise<oracledb.Connection> {
     if (!this.pool) {
