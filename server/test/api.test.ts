@@ -112,3 +112,27 @@ test('POST /api/checkout returns an order number and validates input', async () 
   });
   assert.equal(empty.status, 400);
 });
+
+test('API routes are rate limited per client', async () => {
+  const prev = process.env.API_RATE_LIMIT_PER_MIN;
+  process.env.API_RATE_LIMIT_PER_MIN = '3';
+  const limited = createApp().listen(0);
+  try {
+    await new Promise<void>((resolve) => limited.once('listening', resolve));
+    const url = `http://127.0.0.1:${(limited.address() as AddressInfo).port}/api/health`;
+    const statuses: number[] = [];
+    for (let i = 0; i < 4; i++) statuses.push((await fetch(url)).status);
+    assert.deepEqual(statuses, [200, 200, 200, 429]);
+
+    // Clients behind a loopback proxy get their own bucket via X-Forwarded-For.
+    const via = (ip: string) => fetch(url, { headers: { 'X-Forwarded-For': ip } });
+    const flooder: number[] = [];
+    for (let i = 0; i < 4; i++) flooder.push((await via('203.0.113.9')).status);
+    assert.deepEqual(flooder, [200, 200, 200, 429]);
+    assert.equal((await via('198.51.100.7')).status, 200);
+  } finally {
+    limited.close();
+    if (prev === undefined) delete process.env.API_RATE_LIMIT_PER_MIN;
+    else process.env.API_RATE_LIMIT_PER_MIN = prev;
+  }
+});

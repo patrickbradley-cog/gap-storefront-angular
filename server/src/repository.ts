@@ -51,6 +51,9 @@ export class JsonCatalogRepository implements CatalogRepository {
   }
 }
 
+/** How long the Oracle source serves an assembled catalog before re-querying. */
+const CATALOG_CACHE_TTL_MS = Number(process.env.CATALOG_CACHE_TTL_MS ?? 30_000);
+
 interface ColorRow {
   COLOR_ID: number;
   PRODUCT_ID: string;
@@ -69,7 +72,10 @@ interface ColorRow {
  */
 export class OracleCatalogRepository implements CatalogRepository {
   readonly source = 'oracle';
-  private pool: oracledb.Pool | null = null;
+  private poolPromise: Promise<oracledb.Pool> | null = null;
+  private cached: { products: Product[]; byId: Map<string, Product>; expiresAt: number } | null =
+    null;
+  private loading: Promise<{ products: Product[]; byId: Map<string, Product> }> | null = null;
 
   private readonly config = {
     user: process.env.ORACLE_USER || 'GAPCAT',
@@ -77,14 +83,55 @@ export class OracleCatalogRepository implements CatalogRepository {
     connectString: process.env.ORACLE_CONNECT_STRING || 'localhost:1521/XEPDB1',
   };
 
-  private async conn(): Promise<oracledb.Connection> {
-    if (!this.pool) {
-      this.pool = await oracledb.createPool({ ...this.config, poolMin: 1, poolMax: 4 });
+  constructor(private readonly cacheTtlMs = CATALOG_CACHE_TTL_MS) {}
+
+  /** One shared pool: concurrent cold-start callers await the same createPool. */
+  private pool(): Promise<oracledb.Pool> {
+    if (!this.poolPromise) {
+      this.poolPromise = oracledb
+        .createPool({
+          ...this.config,
+          poolMin: 1,
+          poolMax: 4,
+          queueMax: 16,
+          queueTimeout: 5000,
+        })
+        .catch((e: unknown) => {
+          this.poolPromise = null;
+          throw e;
+        });
     }
-    return this.pool.getConnection();
+    return this.poolPromise;
+  }
+
+  private async conn(): Promise<oracledb.Connection> {
+    return (await this.pool()).getConnection();
+  }
+
+  /** Cached catalog; concurrent misses share a single in-flight load. */
+  private catalog(): Promise<{ products: Product[]; byId: Map<string, Product> }> {
+    if (this.cached && Date.now() < this.cached.expiresAt) {
+      return Promise.resolve(this.cached);
+    }
+    if (!this.loading) {
+      this.loading = this.queryProducts()
+        .then((products) => {
+          const byId = new Map(products.map((p) => [p.id, p]));
+          this.cached = { products, byId, expiresAt: Date.now() + this.cacheTtlMs };
+          return { products, byId };
+        })
+        .finally(() => {
+          this.loading = null;
+        });
+    }
+    return this.loading;
   }
 
   async listProducts(): Promise<Product[]> {
+    return (await this.catalog()).products;
+  }
+
+  private async queryProducts(): Promise<Product[]> {
     const conn = await this.conn();
     try {
       const opts = { outFormat: oracledb.OUT_FORMAT_OBJECT };
@@ -179,12 +226,11 @@ export class OracleCatalogRepository implements CatalogRepository {
   }
 
   async getProduct(id: string): Promise<Product | undefined> {
-    return (await this.listProducts()).find((p) => p.id === id);
+    return (await this.catalog()).byId.get(id);
   }
 
   async catalogMap(): Promise<Map<string, CatalogProduct>> {
-    const products = await this.listProducts();
-    return new Map(products.map((p) => [p.id, p]));
+    return (await this.catalog()).byId as Map<string, CatalogProduct>;
   }
 }
 

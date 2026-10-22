@@ -1,4 +1,5 @@
 import express, { Request, Response } from 'express';
+import rateLimit from 'express-rate-limit';
 import { RequestLine, priceBag } from './pricing';
 import { createCatalogRepository } from './repository';
 
@@ -15,6 +16,21 @@ const h =
 
 export function createApp(): express.Express {
   const app = express();
+  // Behind the dev proxy / a local reverse proxy, key rate limits on the forwarded client IP.
+  app.set('trust proxy', process.env.TRUST_PROXY || 'loopback');
+  const perMinute = Number(process.env.API_RATE_LIMIT_PER_MIN ?? 600);
+  if (perMinute > 0) {
+    app.use(
+      '/api',
+      rateLimit({
+        windowMs: 60_000,
+        limit: perMinute,
+        standardHeaders: 'draft-7',
+        legacyHeaders: false,
+        message: { error: 'Too many requests, slow down.' },
+      }),
+    );
+  }
   app.use(express.json());
 
   app.get(
