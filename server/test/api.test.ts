@@ -123,6 +123,13 @@ test('API routes are rate limited per client', async () => {
     const statuses: number[] = [];
     for (let i = 0; i < 4; i++) statuses.push((await fetch(url)).status);
     assert.deepEqual(statuses, [200, 200, 200, 429]);
+
+    // Clients behind a loopback proxy get their own bucket via X-Forwarded-For.
+    const via = (ip: string) => fetch(url, { headers: { 'X-Forwarded-For': ip } });
+    const flooder: number[] = [];
+    for (let i = 0; i < 4; i++) flooder.push((await via('203.0.113.9')).status);
+    assert.deepEqual(flooder, [200, 200, 200, 429]);
+    assert.equal((await via('198.51.100.7')).status, 200);
   } finally {
     limited.close();
     if (prev === undefined) delete process.env.API_RATE_LIMIT_PER_MIN;

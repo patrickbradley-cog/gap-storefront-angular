@@ -16,6 +16,8 @@ const h =
 
 export function createApp(): express.Express {
   const app = express();
+  // Behind the dev proxy / a local reverse proxy, key rate limits on the forwarded client IP.
+  app.set('trust proxy', process.env.TRUST_PROXY || 'loopback');
   const perMinute = Number(process.env.API_RATE_LIMIT_PER_MIN ?? 600);
   if (perMinute > 0) {
     app.use(
